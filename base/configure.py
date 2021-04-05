@@ -29,7 +29,7 @@ class Config(object):
 
   def __init__(self, **kwargs):
     # general
-    self.data_dir = './data'  # top directory for data (corpora, models, etc.)
+    self.data_dir = '/content/data'  # top directory for data (corpora, models, etc.)
     self.model_name = 'default_model'  # name identifying the current model
 
     # mode
