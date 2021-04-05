@@ -40,7 +40,7 @@ def load_cpickle(path, memoized=True):
 
 
 def _load_cpickle(path):
-  with tf.gfile.GFile(path, 'r') as f:
+  with tf.gfile.GFile(path, 'rb') as f:
     return pickle.load(f)
 
 
