@@ -31,7 +31,7 @@ from base import utils
 from task_specific.word_level import word_level_data
 
 
-def main(data_dir='./data'):
+def main(data_dir='/content/data'):
   random.seed(0)
 
   utils.log("BUILDING WORD VOCABULARY/EMBEDDINGS")
