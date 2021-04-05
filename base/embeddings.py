@@ -123,7 +123,7 @@ class PretrainedEmbeddingLoader(object):
         if i % 10000 == 0:
           utils.log('on line', i)
 
-        split = line.decode('utf8').split()
+        split = line.split()
         w = normalize_word(split[0])
 
         try:

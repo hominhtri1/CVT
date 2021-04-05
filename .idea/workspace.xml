@@ -20,32 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d7e3a73-cb26-4827-8258-7d1cee2030a0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/configure.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/configure.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/embeddings.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/embeddings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpus_processing/example.py" beforeDir="false" afterPath="$PROJECT_DIR$/corpus_processing/example.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpus_processing/minibatching.py" beforeDir="false" afterPath="$PROJECT_DIR$/corpus_processing/minibatching.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpus_processing/scorer.py" beforeDir="false" afterPath="$PROJECT_DIR$/corpus_processing/scorer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpus_processing/unlabeled_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/corpus_processing/unlabeled_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cvt.py" beforeDir="false" afterPath="$PROJECT_DIR$/cvt.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/encoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/encoder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/model_helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/model_helpers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/multitask_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/multitask_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/shared_inputs.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/shared_inputs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/task_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/task_module.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preprocessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task_specific/task_definitions.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_specific/task_definitions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task_specific/word_level/depparse_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_specific/word_level/depparse_module.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task_specific/word_level/depparse_scorer.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_specific/word_level/depparse_scorer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task_specific/word_level/tagging_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_specific/word_level/tagging_module.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task_specific/word_level/tagging_scorers.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_specific/word_level/tagging_scorers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task_specific/word_level/tagging_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_specific/word_level/tagging_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task_specific/word_level/word_level_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_specific/word_level/word_level_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task_specific/word_level/word_level_scorer.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_specific/word_level/word_level_scorer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/training/trainer.py" beforeDir="false" afterPath="$PROJECT_DIR$/training/trainer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/training/training_progress.py" beforeDir="false" afterPath="$PROJECT_DIR$/training/training_progress.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,8 +54,16 @@
       <workItem from="1616612648895" duration="1920000" />
       <workItem from="1616918638191" duration="5779000" />
       <workItem from="1617027610942" duration="13013000" />
-      <workItem from="1617580523172" duration="250000" />
+      <workItem from="1617580523172" duration="1877000" />
     </task>
+    <task id="LOCAL-00001" summary="Apply 2to3">
+      <created>1617580935378</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1617580935378</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -102,15 +85,25 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/../.." />
     </ignored-roots>
+    <MESSAGE value="Apply 2to3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Apply 2to3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1617580933211">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1617580933211" />
     <state x="184" y="8" key="SettingsEditor" timestamp="1617580771738">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="8" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1617580771738" />
-    <state x="234" y="60" width="919" height="595" key="find.popup" timestamp="1617032452456">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1617580941128">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="234" y="60" width="919" height="595" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1617032452456" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1617580941128" />
+    <state x="234" y="60" width="919" height="595" key="find.popup" timestamp="1617582278810">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="234" y="60" width="919" height="595" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1617582278810" />
   </component>
 </project>
