@@ -15,18 +15,16 @@
 
 """Base class for word-level scorers."""
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
+
+
+
 
 import abc
 
 from corpus_processing import scorer
 
 
-class WordLevelScorer(scorer.Scorer):
-  __metaclass__ = abc.ABCMeta
-
+class WordLevelScorer(scorer.Scorer, metaclass=abc.ABCMeta):
   def __init__(self):
     super(WordLevelScorer, self).__init__()
     self._total_loss = 0

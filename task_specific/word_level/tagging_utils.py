@@ -15,9 +15,9 @@
 
 """Utilities for sequence tagging tasks for entity-level tasks (e.g., NER)."""
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
+
+
+
 
 
 def get_span_labels(sentence_tags, inv_label_mapping=None):

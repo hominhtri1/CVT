@@ -15,16 +15,14 @@
 
 """Base classes for task-specific modules."""
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
+
+
+
 
 import abc
 
 
-class SupervisedModule(object):
-  __metaclass__ = abc.ABCMeta
-
+class SupervisedModule(object, metaclass=abc.ABCMeta):
   def __init__(self):
     self.supervised_loss = NotImplemented
     self.probs = NotImplemented
@@ -35,9 +33,7 @@ class SupervisedModule(object):
     pass
 
 
-class SemiSupervisedModule(SupervisedModule):
-  __metaclass__ = abc.ABCMeta
-
+class SemiSupervisedModule(SupervisedModule, metaclass=abc.ABCMeta):
   def __init__(self):
     super(SemiSupervisedModule, self).__init__()
     self.unsupervised_loss = NotImplemented

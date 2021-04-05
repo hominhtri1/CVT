@@ -15,9 +15,9 @@
 
 """Dependency parsing evaluation (computes UAS/LAS)."""
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
+
+
+
 
 from task_specific.word_level import word_level_scorer
 

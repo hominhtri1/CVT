@@ -15,9 +15,9 @@
 
 """Classes for storing hyperparameters, data locations, etc."""
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
+
+
+
 
 import json
 from os.path import join
@@ -95,7 +95,7 @@ class Config(object):
     # data set
     self.train_set_percent = 100  # how much of the train set to use
 
-    for k, v in kwargs.iteritems():
+    for k, v in kwargs.items():
       if k not in self.__dict__:
         raise ValueError("Unknown argument", k)
       self.__dict__[k] = v

@@ -18,9 +18,9 @@ Tracks and saves training progress (models and other data such as the current
 location in the lm1b corpus) for later reloading.
 """
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
+
+
+
 
 import tensorflow as tf
 

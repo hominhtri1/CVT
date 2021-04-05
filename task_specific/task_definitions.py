@@ -15,9 +15,9 @@
 
 """Defines all the tasks the model can learn."""
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
+
+
+
 
 import abc
 
@@ -29,9 +29,7 @@ from task_specific.word_level import tagging_scorers
 from task_specific.word_level import word_level_data
 
 
-class Task(object):
-  __metaclass__ = abc.ABCMeta
-
+class Task(object, metaclass=abc.ABCMeta):
   def __init__(self, config, name, loader):
     self.config = config
     self.name = name

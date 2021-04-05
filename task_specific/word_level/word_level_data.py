@@ -15,9 +15,9 @@
 
 """Utilities for processing word-level datasets."""
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
+
+
+
 
 import collections
 import os
@@ -69,7 +69,7 @@ class TaggedDataLoader(object):
         line = line.strip().split()
         if not line:
           if sentence:
-            words, tags = zip(*sentence)
+            words, tags = list(zip(*sentence))
             sentences.append((words, tags))
             sentence = []
           continue
@@ -104,12 +104,11 @@ class TaggedDataLoader(object):
       # the model will never predict this label because it never sees it in the
       # training set
       not_in_train_tags = []
-      for tag, count in tag_counts.items():
+      for tag, count in list(tag_counts.items()):
         if tag not in train_tags:
           not_in_train_tags.append(tag)
       label_mapping = {
-          label: i for i, label in enumerate(sorted(filter(
-            lambda t: t not in not_in_train_tags, tag_counts.keys())))
+          label: i for i, label in enumerate(sorted([t for t in list(tag_counts.keys()) if t not in not_in_train_tags]))
       }
       n = len(label_mapping)
       for tag in not_in_train_tags:

@@ -17,9 +17,9 @@
 
 """Utilities for handling word embeddings."""
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
+
+
+
 
 import collections
 import re
@@ -75,7 +75,7 @@ def get_char_vocab():
 
 @utils.Memoize
 def get_inv_char_vocab():
-  return {i: c for c, i in get_char_vocab().items()}
+  return {i: c for c, i in list(get_char_vocab().items())}
 
 
 def get_word_vocab(config):
@@ -89,7 +89,7 @@ def get_word_embeddings(config):
 @utils.Memoize
 def _punctuation_ids(vocab_path):
   vocab = Vocabulary(utils.load_cpickle(vocab_path))
-  return set(i for w, i in vocab.iteritems() if w in [
+  return set(i for w, i in vocab.items() if w in [
       '!', '...', '``', '{', '}', '(', ')', '[', ']', '--', '-', ',', '.',
       "''", '`', ';', ':', '?'])
 
@@ -127,7 +127,7 @@ class PretrainedEmbeddingLoader(object):
         w = normalize_word(split[0])
 
         try:
-          vec = np.array(map(float, split[1:]), dtype='float32')
+          vec = np.array(list(map(float, split[1:])), dtype='float32')
           if vec.size != self.vector_size:
             utils.log('vector for line', i, 'has size', vec.size, 'so skipping')
             utils.log(line[:100] + '...')

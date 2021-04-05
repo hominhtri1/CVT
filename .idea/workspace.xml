@@ -19,14 +19,41 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d7e3a73-cb26-4827-8258-7d1cee2030a0" name="Default Changelist" comment="" />
+    <list default="true" id="9d7e3a73-cb26-4827-8258-7d1cee2030a0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/configure.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/configure.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/embeddings.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/embeddings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpus_processing/example.py" beforeDir="false" afterPath="$PROJECT_DIR$/corpus_processing/example.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpus_processing/minibatching.py" beforeDir="false" afterPath="$PROJECT_DIR$/corpus_processing/minibatching.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpus_processing/scorer.py" beforeDir="false" afterPath="$PROJECT_DIR$/corpus_processing/scorer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpus_processing/unlabeled_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/corpus_processing/unlabeled_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cvt.py" beforeDir="false" afterPath="$PROJECT_DIR$/cvt.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/encoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/encoder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/model_helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/model_helpers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/multitask_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/multitask_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/shared_inputs.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/shared_inputs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/task_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/task_module.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preprocessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_specific/task_definitions.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_specific/task_definitions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_specific/word_level/depparse_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_specific/word_level/depparse_module.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_specific/word_level/depparse_scorer.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_specific/word_level/depparse_scorer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_specific/word_level/tagging_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_specific/word_level/tagging_module.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_specific/word_level/tagging_scorers.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_specific/word_level/tagging_scorers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_specific/word_level/tagging_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_specific/word_level/tagging_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_specific/word_level/word_level_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_specific/word_level/word_level_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_specific/word_level/word_level_scorer.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_specific/word_level/word_level_scorer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/training/trainer.py" beforeDir="false" afterPath="$PROJECT_DIR$/training/trainer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/training/training_progress.py" beforeDir="false" afterPath="$PROJECT_DIR$/training/training_progress.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="JupyterTrust" id="a87ce0a4-25a1-48a8-b733-f9f77b1e699a" />
   <component name="ProjectId" id="1qDSQ11Swgu8wvRhcscVcXHBU0n" />
@@ -39,7 +66,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.CommitDialog" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -52,6 +79,7 @@
       <workItem from="1616612648895" duration="1920000" />
       <workItem from="1616918638191" duration="5779000" />
       <workItem from="1617027610942" duration="13013000" />
+      <workItem from="1617580523172" duration="250000" />
     </task>
     <servers />
   </component>
@@ -70,11 +98,16 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/../.." />
+    </ignored-roots>
+  </component>
   <component name="WindowStateProjectService">
-    <state x="184" y="8" key="SettingsEditor" timestamp="1617030409885">
+    <state x="184" y="8" key="SettingsEditor" timestamp="1617580771738">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="184" y="8" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1617030409885" />
+    <state x="184" y="8" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1617580771738" />
     <state x="234" y="60" width="919" height="595" key="find.popup" timestamp="1617032452456">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

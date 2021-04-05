@@ -15,9 +15,9 @@
 
 """Sequence tagging evaluation."""
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
+
+
+
 
 import abc
 
@@ -43,9 +43,7 @@ class AccuracyScorer(word_level_scorer.WordLevelScorer):
     ]
 
 
-class F1Scorer(word_level_scorer.WordLevelScorer):
-  __metaclass__ = abc.ABCMeta
-
+class F1Scorer(word_level_scorer.WordLevelScorer, metaclass=abc.ABCMeta):
   def __init__(self):
     super(F1Scorer, self).__init__()
     self._n_correct, self._n_predicted, self._n_gold = 0, 0, 0
@@ -68,7 +66,7 @@ class F1Scorer(word_level_scorer.WordLevelScorer):
 class EntityLevelF1Scorer(F1Scorer):
   def __init__(self, label_mapping):
     super(EntityLevelF1Scorer, self).__init__()
-    self._inv_label_mapping = {v: k for k, v in label_mapping.iteritems()}
+    self._inv_label_mapping = {v: k for k, v in label_mapping.items()}
 
   def _get_results(self):
     self._n_correct, self._n_predicted, self._n_gold = 0, 0, 0

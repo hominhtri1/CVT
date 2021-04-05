@@ -15,16 +15,14 @@
 
 """Abstract base class for evaluation."""
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
+
+
+
 
 import abc
 
 
-class Scorer(object):
-  __metaclass__ = abc.ABCMeta
-
+class Scorer(object, metaclass=abc.ABCMeta):
   def __init__(self):
     self._updated = False
     self._cached_results = {}

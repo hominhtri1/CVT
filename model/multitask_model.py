@@ -15,9 +15,9 @@
 
 """A multi-task and semi-supervised NLP model."""
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
+
+
+
 
 import tensorflow as tf
 
@@ -89,19 +89,19 @@ class Model(object):
     return global_step, optimizer
 
   def _get_train_op(self, loss):
-    grads, vs = zip(*self._optimizer.compute_gradients(loss))
+    grads, vs = list(zip(*self._optimizer.compute_gradients(loss)))
     grads, _ = tf.clip_by_global_norm(grads, self._config.grad_clip)
     update_ops = tf.get_collection(tf.GraphKeys.UPDATE_OPS)
     with tf.control_dependencies(update_ops):
       return self._optimizer.apply_gradients(
-          zip(grads, vs), global_step=self._global_step)
+          list(zip(grads, vs)), global_step=self._global_step)
 
   def _create_feed_dict(self, mb, model, is_training=True):
     feed = self._inputs.create_feed_dict(mb, is_training)
     if mb.task_name in model.modules:
       model.modules[mb.task_name].update_feed_dict(feed, mb)
     else:
-      for module in model.modules.values():
+      for module in list(model.modules.values()):
         module.update_feed_dict(feed, mb)
     return feed
 
@@ -119,7 +119,7 @@ class Model(object):
                        for task in self._tasks},
                       feed_dict=self._create_feed_dict(mb, self._teacher,
                                                        False))
-    for task_name, probs in result.iteritems():
+    for task_name, probs in result.items():
       mb.teacher_predictions[task_name] = probs.astype('float16')
 
   def test(self, sess, mb):
