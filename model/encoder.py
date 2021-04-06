@@ -108,5 +108,5 @@ class Encoder(object):
             scope='bilstm'
         )
         current_outputs = tf.concat([outputs_fw, outputs_bw], axis=-1)
-        current_state = state_fw
+        current_state = state_fw.h
       return outputs_fw, outputs_bw, current_outputs, current_state
