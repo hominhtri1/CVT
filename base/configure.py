@@ -36,7 +36,7 @@ class Config(object):
     self.mode = 'train'  # either "train" or "eval"
     self.task_names = ['chunk']  # list of tasks this model will learn
                                  # more than one trains a multi-task model
-    self.is_semisup = True  # whether to use CVT or train purely supervised
+    self.is_semisup = False  # whether to use CVT or train purely supervised
     self.for_preprocessing = False  # is this for the preprocessing script
 
     # embeddings
@@ -45,7 +45,7 @@ class Config(object):
     self.word_embedding_size = 50  # size of each word embedding
 
     # encoder
-    self.use_chars = True  # whether to include a character-level cnn
+    self.use_chars = False  # whether to include a character-level cnn
     self.char_embedding_size = 50  # size of character embeddings
     self.char_cnn_filter_widths = [2, 3, 4]  # filter widths for the char cnn
     self.char_cnn_n_filters = 100  # number of filters for each filter width

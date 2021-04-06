@@ -19,7 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d7e3a73-cb26-4827-8258-7d1cee2030a0" name="Default Changelist" comment="">
+    <list default="true" id="9d7e3a73-cb26-4827-8258-7d1cee2030a0" name="Default Changelist" comment="Update config">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/configure.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/configure.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +56,7 @@
       <workItem from="1616918638191" duration="5779000" />
       <workItem from="1617027610942" duration="13013000" />
       <workItem from="1617580523172" duration="6055000" />
-      <workItem from="1617677380762" duration="486000" />
+      <workItem from="1617677380762" duration="1437000" />
     </task>
     <task id="LOCAL-00001" summary="Apply 2to3">
       <created>1617580935378</created>
@@ -99,7 +100,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617677648136</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Reduce eval frequency when training">
+      <created>1617677921775</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1617677921775</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -127,21 +135,26 @@
     <MESSAGE value="Update data_dir in config" />
     <MESSAGE value="Load cpickle now load binary file" />
     <MESSAGE value="Change embedding size from 300 to 50" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change embedding size from 300 to 50" />
+    <MESSAGE value="Reduce eval frequency when training" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reduce eval frequency when training" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1617677646539">
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1617678782284">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1617677646539" />
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1617678782284" />
+    <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1617678501946">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="92" y="92" width="1182" height="544" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1617678501946" />
     <state x="184" y="8" key="SettingsEditor" timestamp="1617580771738">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="8" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1617580771738" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1617677653367">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1617677926081">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1617677653367" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1617677926081" />
     <state x="234" y="60" width="919" height="595" key="find.popup" timestamp="1617677598573">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
