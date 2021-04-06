@@ -28,7 +28,7 @@ class ClassificationModule(task_module.SemiSupervisedModule):
         self.loss = model_helpers.masked_ce_loss(
           self.logits, targets, inputs.mask, roll_direction=roll_direction)
 
-    print_op = tf.print('labels', labels.shape, 'encoder.bi_state', encoder.bi_state.shape)
+    print_op = tf.print('TRI', 'labels', tf.shape(labels), 'encoder.bi_state', tf.shape(encoder.bi_state))
 
     with tf.compat.v1.control_dependencies([print_op]):
       primary = PredictionModule('primary', encoder.bi_state)
