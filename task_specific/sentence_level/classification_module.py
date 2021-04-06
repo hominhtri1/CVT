@@ -29,7 +29,7 @@ class ClassificationModule(task_module.SemiSupervisedModule):
 
     primary = PredictionModule('primary', encoder.bi_reprs)
 
-    self.unsupervised_loss = 0
+    self.unsupervised_loss = primary.loss
     self.supervised_loss = primary.loss
     self.probs = tf.nn.softmax(primary.logits)
     self.preds = tf.argmax(primary.logits, axis=-1)
