@@ -17,9 +17,10 @@ class ClassificationModule(task_module.SemiSupervisedModule):
       def __init__(self, name, input_reprs, roll_direction=0, activate=True):
         self.name = name
         with tf.variable_scope(name + '/predictions'):
-          self.pool = tf.layers.max_pooling1d(input_reprs, config.max_sentence_length, 1,
-                                              padding='valid', name='pool')
-          self.logits = tf.layers.dense(self.pool, n_classes, name='predict')
+          #self.pool = tf.layers.max_pooling1d(input_reprs, config.max_sentence_length, 1,
+          #                                    padding='valid', name='pool')
+          #self.logits = tf.layers.dense(self.pool, n_classes, name='predict')
+          self.logits = tf.layers.dense(input_reprs, n_classes, name='predict')
 
         targets = labels
         targets *= (1 - inputs.label_smoothing)
@@ -27,7 +28,7 @@ class ClassificationModule(task_module.SemiSupervisedModule):
         self.loss = model_helpers.masked_ce_loss(
           self.logits, targets, inputs.mask, roll_direction=roll_direction)
 
-    primary = PredictionModule('primary', encoder.bi_reprs)
+    primary = PredictionModule('primary', encoder.bi_state)
 
     self.unsupervised_loss = primary.loss
     self.supervised_loss = primary.loss
