@@ -35,11 +35,11 @@ def main(data_dir='/content/data'):
   random.seed(0)
 
   utils.log("BUILDING WORD VOCABULARY/EMBEDDINGS")
-  for pretrained in ['glove.6B.300d.txt']:
+  for pretrained in ['glove.6B.50d.txt']:
     config = configure.Config(data_dir=data_dir,
                               for_preprocessing=True,
                               pretrained_embeddings=pretrained,
-                              word_embedding_size=300)
+                              word_embedding_size=50)
     embeddings.PretrainedEmbeddingLoader(config).build()
 
   utils.log("CONSTRUCTING DEV SETS")

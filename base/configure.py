@@ -40,9 +40,9 @@ class Config(object):
     self.for_preprocessing = False  # is this for the preprocessing script
 
     # embeddings
-    self.pretrained_embeddings = 'glove.6B.300d.txt'  # which pretrained
+    self.pretrained_embeddings = 'glove.6B.50d.txt'  # which pretrained
                                                       # embeddings to use
-    self.word_embedding_size = 300  # size of each word embedding
+    self.word_embedding_size = 50  # size of each word embedding
 
     # encoder
     self.use_chars = True  # whether to include a character-level cnn
