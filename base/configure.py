@@ -34,7 +34,7 @@ class Config(object):
 
     # mode
     self.mode = 'train'  # either "train" or "eval"
-    self.task_names = ['chunk']  # list of tasks this model will learn
+    self.task_names = ['senclass']  # list of tasks this model will learn
                                  # more than one trains a multi-task model
     self.is_semisup = False  # whether to use CVT or train purely supervised
     self.for_preprocessing = False  # is this for the preprocessing script

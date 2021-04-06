@@ -22,6 +22,7 @@
 import abc
 
 from base import embeddings
+from task_specific.sentence_level import sentence_level_data, classification_module, sentence_classification_scorer
 from task_specific.word_level import depparse_module
 from task_specific.word_level import depparse_scorer
 from task_specific.word_level import tagging_module
@@ -78,6 +79,21 @@ class DependencyParsing(Tagging):
         self.n_classes, (embeddings.get_punctuation_ids(self.config)))
 
 
+class SentenceClassification(Task):
+  def __init__(self, config, name):
+    super(SentenceClassification, self).__init__(
+      config, name, sentence_level_data.SentenceClassificationDataLoader(
+        config, name))
+    self.n_classes = len(set(self.loader.label_mapping.values()))
+
+  def get_module(self, inputs, encoder):
+    return classification_module.ClassificationModule(
+        self.config, self.name, self.n_classes, inputs, encoder)
+
+  def get_scorer(self):
+    return sentence_classification_scorer.SentenceAccuracyScorer()
+
+
 def get_task(config, name):
   if name in ["ccg", "pos"]:
     return Tagging(config, name, True)
@@ -85,5 +101,7 @@ def get_task(config, name):
     return Tagging(config, name, False)
   elif name == "depparse":
     return DependencyParsing(config, name)
+  elif name == "senclass":
+    return SentenceClassification(config, name)
   else:
     raise ValueError("Unknown task", name)
