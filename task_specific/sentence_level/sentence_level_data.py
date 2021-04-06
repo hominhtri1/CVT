@@ -41,7 +41,7 @@ class SentenceClassificationDataLoader(object):
         line = line.strip().split()
         words, tag = line[:-1], line[-1]
         sentences.append((words, tag))
-    return words
+    return sentences
 
   @property
   def label_mapping(self):
