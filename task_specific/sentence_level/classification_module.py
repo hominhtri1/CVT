@@ -26,8 +26,8 @@ class ClassificationModule(task_module.SemiSupervisedModule):
         targets = labels
         targets *= (1 - inputs.label_smoothing)
         targets += inputs.label_smoothing / n_classes
-        self.loss = model_helpers.masked_ce_loss(
-          self.logits, targets, inputs.mask, roll_direction=roll_direction)
+        self.loss = model_helpers.ce_loss(
+          self.logits, targets)
 
     print_op = tf.print('TRI', 'labels', tf.shape(labels), 'encoder.bi_state', tf.shape(encoder.bi_state))
 

@@ -52,6 +52,14 @@ def masked_ce_loss(logits, labels, mask, sparse=False, roll_direction=0):
     return tf.reduce_sum(mask * ce) / tf.to_float(tf.reduce_sum(mask))
 
 
+def ce_loss(logits, labels, sparse=False):
+  ce = ((tf.nn.sparse_softmax_cross_entropy_with_logits if sparse
+         else tf.nn.softmax_cross_entropy_with_logits_v2)
+        (logits=logits, labels=labels))
+
+  return tf.reduce_sum(ce)
+
+
 def _roll(arr, direction, sparse=False):
   if sparse:
     return tf.concat([arr[:, direction:], arr[:, :direction]], axis=1)

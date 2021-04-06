@@ -20,8 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d7e3a73-cb26-4827-8258-7d1cee2030a0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/model_helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/model_helpers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_specific/sentence_level/classification_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_specific/sentence_level/classification_module.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +65,7 @@
       <workItem from="1617027610942" duration="13013000" />
       <workItem from="1617580523172" duration="6055000" />
       <workItem from="1617677380762" duration="9071000" />
-      <workItem from="1617719024852" duration="15865000" />
+      <workItem from="1617719024852" duration="16203000" />
     </task>
     <task id="LOCAL-00001" summary="Apply 2to3">
       <created>1617580935378</created>
@@ -200,7 +200,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617738168612</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Add debugging to model helper">
+      <created>1617738704485</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1617738704485</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,17 +247,18 @@
     <MESSAGE value="Fix bug with last commit" />
     <MESSAGE value="Add debugging to classification module" />
     <MESSAGE value="Encoder returns h tensor of lstm state" />
-    <option name="LAST_COMMIT_MESSAGE" value="Encoder returns h tensor of lstm state" />
+    <MESSAGE value="Add debugging to model helper" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add debugging to model helper" />
   </component>
   <component name="WindowStateProjectService">
     <state x="482" y="72" key="#Python" timestamp="1617719585536">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="482" y="72" key="#Python/0.0.1366.728@0.0.1366.728" timestamp="1617719585536" />
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1617738167846">
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1617738703592">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1617738167846" />
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1617738703592" />
     <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1617736866343">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -259,10 +267,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="8" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1617686181312" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1617738178013">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1617738707390">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1617738178013" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1617738707390" />
     <state x="234" y="60" width="919" height="595" key="find.popup" timestamp="1617738307654">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
