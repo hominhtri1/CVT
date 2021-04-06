@@ -3,7 +3,7 @@ import os
 import tensorflow as tf
 
 from base import embeddings, utils
-from corpus_processing import minibatching
+from corpus_processing import minibatching, example
 
 
 class SentenceClassificationDataLoader(object):
@@ -57,7 +57,7 @@ class SentenceClassificationDataLoader(object):
         for words, tag in self.get_labeled_sentences(split)]
     return examples
 
-class SentenceClassificationExample():
+class SentenceClassificationExample(example.Example):
   def __init__(self, config, words, original_tag,
                word_vocab, char_vocab, label_mapping, task_name):
     super(SentenceClassificationExample, self).__init__(words, word_vocab, char_vocab)
