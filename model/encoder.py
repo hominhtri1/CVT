@@ -107,6 +107,6 @@ class Encoder(object):
             sequence_length=self._inputs.lengths,
             scope='bilstm'
         )
-        current_outputs = tf.concat([outputs_fw, outputs_bw], axis=-1)
+        current_outputs = outputs_fw
         current_state = tf.concat([state_fw, state_bw], axis=-1)
       return outputs_fw, outputs_bw, current_outputs, current_state
