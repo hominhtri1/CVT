@@ -20,7 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d7e3a73-cb26-4827-8258-7d1cee2030a0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/model/encoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/encoder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_specific/sentence_level/classification_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_specific/sentence_level/classification_module.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +65,7 @@
       <workItem from="1617027610942" duration="13013000" />
       <workItem from="1617580523172" duration="6055000" />
       <workItem from="1617677380762" duration="9071000" />
-      <workItem from="1617719024852" duration="8581000" />
+      <workItem from="1617719024852" duration="12035000" />
     </task>
     <task id="LOCAL-00001" summary="Apply 2to3">
       <created>1617580935378</created>
@@ -150,7 +151,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617730817939</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Use end state of encoder's lstm">
+      <created>1617731208459</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1617731208459</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -183,17 +191,18 @@
     <MESSAGE value="Add sentence classification task" />
     <MESSAGE value="Fix bug with data loader" />
     <MESSAGE value="Fix bug with classification module" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix bug with classification module" />
+    <MESSAGE value="Use end state of encoder's lstm" />
+    <option name="LAST_COMMIT_MESSAGE" value="Use end state of encoder's lstm" />
   </component>
   <component name="WindowStateProjectService">
     <state x="482" y="72" key="#Python" timestamp="1617719585536">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="482" y="72" key="#Python/0.0.1366.728@0.0.1366.728" timestamp="1617719585536" />
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1617730817003">
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1617731207484">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1617730817003" />
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1617731207484" />
     <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1617678501946">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -202,17 +211,17 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="8" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1617686181312" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1617730822010">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1617731212681">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1617730822010" />
-    <state x="234" y="60" width="919" height="595" key="find.popup" timestamp="1617728112957">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1617731212681" />
+    <state x="234" y="60" width="919" height="595" key="find.popup" timestamp="1617733948968">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="234" y="60" width="919" height="595" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1617728112957" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1617730963776">
+    <state x="234" y="60" width="919" height="595" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1617733948968" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1617732094299">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1617730963776" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1617732094299" />
   </component>
 </project>
