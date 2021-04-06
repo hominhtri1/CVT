@@ -19,7 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d7e3a73-cb26-4827-8258-7d1cee2030a0" name="Default Changelist" comment="" />
+    <list default="true" id="9d7e3a73-cb26-4827-8258-7d1cee2030a0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_specific/sentence_level/classification_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_specific/sentence_level/classification_module.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -62,7 +65,7 @@
       <workItem from="1617027610942" duration="13013000" />
       <workItem from="1617580523172" duration="6055000" />
       <workItem from="1617677380762" duration="9071000" />
-      <workItem from="1617719024852" duration="13377000" />
+      <workItem from="1617719024852" duration="14041000" />
     </task>
     <task id="LOCAL-00001" summary="Apply 2to3">
       <created>1617580935378</created>
@@ -176,7 +179,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617736192424</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Fix bug with last commit">
+      <created>1617736283585</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1617736283585</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,29 +223,30 @@
     <MESSAGE value="Add debugging" />
     <MESSAGE value="Update debugging for classification module" />
     <MESSAGE value="Change returned state of encoder" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change returned state of encoder" />
+    <MESSAGE value="Fix bug with last commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix bug with last commit" />
   </component>
   <component name="WindowStateProjectService">
     <state x="482" y="72" key="#Python" timestamp="1617719585536">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="482" y="72" key="#Python/0.0.1366.728@0.0.1366.728" timestamp="1617719585536" />
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1617736191417">
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1617736282864">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1617736191417" />
-    <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1617678501946">
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1617736282864" />
+    <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1617736866343">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="92" y="92" width="1182" height="544" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1617678501946" />
+    <state x="92" y="92" width="1182" height="544" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1617736866343" />
     <state x="184" y="8" key="SettingsEditor" timestamp="1617686181312">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="8" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1617686181312" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1617736196308">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1617736359179">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1617736196308" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1617736359179" />
     <state x="234" y="60" width="919" height="595" key="find.popup" timestamp="1617733948968">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

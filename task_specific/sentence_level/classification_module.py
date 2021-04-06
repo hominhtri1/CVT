@@ -20,6 +20,7 @@ class ClassificationModule(task_module.SemiSupervisedModule):
           #self.pool = tf.layers.max_pooling1d(input_reprs, config.max_sentence_length, 1,
           #                                    padding='valid', name='pool')
           #self.logits = tf.layers.dense(self.pool, n_classes, name='predict')
+          print('TRI', 'input_reprs', input_reprs.get_shape(), 'n_classes', n_classes)
           self.logits = tf.layers.dense(input_reprs, n_classes, name='predict')
 
         targets = labels
