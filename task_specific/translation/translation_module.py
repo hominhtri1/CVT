@@ -23,7 +23,6 @@ class TranslationModule(task_module.SemiSupervisedModule):
             word_embedding_matrix = tf.get_variable(
                 'word_embedding_matrix',
                 [config.en_vocab_size, config.word_embedding_size],
-                dtype=tf.float32,
                 initializer=tf.initializers.random_uniform(-1, 1, dtype=tf.float32))
             word_embeddings = tf.nn.embedding_lookup(
                 word_embedding_matrix, words_tgt_in)
