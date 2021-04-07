@@ -74,6 +74,7 @@ class TranslationDataLoader(object):
             word_vocab, char_vocab, self._task_name)
         for words_src, words_tgt_in, words_tgt_out in self.get_sentence_tuples(split)
     ]
+    return examples
 
 class TranslationExample(example.Example):
   def __init__(self, config, words_src, words_tgt_in, words_tgt_out,
