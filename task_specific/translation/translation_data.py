@@ -1,0 +1,78 @@
+import os
+import tensorflow as tf
+
+from base import embeddings
+from corpus_processing import example, minibatching
+
+
+class TranslationDataLoader(object):
+  def __init__(self, config, name):
+    self._config = config
+    self._task_name = name
+    self._raw_data_path = os.path.join(config.raw_data_topdir, name)
+
+  def get_dataset(self, split):
+    if (split == 'train' and not self._config.for_preprocessing and
+        tf.gfile.Exists(os.path.join(self._raw_data_path, 'train_subset.txt'))):
+      split = 'train_subset'
+    return minibatching.Dataset(
+      self._config, self._get_examples(split), self._task_name)
+
+  def get_sentence_tuples(self, split):
+    tuples = []
+    path = os.path.join(self._raw_data_path, split + '.txt')
+    if not tf.gfile.Exists(path):
+      if self._config.for_preprocessing:
+        return []
+      else:
+        raise ValueError('Unable to load data from', path)
+
+    f = tf.gfile.GFile(path, 'r')
+
+    while (True):
+      line_src = f.readline()[:-1]
+
+      if line_src == '':
+        break
+
+      line_tgt_in = f.readline()[:-1]
+      line_tgt_out = f.readline()[:-1]
+      line_size_src = f.readline()[:-1]
+      line_size_tgt_in = f.readline()[:-1]
+      f.readline()
+
+      words_src = line_src.strip().split()
+      words_tgt_in = line_tgt_in.strip().split()
+      words_tgt_out = line_tgt_out.strip().split()
+
+      tuples.append((words_src, words_tgt_in, words_tgt_out))
+
+      break
+
+    f.close()
+
+    return tuples
+
+  @property
+  def label_mapping(self):
+    return {str(x): x for x in range(self._config.vi_vocab_size)}
+
+  def _get_examples(self, split):
+    word_vocab = embeddings.get_word_vocab(self._config)
+    char_vocab = embeddings.get_char_vocab()
+    examples = [
+        TranslationExample(
+            self._config, words_src, words_tgt_in, words_tgt_out,
+            word_vocab, char_vocab, self._task_name)
+        for words_src, words_tgt_in, words_tgt_out in self.get_sentence_tuples(split)
+    ]
+
+class TranslationExample(example.Example):
+  def __init__(self, config, words_src, words_tgt_in, words_tgt_out,
+               word_vocab, char_vocab, task_name):
+    super(TranslationExample, self).__init__(words_src, word_vocab, char_vocab)
+
+    self.words = words_src
+    self.words_tgt_in = words_tgt_in
+    self.words_tgt_out = words_tgt_out
+

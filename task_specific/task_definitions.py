@@ -23,6 +23,7 @@ import abc
 
 from base import embeddings
 from task_specific.sentence_level import sentence_level_data, classification_module, sentence_classification_scorer
+from task_specific.translation import translation_data, translation_module, translation_scorer
 from task_specific.word_level import depparse_module
 from task_specific.word_level import depparse_scorer
 from task_specific.word_level import tagging_module
@@ -82,8 +83,8 @@ class DependencyParsing(Tagging):
 class SentenceClassification(Task):
   def __init__(self, config, name):
     super(SentenceClassification, self).__init__(
-      config, name, sentence_level_data.SentenceClassificationDataLoader(
-        config, name))
+        config, name, sentence_level_data.SentenceClassificationDataLoader(
+            config, name))
     self.n_classes = len(set(self.loader.label_mapping.values()))
 
   def get_module(self, inputs, encoder):
@@ -92,6 +93,21 @@ class SentenceClassification(Task):
 
   def get_scorer(self):
     return sentence_classification_scorer.SentenceAccuracyScorer()
+
+
+class Translation(Task):
+  def __init__(self, config, name):
+    super(Translation, self).__init__(
+        config, name, translation_data.TranslationDataLoader(
+            config, name))
+    self.n_classes = len(set(self.loader.label_mapping.values()))
+
+  def get_module(self, inputs, encoder):
+    return translation_module.TranslationModule(
+        self.config, self.name, self.n_classes, inputs, encoder)
+
+  def get_scorer(self):
+    return translation_scorer.AccuracyScorer()
 
 
 def get_task(config, name):
@@ -103,5 +119,7 @@ def get_task(config, name):
     return DependencyParsing(config, name)
   elif name == "senclass":
     return SentenceClassification(config, name)
+  elif name == "translate":
+    return Translation(config, name)
   else:
     raise ValueError("Unknown task", name)
