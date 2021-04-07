@@ -17,7 +17,7 @@ def main(data_dir='/content/data'):
     embeddings.PretrainedEmbeddingLoader(config).build()
 
   utils.log("WRITING LABEL MAPPINGS")
-  for task_name in ["senclass"]:
+  for task_name in ["translate"]:
     config = configure.Config(data_dir=data_dir,
                               for_preprocessing=True)
     loader = translation_data.TranslationDataLoader(config, task_name)
