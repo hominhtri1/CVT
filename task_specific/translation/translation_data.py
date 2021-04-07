@@ -10,6 +10,14 @@ class TranslationDataLoader(object):
     self._config = config
     self._task_name = name
     self._raw_data_path = os.path.join(config.raw_data_topdir, name)
+    self.label_mapping_path = os.path.join(
+      config.preprocessed_data_topdir,
+      name + '_label_mapping.pkl')
+
+    if self.label_mapping:
+      self._n_classes = len(set(self.label_mapping.values()))
+    else:
+      self._n_classes = None
 
   def get_dataset(self, split):
     if (split == 'train' and not self._config.for_preprocessing and
