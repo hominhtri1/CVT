@@ -43,8 +43,8 @@ class TranslationModule(task_module.SemiSupervisedModule):
         targets = words_tgt_out
         targets *= (1 - inputs.label_smoothing)
         targets += inputs.label_smoothing / n_classes
-        self.loss = model_helpers.masked_ce_loss(
-          self.logits, targets, inputs.mask, roll_direction=roll_direction)
+        self.loss = model_helpers.ce_loss(
+          self.logits, targets)
 
     primary = PredictionModule('primary', encoder.bi_state)
 
