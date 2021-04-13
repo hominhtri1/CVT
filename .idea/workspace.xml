@@ -19,9 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d7e3a73-cb26-4827-8258-7d1cee2030a0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="9d7e3a73-cb26-4827-8258-7d1cee2030a0" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -65,7 +63,7 @@
       <workItem from="1617580523172" duration="6055000" />
       <workItem from="1617677380762" duration="9071000" />
       <workItem from="1617719024852" duration="30262000" />
-      <workItem from="1618283052417" duration="3163000" />
+      <workItem from="1618283052417" duration="3563000" />
     </task>
     <task id="LOCAL-00001" summary="Apply 2to3">
       <created>1617580935378</created>
@@ -291,7 +289,21 @@
       <option name="project" value="LOCAL" />
       <updated>1618285380960</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Convert str to int in translation data">
+      <created>1618287164701</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1618287164701</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Skip char processing for translate task">
+      <created>1618287362869</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1618287362869</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -313,8 +325,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/../.." />
     </ignored-roots>
-    <MESSAGE value="Reduce eval frequency when training" />
-    <MESSAGE value="Update config" />
     <MESSAGE value="Add sentence classification task" />
     <MESSAGE value="Fix bug with data loader" />
     <MESSAGE value="Fix bug with classification module" />
@@ -338,7 +348,9 @@
     <MESSAGE value="Fix looping bug in translation data" />
     <MESSAGE value="Skip word processing for translation task" />
     <MESSAGE value="Fix missing argument" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix missing argument" />
+    <MESSAGE value="Convert str to int in translation data" />
+    <MESSAGE value="Skip char processing for translate task" />
+    <option name="LAST_COMMIT_MESSAGE" value="Skip char processing for translate task" />
   </component>
   <component name="WindowStateProjectService">
     <state x="482" y="72" key="#Python" timestamp="1617719585536">
@@ -349,10 +361,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="515" y="254" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog/0.0.1366.728@0.0.1366.728" timestamp="1617778145837" />
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1618285380097">
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1618287362030">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1618285380097" />
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1618287362030" />
     <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1618284388005">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -361,14 +373,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="8" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1617686181312" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1618285388013">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1618287366416">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1618285388013" />
-    <state x="234" y="60" width="919" height="595" key="find.popup" timestamp="1617781929012">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1618287366416" />
+    <state x="234" y="60" width="919" height="595" key="find.popup" timestamp="1618287316232">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="234" y="60" width="919" height="595" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1617781929012" />
+    <state x="234" y="60" width="919" height="595" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1618287316232" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1618284889724">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
