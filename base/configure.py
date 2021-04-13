@@ -40,7 +40,7 @@ class Config(object):
     self.for_preprocessing = False  # is this for the preprocessing script
 
     # embeddings
-    self.use_pretrained_embeddings = False
+    self.use_pretrained_embeddings = True
     self.pretrained_embeddings = 'glove.6B.50d.txt'  # which pretrained
                                                       # embeddings to use
     self.word_embedding_size = 50  # size of each word embedding
