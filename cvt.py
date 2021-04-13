@@ -60,6 +60,7 @@ def main():
             config.checkpoints_dir))
         model_trainer.evaluate_all_tasks(sess, summary_writer, None)
       elif config.mode == 'infer':
+        utils.heading('START INFER ({:})'.format(config.model_name))
         model_trainer.infer(sess)
       else:
         raise ValueError('Mode must be "train" or "eval"')
