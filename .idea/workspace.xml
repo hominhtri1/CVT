@@ -64,7 +64,7 @@
       <workItem from="1617677380762" duration="9071000" />
       <workItem from="1617719024852" duration="30262000" />
       <workItem from="1618283052417" duration="7489000" />
-      <workItem from="1618321929052" duration="5849000" />
+      <workItem from="1618321929052" duration="6137000" />
     </task>
     <task id="LOCAL-00001" summary="Apply 2to3">
       <created>1617580935378</created>
@@ -381,7 +381,21 @@
       <option name="project" value="LOCAL" />
       <updated>1618328143110</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Write result to file in infer mode">
+      <created>1618329074301</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1618329074301</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Add heading in infer mode">
+      <created>1618329266575</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1618329266575</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -403,8 +417,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/../.." />
     </ignored-roots>
-    <MESSAGE value="Add debugging to model helper" />
-    <MESSAGE value="Skip using mask for sentence classification" />
     <MESSAGE value="Disable debugging for classification module" />
     <MESSAGE value="Add translation task" />
     <MESSAGE value="Update task name in config" />
@@ -428,7 +440,9 @@
     <MESSAGE value="Add infer mode" />
     <MESSAGE value="Use pretrained embeddings for chunking task" />
     <MESSAGE value="Disable debugging" />
-    <option name="LAST_COMMIT_MESSAGE" value="Disable debugging" />
+    <MESSAGE value="Write result to file in infer mode" />
+    <MESSAGE value="Add heading in infer mode" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add heading in infer mode" />
     <option name="PRESELECT_EXISTING_CHANGELIST" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -440,10 +454,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="515" y="254" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog/0.0.1366.728@0.0.1366.728" timestamp="1617778145837" />
-    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2" timestamp="1618328142026">
+    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2" timestamp="1618329265809">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1618328142026" />
+    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1618329265809" />
     <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1618328922780">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -456,14 +470,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="530" y="277" key="VCS.ChangelistChooser/0.0.1366.728@0.0.1366.728" timestamp="1618288312466" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1618328147515">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1618329269543">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1618328147515" />
-    <state x="234" y="60" width="919" height="595" key="find.popup" timestamp="1618328113447">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1618329269543" />
+    <state x="234" y="60" width="919" height="595" key="find.popup" timestamp="1618329159353">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="234" y="60" width="919" height="595" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1618328113447" />
+    <state x="234" y="60" width="919" height="595" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1618329159353" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1618324963184">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

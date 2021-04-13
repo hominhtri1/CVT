@@ -148,7 +148,7 @@ class Trainer(object):
 
         f.write('\n')
 
-  def _np_str(np_arr):
+  def _np_str(self, np_arr):
     return ' '.join([str(x) for x in np_arr])
 
 
