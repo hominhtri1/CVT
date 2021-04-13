@@ -20,7 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d7e3a73-cb26-4827-8258-7d1cee2030a0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/training/trainer.py" beforeDir="false" afterPath="$PROJECT_DIR$/training/trainer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cvt.py" beforeDir="false" afterPath="$PROJECT_DIR$/cvt.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +67,7 @@
       <workItem from="1617677380762" duration="9071000" />
       <workItem from="1617719024852" duration="30262000" />
       <workItem from="1618283052417" duration="7489000" />
-      <workItem from="1618321929052" duration="6719000" />
+      <workItem from="1618321929052" duration="7479000" />
     </task>
     <task id="LOCAL-00001" summary="Apply 2to3">
       <created>1617580935378</created>
@@ -404,7 +405,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618329365772</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Add true label in infer result">
+      <created>1618329871000</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1618329871000</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -426,7 +434,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/../.." />
     </ignored-roots>
-    <MESSAGE value="Add translation task" />
     <MESSAGE value="Update task name in config" />
     <MESSAGE value="Update task name in preprocessing" />
     <MESSAGE value="Add label mapping to translation data loader" />
@@ -451,7 +458,8 @@
     <MESSAGE value="Write result to file in infer mode" />
     <MESSAGE value="Add heading in infer mode" />
     <MESSAGE value="Add missing 'self' parameter to method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add missing 'self' parameter to method" />
+    <MESSAGE value="Add true label in infer result" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add true label in infer result" />
     <option name="PRESELECT_EXISTING_CHANGELIST" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -463,10 +471,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="515" y="254" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog/0.0.1366.728@0.0.1366.728" timestamp="1617778145837" />
-    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2" timestamp="1618329364965">
+    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2" timestamp="1618329870122">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1618329364965" />
+    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1618329870122" />
     <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1618328922780">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -479,14 +487,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="530" y="277" key="VCS.ChangelistChooser/0.0.1366.728@0.0.1366.728" timestamp="1618288312466" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1618329369844">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1618329875360">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1618329369844" />
-    <state x="234" y="60" width="919" height="595" key="find.popup" timestamp="1618329159353">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1618329875360" />
+    <state x="234" y="60" width="919" height="595" key="find.popup" timestamp="1618330538874">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="234" y="60" width="919" height="595" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1618329159353" />
+    <state x="234" y="60" width="919" height="595" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1618330538874" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1618324963184">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
