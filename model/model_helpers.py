@@ -60,7 +60,7 @@ def ce_loss(logits, labels, sparse=False):
   #print_op = tf.print('TRI', 'ce', tf.shape(ce))
 
   #with tf.compat.v1.control_dependencies([print_op]):
-  return tf.reduce_sum(ce) / tf.shape(ce)[:-1]
+  return tf.reduce_sum(ce) / tf.to_float(tf.shape(ce)[:-1])
 
 
 def _roll(arr, direction, sparse=False):
