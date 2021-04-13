@@ -77,7 +77,7 @@ class TranslationDataLoader(object):
 class TranslationExample(example.Example):
   def __init__(self, config, words_src, words_tgt_in, words_tgt_out,
                word_vocab, char_vocab, task_name):
-    super(TranslationExample, self).__init__(words_src, word_vocab, char_vocab)
+    super(TranslationExample, self).__init__(words_src, word_vocab, char_vocab, False)
 
     self.words = words_src
     self.words_tgt_in = words_tgt_in
