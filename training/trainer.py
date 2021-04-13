@@ -138,9 +138,13 @@ class Trainer(object):
 
       with open('/content/result.txt', 'w') as f:
         words = mb.examples[0].words
+        labels = mb.examples[0].labels
         preds = batch_preds[0]
 
         f.write(self._np_str(words))
+        f.write('\n')
+
+        f.write(self._np_str(labels))
         f.write('\n')
 
         f.write(self._np_str(preds))
