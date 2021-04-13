@@ -136,21 +136,38 @@ class Trainer(object):
     for i, mb in enumerate(data.get_minibatches(self._config.infer_batch_size)):
       loss, batch_preds = self._model.test(sess, mb)
 
-      with open('/content/result.txt', 'w') as f:
-        words = mb.examples[0].words
-        labels = mb.examples[0].labels
-        preds = batch_preds[0]
+      if self._config.task_names[0] == 'chunk':
+        with open('/content/result.txt', 'w') as f:
+          words = mb.examples[0].words
+          labels = mb.examples[0].labels
+          preds = batch_preds[0]
 
-        f.write(self._np_str(words))
-        f.write('\n')
+          f.write(self._np_str(words))
+          f.write('\n')
 
-        f.write(self._np_str(labels))
-        f.write('\n')
+          f.write(self._np_str(labels))
+          f.write('\n')
 
-        f.write(self._np_str(preds))
-        f.write('\n')
+          f.write(self._np_str(preds))
+          f.write('\n')
 
-        f.write('\n')
+          f.write('\n')
+      elif self._config.task_names[0] == 'senclass':
+        with open('/content/result.txt', 'w') as f:
+          words = mb.examples[0].words
+          labels = mb.examples[0].labels
+          preds = batch_preds[0]
+
+          f.write(self._np_str(words))
+          f.write('\n')
+
+          f.write(labels)
+          f.write('\n')
+
+          f.write(preds)
+          f.write('\n')
+
+          f.write('\n')
 
   def _np_str(self, np_arr):
     return ' '.join([str(x) for x in np_arr])
