@@ -1,6 +1,7 @@
 import numpy as np
 import tensorflow as tf
 
+from corpus_processing import minibatching
 from model import task_module, model_helpers
 
 
@@ -57,5 +58,5 @@ class TranslationModule(task_module.SemiSupervisedModule):
     words_tgt_in = [e.words_tgt_in for e in mb.examples]
     feed[self.words_tgt_in] = words_tgt_in
 
-    words_tgt_out = [e.words_tgt_out for e in mb.examples]
+    words_tgt_out = minibatching.build_array([e.words_tgt_out for e in mb.examples])
     feed[self.words_tgt_out] = np.eye(self.n_classes)[words_tgt_out]

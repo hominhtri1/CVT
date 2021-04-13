@@ -57,7 +57,10 @@ def ce_loss(logits, labels, sparse=False):
          else tf.nn.softmax_cross_entropy_with_logits_v2)
         (logits=logits, labels=labels))
 
-  return tf.reduce_sum(ce)
+  print_op = tf.print('TRI', 'ce', tf.shape(ce))
+
+  with tf.compat.v1.control_dependencies([print_op]):
+    return tf.reduce_sum(ce)
 
 
 def _roll(arr, direction, sparse=False):
