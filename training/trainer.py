@@ -136,7 +136,7 @@ class Trainer(object):
     for i, mb in enumerate(data.get_minibatches(self._config.infer_batch_size)):
       loss, batch_preds = self._model.test(sess, mb)
 
-      with open('/content/result.txt') as f:
+      with open('/content/result.txt', 'w') as f:
         words = mb.examples[0].words
         preds = batch_preds[0]
 

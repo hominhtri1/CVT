@@ -19,10 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d7e3a73-cb26-4827-8258-7d1cee2030a0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cvt.py" beforeDir="false" afterPath="$PROJECT_DIR$/cvt.py" afterDir="false" />
-    </list>
+    <list default="true" id="9d7e3a73-cb26-4827-8258-7d1cee2030a0" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -67,7 +64,7 @@
       <workItem from="1617677380762" duration="9071000" />
       <workItem from="1617719024852" duration="30262000" />
       <workItem from="1618283052417" duration="7489000" />
-      <workItem from="1618321929052" duration="5075000" />
+      <workItem from="1618321929052" duration="5849000" />
     </task>
     <task id="LOCAL-00001" summary="Apply 2to3">
       <created>1617580935378</created>
@@ -370,7 +367,21 @@
       <option name="project" value="LOCAL" />
       <updated>1618325847355</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Use pretrained embeddings for chunking task">
+      <created>1618328006259</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1618328006259</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Disable debugging">
+      <created>1618328143110</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1618328143110</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -392,8 +403,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/../.." />
     </ignored-roots>
-    <MESSAGE value="Add debugging to classification module" />
-    <MESSAGE value="Encoder returns h tensor of lstm state" />
     <MESSAGE value="Add debugging to model helper" />
     <MESSAGE value="Skip using mask for sentence classification" />
     <MESSAGE value="Disable debugging for classification module" />
@@ -417,7 +426,9 @@
     <MESSAGE value="Change int to float for loss function" />
     <MESSAGE value="Fix typo in loss function" />
     <MESSAGE value="Add infer mode" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add infer mode" />
+    <MESSAGE value="Use pretrained embeddings for chunking task" />
+    <MESSAGE value="Disable debugging" />
+    <option name="LAST_COMMIT_MESSAGE" value="Disable debugging" />
     <option name="PRESELECT_EXISTING_CHANGELIST" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -429,14 +440,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="515" y="254" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog/0.0.1366.728@0.0.1366.728" timestamp="1617778145837" />
-    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2" timestamp="1618325846010">
+    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2" timestamp="1618328142026">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1618325846010" />
-    <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1618290646446">
+    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1618328142026" />
+    <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1618328922780">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="92" y="92" width="1182" height="544" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1618290646446" />
+    <state x="92" y="92" width="1182" height="544" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1618328922780" />
     <state x="184" y="8" key="SettingsEditor" timestamp="1617686181312">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -445,14 +456,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="530" y="277" key="VCS.ChangelistChooser/0.0.1366.728@0.0.1366.728" timestamp="1618288312466" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1618325857750">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1618328147515">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1618325857750" />
-    <state x="234" y="60" width="919" height="595" key="find.popup" timestamp="1618324668000">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1618328147515" />
+    <state x="234" y="60" width="919" height="595" key="find.popup" timestamp="1618328113447">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="234" y="60" width="919" height="595" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1618324668000" />
+    <state x="234" y="60" width="919" height="595" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1618328113447" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1618324963184">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
