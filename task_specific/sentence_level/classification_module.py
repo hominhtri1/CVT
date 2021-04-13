@@ -21,7 +21,8 @@ class ClassificationModule(task_module.SemiSupervisedModule):
           #                                    padding='valid', name='pool')
           #self.logits = tf.layers.dense(self.pool, n_classes, name='predict')
           print('TRI', 'input_reprs', input_reprs.get_shape(), 'n_classes', n_classes)
-          self.logits = tf.layers.dense(input_reprs, n_classes, name='predict')
+          self.relu = tf.nn.relu(input_reprs)
+          self.logits = tf.layers.dense(self.relu, n_classes, name='predict')
 
         targets = labels
         targets *= (1 - inputs.label_smoothing)
