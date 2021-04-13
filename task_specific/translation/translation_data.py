@@ -49,9 +49,9 @@ class TranslationDataLoader(object):
       line_size_tgt_in = f.readline()[:-1]
       f.readline()
 
-      words_src = line_src.strip().split()
-      words_tgt_in = line_tgt_in.strip().split()
-      words_tgt_out = line_tgt_out.strip().split()
+      words_src = [int(x) for x in line_src.strip().split()]
+      words_tgt_in = [int(x) for x in line_tgt_in.strip().split()]
+      words_tgt_out = [int(x) for x in line_tgt_out.strip().split()]
 
       tuples.append((words_src, words_tgt_in, words_tgt_out))
 
