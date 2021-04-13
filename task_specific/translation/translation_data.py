@@ -61,7 +61,7 @@ class TranslationDataLoader(object):
 
   @property
   def label_mapping(self):
-    return {str(x): x for x in range(self._config.vi_vocab_size)}
+    return {str(x): x for x in range(self._config.en_vocab_size)}
 
   def _get_examples(self, split):
     word_vocab = embeddings.get_word_vocab(self._config)

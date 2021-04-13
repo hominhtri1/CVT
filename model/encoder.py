@@ -43,7 +43,7 @@ class Encoder(object):
       else:
         word_embedding_matrix = tf.get_variable(
             'word_embedding_matrix',
-            [self._config.en_vocab_size, self._config.word_embedding_size],
+            [self._config.vi_vocab_size, self._config.word_embedding_size],
             dtype=tf.float32,
             initializer=tf.initializers.random_uniform(-1, 1, dtype=tf.float32))
       word_embeddings = tf.nn.embedding_lookup(
