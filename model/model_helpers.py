@@ -46,10 +46,10 @@ def masked_ce_loss(logits, labels, mask, sparse=False, roll_direction=0):
          else tf.nn.softmax_cross_entropy_with_logits_v2)
         (logits=logits, labels=labels))
 
-  print_op = tf.print('TRI', 'mask', tf.shape(mask), 'ce', tf.shape(ce))
+  #print_op = tf.print('TRI', 'mask', tf.shape(mask), 'ce', tf.shape(ce))
 
-  with tf.compat.v1.control_dependencies([print_op]):
-    return tf.reduce_sum(mask * ce) / tf.to_float(tf.reduce_sum(mask))
+  #with tf.compat.v1.control_dependencies([print_op]):
+  return tf.reduce_sum(mask * ce) / tf.to_float(tf.reduce_sum(mask))
 
 
 def ce_loss(logits, labels, sparse=False):
