@@ -55,8 +55,6 @@ class TranslationDataLoader(object):
 
       tuples.append((words_src, words_tgt_in, words_tgt_out))
 
-      break
-
     f.close()
 
     return tuples
