@@ -42,17 +42,17 @@ class Example(object):
       self.words = ([embeddings.START] +
                     [word_vocab[embeddings.normalize_word(w)] for w in words] +
                     [embeddings.END])
+
+      self.chars = ([[embeddings.MISSING]] +
+                    [[char_vocab[c] for c in embeddings.normalize_chars(w)]
+                     for w in words] +
+                    [[embeddings.MISSING]])
     else:
       words = words[:]
 
       self.words = ([embeddings.START] +
                     [w for w in words] +
                     [embeddings.END])
-
-    self.chars = ([[embeddings.MISSING]] +
-                  [[char_vocab[c] for c in embeddings.normalize_chars(w)]
-                   for w in words] +
-                  [[embeddings.MISSING]])
 
   def __repr__(self,):
     inv_char_vocab = embeddings.get_inv_char_vocab()
