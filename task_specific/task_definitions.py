@@ -38,6 +38,7 @@ class Task(object, metaclass=abc.ABCMeta):
     self.loader = loader
     self.train_set = self.loader.get_dataset("train")
     self.val_set = self.loader.get_dataset("dev" if config.dev_set else "test")
+    self.infer_set = self.loader.get_dataset("infer")
 
   @abc.abstractmethod
   def get_module(self, inputs, encoder):

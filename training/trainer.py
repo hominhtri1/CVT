@@ -130,6 +130,27 @@ class Trainer(object):
       if self._config.is_semisup:
         yield next(unlabeled_mbs)
 
+  def infer(self, sess):
+    task = self.tasks[0]
+    data = task.infer_set
+    for i, mb in enumerate(data.get_minibatches(self._config.infer_batch_size)):
+      loss, batch_preds = self._model.test(sess, mb)
+
+      with open('/content/result.txt') as f:
+        words = mb.examples[0].words
+        preds = batch_preds[0]
+
+        f.write(self._np_str(words))
+        f.write('\n')
+
+        f.write(self._np_str(preds))
+        f.write('\n')
+
+        f.write('\n')
+
+  def _np_str(np_arr):
+    return ' '.join([str(x) for x in np_arr])
+
 
 def write_summary(writer, results, global_step):
   for k, v in results:

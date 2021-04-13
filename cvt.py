@@ -59,6 +59,8 @@ def main():
         progress.best_model_saver.restore(sess, tf.train.latest_checkpoint(
             config.checkpoints_dir))
         model_trainer.evaluate_all_tasks(sess, summary_writer, None)
+      elif config.mode == 'eval':
+        model_trainer.infer(sess)
       else:
         raise ValueError('Mode must be "train" or "eval"')
 

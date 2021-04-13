@@ -34,7 +34,7 @@ class Config(object):
 
     # mode
     self.mode = 'train'  # either "train" or "eval"
-    self.task_names = ['translate']  # list of tasks this model will learn
+    self.task_names = ['chunk']  # list of tasks this model will learn
                                  # more than one trains a multi-task model
     self.is_semisup = False  # whether to use CVT or train purely supervised
     self.for_preprocessing = False  # is this for the preprocessing script
@@ -86,6 +86,7 @@ class Config(object):
     self.max_word_length = 20  # maximum length of words for char cnn
     self.train_batch_size = 64  # train batch size
     self.test_batch_size = 64  # test batch size
+    self.infer_batch_size = 1  # test batch size
     self.buckets = [(0, 15), (15, 40), (40, 1000)]  # buckets for binning
                                                     # sentences by length
 
