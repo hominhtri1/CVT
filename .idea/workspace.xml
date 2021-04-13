@@ -19,7 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d7e3a73-cb26-4827-8258-7d1cee2030a0" name="Default Changelist" comment="" />
+    <list default="true" id="9d7e3a73-cb26-4827-8258-7d1cee2030a0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -62,7 +64,8 @@
       <workItem from="1617027610942" duration="13013000" />
       <workItem from="1617580523172" duration="6055000" />
       <workItem from="1617677380762" duration="9071000" />
-      <workItem from="1617719024852" duration="30116000" />
+      <workItem from="1617719024852" duration="30262000" />
+      <workItem from="1618283052417" duration="325000" />
     </task>
     <task id="LOCAL-00001" summary="Apply 2to3">
       <created>1617580935378</created>
@@ -253,7 +256,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617781842456</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Fix bug with translation module">
+      <created>1617781988312</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1617781988312</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -275,7 +285,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/../.." />
     </ignored-roots>
-    <MESSAGE value="Remove .decode()" />
     <MESSAGE value="Move data_dir out of code dir" />
     <MESSAGE value="Update data_dir in config" />
     <MESSAGE value="Load cpickle now load binary file" />
@@ -300,7 +309,8 @@
     <MESSAGE value="Update task name in preprocessing" />
     <MESSAGE value="Add label mapping to translation data loader" />
     <MESSAGE value="Fix bug with translation data loader" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix bug with translation data loader" />
+    <MESSAGE value="Fix bug with translation module" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix bug with translation module" />
   </component>
   <component name="WindowStateProjectService">
     <state x="482" y="72" key="#Python" timestamp="1617719585536">
@@ -311,10 +321,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="515" y="254" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog/0.0.1366.728@0.0.1366.728" timestamp="1617778145837" />
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1617781841692">
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1617781987483">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1617781841692" />
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1617781987483" />
     <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1617736866343">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -323,14 +333,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="8" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1617686181312" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1617781848412">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1617781992941">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1617781848412" />
-    <state x="234" y="60" width="919" height="595" key="find.popup" timestamp="1617781907984">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1617781992941" />
+    <state x="234" y="60" width="919" height="595" key="find.popup" timestamp="1617781929012">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="234" y="60" width="919" height="595" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1617781907984" />
+    <state x="234" y="60" width="919" height="595" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1617781929012" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1617779146697">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

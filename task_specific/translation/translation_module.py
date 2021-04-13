@@ -10,7 +10,7 @@ class TranslationModule(task_module.SemiSupervisedModule):
     super(TranslationModule, self).__init__()
     self.task_name = task_name
     self.n_classes = n_classes
-    self.words_tgt_in = words_tgt_in = tf.placeholder(tf.float32, [None, None],
+    self.words_tgt_in = words_tgt_in = tf.placeholder(tf.int64, [None, None],
                                                       name=task_name + '_words_tgt_in')
     self.words_tgt_out = words_tgt_out = tf.placeholder(tf.float32, [None, None, None],
                                                         name=task_name + '_words_tgt_out')
@@ -23,6 +23,7 @@ class TranslationModule(task_module.SemiSupervisedModule):
             word_embedding_matrix = tf.get_variable(
                 'word_embedding_matrix',
                 [config.en_vocab_size, config.word_embedding_size],
+                dtype=tf.float32,
                 initializer=tf.initializers.random_uniform(-1, 1, dtype=tf.float32))
             word_embeddings = tf.nn.embedding_lookup(
                 word_embedding_matrix, words_tgt_in)
