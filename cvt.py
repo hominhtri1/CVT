@@ -47,6 +47,7 @@ def main():
     graph.finalize()
     with tf.Session() as sess:
       sess.run(init_op)
+      summary_writer.add_graph(sess.graph)
       progress = training_progress.TrainingProgress(
           config, sess, checkpoints_saver, best_model_saver,
           config.mode == 'train')
