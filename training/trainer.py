@@ -161,10 +161,10 @@ class Trainer(object):
           f.write(self._np_str(words))
           f.write('\n')
 
-          f.write(labels)
+          f.write(str(labels))
           f.write('\n')
 
-          f.write(preds)
+          f.write(str(preds))
           f.write('\n')
 
           f.write('\n')
