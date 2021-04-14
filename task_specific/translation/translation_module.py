@@ -15,9 +15,9 @@ class TranslationModule(task_module.SemiSupervisedModule):
                                                       name=task_name + '_words_tgt_in')
     self.words_tgt_out = words_tgt_out = tf.placeholder(tf.float32, [None, None, None],
                                                         name=task_name + '_words_tgt_out')
-    self.size_src = size_src = tf.placeholder(tf.int64, [None, None],
+    self.size_src = size_src = tf.placeholder(tf.int64, [None],
                                               name=task_name + '_size_src')
-    self.size_tgt = size_tgt = tf.placeholder(tf.int64, [None, None],
+    self.size_tgt = size_tgt = tf.placeholder(tf.int64, [None],
                                               name=task_name + '_size_tgt')
 
     class PredictionModule(object):

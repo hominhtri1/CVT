@@ -19,10 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d7e3a73-cb26-4827-8258-7d1cee2030a0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task_specific/translation/translation_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_specific/translation/translation_module.py" afterDir="false" />
-    </list>
+    <list default="true" id="9d7e3a73-cb26-4827-8258-7d1cee2030a0" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,21 +66,7 @@
       <workItem from="1618283052417" duration="7489000" />
       <workItem from="1618321929052" duration="14350000" />
       <workItem from="1618354619296" duration="2519000" />
-      <workItem from="1618366965639" duration="3716000" />
-    </task>
-    <task id="LOCAL-00008" summary="Update config">
-      <created>1617678824947</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1617678824947</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Add sentence classification task">
-      <created>1617729716339</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1617729716339</updated>
+      <workItem from="1618366965639" duration="4184000" />
     </task>
     <task id="LOCAL-00010" summary="Fix bug with data loader">
       <created>1617730162627</created>
@@ -414,7 +397,21 @@
       <option name="project" value="LOCAL" />
       <updated>1618368417791</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="Use encoder's final state as decoder initial state">
+      <created>1618381719843</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1618381719843</updated>
+    </task>
+    <task id="LOCAL-00058" summary="Switch to translate task">
+      <created>1618381862272</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1618381862272</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -436,8 +433,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/../.." />
     </ignored-roots>
-    <MESSAGE value="Skip word processing for translation task" />
-    <MESSAGE value="Fix missing argument" />
     <MESSAGE value="Convert str to int in translation data" />
     <MESSAGE value="Skip char processing for translate task" />
     <MESSAGE value="Add temporary char processing in example" />
@@ -461,7 +456,9 @@
     <MESSAGE value="Modify prediction module for classification task" />
     <MESSAGE value="Update result for infer mode of senclass task" />
     <MESSAGE value="Add infer mode for translate task" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add infer mode for translate task" />
+    <MESSAGE value="Use encoder's final state as decoder initial state" />
+    <MESSAGE value="Switch to translate task" />
+    <option name="LAST_COMMIT_MESSAGE" value="Switch to translate task" />
     <option name="PRESELECT_EXISTING_CHANGELIST" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -473,10 +470,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="515" y="254" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog/0.0.1366.728@0.0.1366.728" timestamp="1617778145837" />
-    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2" timestamp="1618368416667">
+    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2" timestamp="1618381861496">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1618368416667" />
+    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1618381861496" />
     <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1618328922780">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -489,10 +486,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="530" y="277" key="VCS.ChangelistChooser/0.0.1366.728@0.0.1366.728" timestamp="1618288312466" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1618368438814">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1618381865382">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1618368438814" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1618381865382" />
     <state x="234" y="60" width="919" height="595" key="find.popup" timestamp="1618357334365">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
