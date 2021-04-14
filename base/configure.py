@@ -34,13 +34,13 @@ class Config(object):
 
     # mode
     self.mode = 'train'  # either "train" or "eval"
-    self.task_names = ['senclass']  # list of tasks this model will learn
+    self.task_names = ['translate']  # list of tasks this model will learn
                                  # more than one trains a multi-task model
     self.is_semisup = False  # whether to use CVT or train purely supervised
     self.for_preprocessing = False  # is this for the preprocessing script
 
     # embeddings
-    self.use_pretrained_embeddings = True
+    self.use_pretrained_embeddings = False
     self.pretrained_embeddings = 'glove.6B.50d.txt'  # which pretrained
                                                       # embeddings to use
     self.word_embedding_size = 50  # size of each word embedding
