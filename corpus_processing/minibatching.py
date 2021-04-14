@@ -124,7 +124,7 @@ class Dataset(object):
       mask = build_array([[0] + [1] * (length - 2) + [0]
                           for length in sentence_lengths])
     else:
-      mask = build_array([[1] * 0 + [0] * (len(e.words) - 0)
+      mask = build_array([[1] * 0 + [0] * (len(e.words) - 1)
                           for e in examples])
     words = build_array([e.words for e in examples])
     chars = build_array(characters, dtype='int16')
