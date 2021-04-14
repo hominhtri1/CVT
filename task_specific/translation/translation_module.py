@@ -48,14 +48,14 @@ class TranslationModule(task_module.SemiSupervisedModule):
 
           self.logits = tf.layers.dense(outputs, n_classes, name='predict')
 
-        #mask = minibatching.build_array([[1] * length + [0] * ()
-        #                                 for length in size_tgt])
+        mask = minibatching.build_array([[1] * size_tgt[i] + [0] * (inputs.length[i] - size_tgt[i])
+                                         for i in tf.shape(size_tgt)[0]])
 
         targets = words_tgt_out
         targets *= (1 - inputs.label_smoothing)
         targets += inputs.label_smoothing / n_classes
-        self.loss = model_helpers.ce_loss(
-          self.logits, targets)
+        self.loss = model_helpers.masked_ce_loss(
+          self.logits, targets, mask)
 
     primary = PredictionModule('primary', encoder.bi_state)
 
