@@ -24,6 +24,8 @@ class TranslationModule(task_module.SemiSupervisedModule):
       def __init__(self, name, input_reprs, roll_direction=0, activate=True):
         self.name = name
         with tf.variable_scope(name + '/predictions'):
+          decoder_state = tf.layers.dense(input_reprs, config.projection_size, name='encoder_to_decoder')
+
           with tf.variable_scope('word_embeddings'):
             word_embedding_matrix = tf.get_variable(
                 'word_embedding_matrix',
@@ -36,8 +38,9 @@ class TranslationModule(task_module.SemiSupervisedModule):
             word_embeddings *= tf.get_variable('emb_scale', initializer=1.0)
 
           outputs, _ = tf.nn.dynamic_rnn(
-            tf.nn.rnn_cell.BasicRNNCell(512),
+            tf.nn.rnn_cell.BasicRNNCell(config.projection_size),
             word_embeddings,
+            initial_state=decoder_state,
             dtype=tf.float32,
             sequence_length=inputs.lengths,
             scope='predictlstm'
