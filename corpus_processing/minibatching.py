@@ -119,9 +119,13 @@ class Dataset(object):
     characters = [[[embeddings.PAD] + [embeddings.START] + w[:max_word_length] +
                    [embeddings.END] + [embeddings.PAD] for w in e.chars]
                   for e in examples]
-    # the first and last words are masked because they are start/end tokens
-    mask = build_array([[0] + [1] * (length - 2) + [0]
-                        for length in sentence_lengths])
+    if self._config.task_names[0] != 'translate':
+      # the first and last words are masked because they are start/end tokens
+      mask = build_array([[0] + [1] * (length - 2) + [0]
+                          for length in sentence_lengths])
+    else:
+      mask = build_array([[1] * e.size_tgt
+                          for e in examples])
     words = build_array([e.words for e in examples])
     chars = build_array(characters, dtype='int16')
     return Minibatch(
