@@ -15,6 +15,10 @@ class TranslationModule(task_module.SemiSupervisedModule):
                                                       name=task_name + '_words_tgt_in')
     self.words_tgt_out = words_tgt_out = tf.placeholder(tf.float32, [None, None, None],
                                                         name=task_name + '_words_tgt_out')
+    self.size_src = size_src = tf.placeholder(tf.int64, [None, None],
+                                              name=task_name + '_size_src')
+    self.size_tgt = size_tgt = tf.placeholder(tf.int64, [None, None],
+                                              name=task_name + '_size_tgt')
 
     class PredictionModule(object):
       def __init__(self, name, input_reprs, roll_direction=0, activate=True):
@@ -41,6 +45,9 @@ class TranslationModule(task_module.SemiSupervisedModule):
 
           self.logits = tf.layers.dense(outputs, n_classes, name='predict')
 
+        #mask = minibatching.build_array([[1] * length + [0] * ()
+        #                                 for length in size_tgt])
+
         targets = words_tgt_out
         targets *= (1 - inputs.label_smoothing)
         targets += inputs.label_smoothing / n_classes
@@ -60,3 +67,9 @@ class TranslationModule(task_module.SemiSupervisedModule):
 
     words_tgt_out = minibatching.build_array([e.words_tgt_out for e in mb.examples])
     feed[self.words_tgt_out] = np.eye(self.n_classes)[words_tgt_out]
+
+    size_src = [e.size_src for e in mb.examples]
+    feed[self.size_src] = size_src
+
+    size_tgt = [e.size_tgt for e in mb.examples]
+    feed[self.size_tgt] = size_tgt

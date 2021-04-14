@@ -46,14 +46,16 @@ class TranslationDataLoader(object):
       line_tgt_in = f.readline()[:-1]
       line_tgt_out = f.readline()[:-1]
       line_size_src = f.readline()[:-1]
-      line_size_tgt_in = f.readline()[:-1]
+      line_size_tgt = f.readline()[:-1]
       f.readline()
 
       words_src = [int(x) for x in line_src.strip().split()]
       words_tgt_in = [int(x) for x in line_tgt_in.strip().split()]
       words_tgt_out = [int(x) for x in line_tgt_out.strip().split()]
+      size_src = int(line_size_src)
+      size_tgt = int(line_size_tgt)
 
-      tuples.append((words_src, words_tgt_in, words_tgt_out))
+      tuples.append((words_src, words_tgt_in, words_tgt_out, size_src, size_tgt))
 
     f.close()
 
@@ -68,18 +70,20 @@ class TranslationDataLoader(object):
     char_vocab = embeddings.get_char_vocab()
     examples = [
         TranslationExample(
-            self._config, words_src, words_tgt_in, words_tgt_out,
+            self._config, words_src, words_tgt_in, words_tgt_out, size_src, size_tgt,
             word_vocab, char_vocab, self._task_name)
-        for words_src, words_tgt_in, words_tgt_out in self.get_sentence_tuples(split)
+        for words_src, words_tgt_in, words_tgt_out, size_src, size_tgt in self.get_sentence_tuples(split)
     ]
     return examples
 
 class TranslationExample(example.Example):
-  def __init__(self, config, words_src, words_tgt_in, words_tgt_out,
+  def __init__(self, config, words_src, words_tgt_in, words_tgt_out, size_src, size_tgt,
                word_vocab, char_vocab, task_name):
     super(TranslationExample, self).__init__(words_src, word_vocab, char_vocab, False)
 
     self.words = words_src
     self.words_tgt_in = words_tgt_in
     self.words_tgt_out = words_tgt_out
+    self.size_src = size_src
+    self.size_tgt = size_tgt
 

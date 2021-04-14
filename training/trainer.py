@@ -168,6 +168,26 @@ class Trainer(object):
           f.write('\n')
 
           f.write('\n')
+      elif self._config.task_names[0] == 'translate':
+        with open('/content/result.txt', 'w') as f:
+          words = mb.examples[0].words
+          words_tgt_in = mb.examples[0].words_tgt_in
+          words_tgt_out = mb.examples[0].words_tgt_out
+          preds = batch_preds[0]
+
+          f.write(self._np_str(words))
+          f.write('\n')
+
+          f.write(self._np_str(words_tgt_in))
+          f.write('\n')
+
+          f.write(self._np_str(words_tgt_out))
+          f.write('\n')
+
+          f.write(self._np_str(preds))
+          f.write('\n')
+
+          f.write('\n')
 
   def _np_str(self, np_arr):
     return ' '.join([str(x) for x in np_arr])
