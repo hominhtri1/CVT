@@ -46,5 +46,5 @@ class Scorer(object, metaclass=abc.ABCMeta):
     return [(prefix + k, v) for k, v in results]
 
   def results_str(self):
-    return " - ".join(["{:}: {:.6f}".format(k, v)
+    return " - ".join(["{:}: {:.3f}".format(k, v)
                        for k, v in self.get_results()])

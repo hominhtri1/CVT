@@ -53,7 +53,7 @@ class Trainer(object):
       if mb.task_name != 'unlabeled':
         loss = self._model.train_labeled(sess, mb)
         supervised_loss_total += loss
-        supervised_loss_count += len(mb.examples)
+        supervised_loss_count += 1
 
       if mb.task_name == 'unlabeled':
         self._model.run_teacher(sess, mb)
@@ -68,8 +68,8 @@ class Trainer(object):
       if global_step % self._config.print_every == 0:
         supervised_loss_reported = supervised_loss_total / max(1, supervised_loss_count)
         utils.log('step {:} - '
-                  'supervised loss: {:.6f} - '
-                  'unsupervised loss: {:.6f} - '
+                  'supervised loss: {:.3f} - '
+                  'unsupervised loss: {:.3f} - '
                   '{:.1f} sentences per second'.format(
             global_step,
             supervised_loss_reported,

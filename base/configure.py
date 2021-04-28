@@ -83,12 +83,13 @@ class Config(object):
     self.unlabeled_keep_prob = 0.8  # 1 - dropout on unlabeled examples
 
     # sizing
-    self.train_batch_sizes = {'chunk': 20, 'senclass': 256}
+    self.train_batch_sizes = {'chunk': 64, 'senclass': 256}
+    self.test_batch_sizes = {'chunk': 64, 'senclass': 256}
 
     self.max_sentence_length = 50  # maximum length of unlabeled sentences
     self.max_word_length = 20  # maximum length of words for char cnn
     self.train_batch_size = self.train_batch_sizes[self.task]  # train batch size
-    self.test_batch_size = 64  # test batch size
+    self.test_batch_size = self.test_batch_sizes[self.task]  # test batch size
     self.infer_batch_size = 64  # test batch size
     self.buckets = [(0, 15), (15, 40), (40, 1000)]  # buckets for binning
                                                     # sentences by length
