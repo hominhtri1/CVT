@@ -86,7 +86,7 @@ class Config(object):
     self.max_word_length = 20  # maximum length of words for char cnn
     self.train_batch_size = 64  # train batch size
     self.test_batch_size = 64  # test batch size
-    self.infer_batch_size = 1  # test batch size
+    self.infer_batch_size = 64  # test batch size
     self.buckets = [(0, 15), (15, 40), (40, 1000)]  # buckets for binning
                                                     # sentences by length
 

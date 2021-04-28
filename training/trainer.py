@@ -133,11 +133,13 @@ class Trainer(object):
   def infer(self, sess):
     task = self.tasks[0]
     data = task.infer_set
+    with open('/content/result.txt', 'w') as f:
+      pass
     for i, mb in enumerate(data.get_minibatches(self._config.infer_batch_size)):
       loss, batch_preds = self._model.test(sess, mb)
 
       if self._config.task_names[0] == 'chunk':
-        with open('/content/result.txt', 'w') as f:
+        with open('/content/result.txt', 'a') as f:
           words = mb.examples[0].words
           labels = mb.examples[0].labels
           preds = batch_preds[0]
@@ -153,7 +155,7 @@ class Trainer(object):
 
           f.write('\n')
       elif self._config.task_names[0] == 'senclass':
-        with open('/content/result.txt', 'w') as f:
+        with open('/content/result.txt', 'a') as f:
           for i in range(len(mb.examples)):
             words = mb.examples[i].words
             labels = mb.examples[i].labels
@@ -170,7 +172,7 @@ class Trainer(object):
 
             f.write('\n')
       elif self._config.task_names[0] == 'translate':
-        with open('/content/result.txt', 'w') as f:
+        with open('/content/result.txt', 'a') as f:
           words = mb.examples[0].words
           words_tgt_in = mb.examples[0].words_tgt_in
           words_tgt_out = mb.examples[0].words_tgt_out
