@@ -79,7 +79,6 @@ class Trainer(object):
         supervised_loss_total, supervised_loss_count = 0, 0
         summary_writer.add_summary(tf.Summary(
           value=[tf.Summary.Value(tag='loss', simple_value=supervised_loss_reported)]), global_step)
-        summary_writer.flush()
 
       if global_step % self._config.eval_dev_every == 0:
         heading('EVAL ON DEV')

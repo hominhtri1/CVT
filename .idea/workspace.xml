@@ -19,9 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d7e3a73-cb26-4827-8258-7d1cee2030a0" name="Default Changelist" comment="T">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cvt.py" beforeDir="false" afterPath="$PROJECT_DIR$/cvt.py" afterDir="false" />
+    <list default="true" id="9d7e3a73-cb26-4827-8258-7d1cee2030a0" name="Default Changelist" comment="Add detailed loss summary">
       <change beforePath="$PROJECT_DIR$/training/trainer.py" beforeDir="false" afterPath="$PROJECT_DIR$/training/trainer.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,14 +69,7 @@
       <workItem from="1618321929052" duration="14350000" />
       <workItem from="1618354619296" duration="2519000" />
       <workItem from="1618366965639" duration="8436000" />
-      <workItem from="1619575535068" duration="8376000" />
-    </task>
-    <task id="LOCAL-00022" summary="Disable debugging for classification module">
-      <created>1617739194228</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1617739194228</updated>
+      <workItem from="1619575535068" duration="8728000" />
     </task>
     <task id="LOCAL-00023" summary="Add translation task">
       <created>1617779313065</created>
@@ -416,7 +407,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619582718243</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="Add detailed loss summary">
+      <created>1619588007562</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1619588007562</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -438,7 +436,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/../.." />
     </ignored-roots>
-    <MESSAGE value="Disable debugging, update loss function" />
     <MESSAGE value="Change int to float for loss function" />
     <MESSAGE value="Fix typo in loss function" />
     <MESSAGE value="Add infer mode" />
@@ -463,7 +460,8 @@
     <MESSAGE value="Switch to senclass task" />
     <MESSAGE value="Senclass task can now infer for multiple sentences" />
     <MESSAGE value="Update infer batch size and how infer result file is updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update infer batch size and how infer result file is updated" />
+    <MESSAGE value="Add detailed loss summary" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add detailed loss summary" />
     <option name="PRESELECT_EXISTING_CHANGELIST" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -475,10 +473,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="515" y="254" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog/0.0.1366.728@0.0.1366.728" timestamp="1617778145837" />
-    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2" timestamp="1619586807745">
+    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2" timestamp="1619588103794">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1619586807745" />
+    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1619588103794" />
     <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1619583222920">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -491,10 +489,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="530" y="277" key="VCS.ChangelistChooser/0.0.1366.728@0.0.1366.728" timestamp="1618288312466" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1619582763288">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1619588010830">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1619582763288" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1619588010830" />
     <state x="234" y="60" width="919" height="595" key="find.popup" timestamp="1619585190113">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
