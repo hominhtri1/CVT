@@ -50,7 +50,7 @@ class Example(object):
     else:
       words = words[:]
 
-      self.words = ([w for w in words])
+      self.words = ([word_vocab[embeddings.normalize_word(w)] for w in words])
 
       self.chars = ([[embeddings.MISSING]] +
                     [[char_vocab[c] for c in embeddings.normalize_chars(w)]

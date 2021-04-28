@@ -41,12 +41,14 @@ class Config(object):
     self.for_preprocessing = False  # is this for the preprocessing script
 
     # embeddings
-    self.use_pretrained_embeddings = False
+    self.use_pretrained_embeddings = True
     self.pretrained_embeddings = 'glove.6B.50d.txt'  # which pretrained
                                                       # embeddings to use
     self.word_embedding_size = 50  # size of each word embedding
     self.en_vocab_size = 17191
     self.vi_vocab_size = 7709
+    self.src_vocab_size = self.en_vocab_size
+    self.tgt_vocab_size = self.vi_vocab_size
 
     # encoder
     self.unidirectional_sizes_dict = {'chunk': [1024], 'senclass': [256], 'translate': [512]}

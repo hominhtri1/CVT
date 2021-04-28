@@ -49,7 +49,7 @@ class TranslationDataLoader(object):
       line_size_tgt = f.readline()[:-1]
       f.readline()
 
-      words_src = [int(x) for x in line_src.strip().split()]
+      words_src = line_src.strip().split()
       words_tgt_in = [int(x) for x in line_tgt_in.strip().split()]
       words_tgt_out = [int(x) for x in line_tgt_out.strip().split()]
       size_src = int(line_size_src)
@@ -63,7 +63,7 @@ class TranslationDataLoader(object):
 
   @property
   def label_mapping(self):
-    return {str(x): x for x in range(self._config.en_vocab_size)}
+    return {str(x): x for x in range(self._config.tgt_vocab_size)}
 
   def _get_examples(self, split):
     word_vocab = embeddings.get_word_vocab(self._config)
@@ -81,7 +81,7 @@ class TranslationExample(example.Example):
                word_vocab, char_vocab, task_name):
     super(TranslationExample, self).__init__(words_src, word_vocab, char_vocab, False)
 
-    self.words = words_src
+    #self.words = words_src
     self.words_tgt_in = words_tgt_in
     self.words_tgt_out = words_tgt_out
     self.size_src = size_src
