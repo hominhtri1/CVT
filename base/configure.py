@@ -34,14 +34,14 @@ class Config(object):
 
     # mode
     self.mode = 'train'  # either "train" or "eval"
-    self.task_names = ['senclass']  # list of tasks this model will learn
+    self.task_names = ['translate']  # list of tasks this model will learn
                                  # more than one trains a multi-task model
     self.task = self.task_names[0]
     self.is_semisup = False  # whether to use CVT or train purely supervised
     self.for_preprocessing = False  # is this for the preprocessing script
 
     # embeddings
-    self.use_pretrained_embeddings = True
+    self.use_pretrained_embeddings = False
     self.pretrained_embeddings = 'glove.6B.50d.txt'  # which pretrained
                                                       # embeddings to use
     self.word_embedding_size = 50  # size of each word embedding
@@ -49,9 +49,9 @@ class Config(object):
     self.vi_vocab_size = 7709
 
     # encoder
-    self.unidirectional_sizes_dict = {'chunk': [1024], 'senclass': [256]}
-    self.bidirectional_sizes_dict = {'chunk': [512], 'senclass': [128]}
-    self.projection_size_dict = {'chunk': 512, 'senclass': 128}
+    self.unidirectional_sizes_dict = {'chunk': [1024], 'senclass': [256], 'translate': [512]}
+    self.bidirectional_sizes_dict = {'chunk': [512], 'senclass': [128], 'translate': [512]}
+    self.projection_size_dict = {'chunk': 512, 'senclass': 128, 'translate': 256}
 
     self.use_chars = False  # whether to include a character-level cnn
     self.char_embedding_size = 50  # size of character embeddings
@@ -87,8 +87,8 @@ class Config(object):
     self.unlabeled_keep_prob = 0.8  # 1 - dropout on unlabeled examples
 
     # sizing
-    self.train_batch_size_dict = {'chunk': 64, 'senclass': 256}
-    self.test_batch_size_dict = {'chunk': 64, 'senclass': 256}
+    self.train_batch_size_dict = {'chunk': 64, 'senclass': 256, 'translate': 128}
+    self.test_batch_size_dict = {'chunk': 64, 'senclass': 256, 'translate': 128}
 
     self.max_sentence_length = 50  # maximum length of unlabeled sentences
     self.max_word_length = 20  # maximum length of words for char cnn
