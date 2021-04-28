@@ -49,13 +49,17 @@ class Config(object):
     self.vi_vocab_size = 7709
 
     # encoder
+    self.unidirectional_sizes_dict = {'chunk': [1024], 'senclass': [256]}
+    self.bidirectional_sizes_dict = {'chunk': [512], 'senclass': [128]}
+    self.projection_size_dict = {'chunk': [512], 'senclass': [128]}
+
     self.use_chars = False  # whether to include a character-level cnn
     self.char_embedding_size = 50  # size of character embeddings
     self.char_cnn_filter_widths = [2, 3, 4]  # filter widths for the char cnn
     self.char_cnn_n_filters = 100  # number of filters for each filter width
-    self.unidirectional_sizes = [1024]  # size of first Bi-LSTM
-    self.bidirectional_sizes = [512]  # size of second Bi-LSTM
-    self.projection_size = 512  # projections size for LSTMs and hidden layers
+    self.unidirectional_sizes = self.unidirectional_sizes_dict[self.task]  # size of first Bi-LSTM
+    self.bidirectional_sizes = self.bidirectional_sizes_dict[self.task]  # size of second Bi-LSTM
+    self.projection_size = self.projection_size_dict[self.task]  # projections size for LSTMs and hidden layers
 
     # dependency parsing
     self.depparse_projection_size = 128  # size of the representations used in
@@ -83,13 +87,13 @@ class Config(object):
     self.unlabeled_keep_prob = 0.8  # 1 - dropout on unlabeled examples
 
     # sizing
-    self.train_batch_sizes = {'chunk': 64, 'senclass': 256}
-    self.test_batch_sizes = {'chunk': 64, 'senclass': 256}
+    self.train_batch_size_dict = {'chunk': 64, 'senclass': 256}
+    self.test_batch_size_dict = {'chunk': 64, 'senclass': 256}
 
     self.max_sentence_length = 50  # maximum length of unlabeled sentences
     self.max_word_length = 20  # maximum length of words for char cnn
-    self.train_batch_size = self.train_batch_sizes[self.task]  # train batch size
-    self.test_batch_size = self.test_batch_sizes[self.task]  # test batch size
+    self.train_batch_size = self.train_batch_size_dict[self.task]  # train batch size
+    self.test_batch_size = self.test_batch_size_dict[self.task]  # test batch size
     self.infer_batch_size = 64  # test batch size
     self.buckets = [(0, 15), (15, 40), (40, 1000)]  # buckets for binning
                                                     # sentences by length
