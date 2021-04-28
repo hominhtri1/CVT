@@ -154,20 +154,21 @@ class Trainer(object):
           f.write('\n')
       elif self._config.task_names[0] == 'senclass':
         with open('/content/result.txt', 'w') as f:
-          words = mb.examples[0].words
-          labels = mb.examples[0].labels
-          preds = batch_preds[0]
+          for i in range(len(mb.examples)):
+            words = mb.examples[i].words
+            labels = mb.examples[i].labels
+            preds = batch_preds[i]
 
-          f.write(self._np_str(words))
-          f.write('\n')
+            f.write(self._np_str(words))
+            f.write('\n')
 
-          f.write(str(labels))
-          f.write('\n')
+            f.write(str(labels))
+            f.write('\n')
 
-          f.write(str(preds))
-          f.write('\n')
+            f.write(str(preds))
+            f.write('\n')
 
-          f.write('\n')
+            f.write('\n')
       elif self._config.task_names[0] == 'translate':
         with open('/content/result.txt', 'w') as f:
           words = mb.examples[0].words
