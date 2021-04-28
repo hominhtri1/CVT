@@ -19,7 +19,7 @@ class SentenceLevelScorer(scorer.Scorer, metaclass=abc.ABCMeta):
       self._preds.append(preds)
       n_words += len(example.words) - 2
     self._total_loss += loss
-    self._total_sentences += 1
+    self._total_sentences += len(examples)
 
   def get_loss(self):
     return self._total_loss / max(1, self._total_sentences)

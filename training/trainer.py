@@ -53,7 +53,7 @@ class Trainer(object):
       if mb.task_name != 'unlabeled':
         loss = self._model.train_labeled(sess, mb)
         supervised_loss_total += loss
-        supervised_loss_count += 1
+        supervised_loss_count += len(mb.examples)
 
       if mb.task_name == 'unlabeled':
         self._model.run_teacher(sess, mb)

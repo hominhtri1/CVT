@@ -85,7 +85,8 @@ class Model(object):
     decay_multiplier = 1.0 / (1 + self._config.lr_decay *
                               tf.sqrt(tf.to_float(global_step)))
     lr = self._config.lr * warm_up_multiplier * decay_multiplier
-    optimizer = tf.train.MomentumOptimizer(lr, self._config.momentum)
+    #optimizer = tf.train.MomentumOptimizer(lr, self._config.momentum)
+    optimizer = tf.train.AdamOptimizer()
     return global_step, optimizer
 
   def _get_train_op(self, loss):
