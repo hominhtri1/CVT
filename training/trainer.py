@@ -68,8 +68,8 @@ class Trainer(object):
       if global_step % self._config.print_every == 0:
         supervised_loss_reported = supervised_loss_total / max(1, supervised_loss_count)
         utils.log('step {:} - '
-                  'supervised loss: {:.2f} - '
-                  'unsupervised loss: {:.2f} - '
+                  'supervised loss: {:.6f} - '
+                  'unsupervised loss: {:.6f} - '
                   '{:.1f} sentences per second'.format(
             global_step,
             supervised_loss_reported,
