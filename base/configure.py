@@ -51,7 +51,7 @@ class Config(object):
     # encoder
     self.unidirectional_sizes_dict = {'chunk': [1024], 'senclass': [256]}
     self.bidirectional_sizes_dict = {'chunk': [512], 'senclass': [128]}
-    self.projection_size_dict = {'chunk': [512], 'senclass': [128]}
+    self.projection_size_dict = {'chunk': 512, 'senclass': 128}
 
     self.use_chars = False  # whether to include a character-level cnn
     self.char_embedding_size = 50  # size of character embeddings

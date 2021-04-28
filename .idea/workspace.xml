@@ -19,10 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d7e3a73-cb26-4827-8258-7d1cee2030a0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/configure.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/configure.py" afterDir="false" />
-    </list>
+    <list default="true" id="9d7e3a73-cb26-4827-8258-7d1cee2030a0" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -70,14 +67,7 @@
       <workItem from="1618321929052" duration="14350000" />
       <workItem from="1618354619296" duration="2519000" />
       <workItem from="1618366965639" duration="8436000" />
-      <workItem from="1619575535068" duration="17931000" />
-    </task>
-    <task id="LOCAL-00028" summary="Fix bug with translation module">
-      <created>1617781988312</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1617781988312</updated>
+      <workItem from="1619575535068" duration="18054000" />
     </task>
     <task id="LOCAL-00029" summary="Fix bug with translation module's embedding index">
       <created>1618283489390</created>
@@ -415,7 +405,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619595458826</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="Add more task specific configs">
+      <created>1619601303204</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1619601303204</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -437,7 +434,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/../.." />
     </ignored-roots>
-    <MESSAGE value="Write result to file in infer mode" />
     <MESSAGE value="Add heading in infer mode" />
     <MESSAGE value="Add missing 'self' parameter to method" />
     <MESSAGE value="Add true label in infer result" />
@@ -462,7 +458,8 @@
     <MESSAGE value="Use Adam optimizer, update loss count" />
     <MESSAGE value="Add more digits when displaying loss" />
     <MESSAGE value="Update loss function" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update loss function" />
+    <MESSAGE value="Add more task specific configs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add more task specific configs" />
     <option name="PRESELECT_EXISTING_CHANGELIST" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -474,14 +471,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="515" y="254" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog/0.0.1366.728@0.0.1366.728" timestamp="1617778145837" />
-    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2" timestamp="1619595457151">
+    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2" timestamp="1619601302154">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1619595457151" />
-    <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1619594942262">
+    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1619601302154" />
+    <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1619614674506">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="92" y="92" width="1182" height="544" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1619594942262" />
+    <state x="92" y="92" width="1182" height="544" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1619614674506" />
     <state x="184" y="8" key="SettingsEditor" timestamp="1617686181312">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -490,10 +487,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="530" y="277" key="VCS.ChangelistChooser/0.0.1366.728@0.0.1366.728" timestamp="1618288312466" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1619595461331">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1619601336080">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1619595461331" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1619601336080" />
     <state x="234" y="60" width="919" height="595" key="find.popup" timestamp="1619600243323">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
