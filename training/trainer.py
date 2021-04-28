@@ -66,16 +66,20 @@ class Trainer(object):
       global_step = self._model.get_global_step(sess)
 
       if global_step % self._config.print_every == 0:
+        supervised_loss_reported = supervised_loss_total / max(1, supervised_loss_count)
         utils.log('step {:} - '
                   'supervised loss: {:.2f} - '
                   'unsupervised loss: {:.2f} - '
                   '{:.1f} sentences per second'.format(
             global_step,
-            supervised_loss_total / max(1, supervised_loss_count),
+            supervised_loss_reported,
             unsupervised_loss_total / max(1, unsupervised_loss_count),
             trained_on_sentences / (time.time() - start_time)))
         unsupervised_loss_total, unsupervised_loss_count = 0, 0
         supervised_loss_total, supervised_loss_count = 0, 0
+        summary_writer.add_summary(tf.Summary(
+          value=[tf.Summary.Value(tag='loss', simple_value=supervised_loss_reported)]), global_step)
+        summary_writer.flush()
 
       if global_step % self._config.eval_dev_every == 0:
         heading('EVAL ON DEV')
@@ -198,7 +202,7 @@ class Trainer(object):
 
 def write_summary(writer, results, global_step):
   for k, v in results:
-    if 'f1' in k or 'acc' in k or 'loss' in k:
+    if 'f1' in k or 'acc' in k:
       writer.add_summary(tf.Summary(
           value=[tf.Summary.Value(tag=k, simple_value=v)]), global_step)
   writer.flush()
