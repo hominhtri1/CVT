@@ -50,6 +50,12 @@ def main():
     sentence = ([word_vocab_reversed[int(w)] for w in sentence])
     print(sentence)
     return
+  if config.mode == 'encode-vi':
+    word_vocab_vi = embeddings.get_word_vocab_vi(config)
+    sentence = "Mỗi_một khoa_học_gia đều thuộc một nhóm nghiên_cứu , và mỗi nhóm đều nghiên_cứu rất nhiều đề_tài đa_dạng .".split()
+    sentence = ([word_vocab_vi[embeddings.normalize_word(w)] for w in sentence])
+    print(sentence)
+    return
   with tf.Graph().as_default() as graph:
     model_trainer = trainer.Trainer(config)
     summary_writer = tf.summary.FileWriter(config.summaries_dir)

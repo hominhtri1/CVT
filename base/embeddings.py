@@ -89,6 +89,17 @@ def get_word_vocab_reversed(config):
 def get_word_embeddings(config):
   return utils.load_cpickle(config.word_embeddings)
 
+def get_word_vocab_vi(config):
+  return Vocabulary(utils.load_cpickle(config.word_vocabulary_vi))
+
+
+def get_word_vocab_reversed_vi(config):
+  return Vocabulary(utils.load_cpickle(config.word_vocabulary_reversed_vi))
+
+
+def get_word_embeddings_vi(config):
+  return utils.load_cpickle(config.word_embeddings_vi)
+
 
 @utils.Memoize
 def _punctuation_ids(vocab_path):
@@ -109,6 +120,10 @@ class PretrainedEmbeddingLoader(object):
     self.vocabulary_reversed = {}
     self.vectors = []
     self.vector_size = config.word_embedding_size
+    self.vocabulary_vi = {}
+    self.vocabulary_reversed_vi = {}
+    self.vectors_vi = []
+    self.vector_size_vi = config.word_embedding_size_vi
 
   def _add_vector(self, w):
     if w not in self.vocabulary:
@@ -145,6 +160,30 @@ class PretrainedEmbeddingLoader(object):
           self.vocabulary[w] = len(self.vectors)
           self.vocabulary_reversed[len(self.vectors)] = w
           self.vectors.append(vec)
+    if self._config.task_names[0] == 'translate':
+      with tf.gfile.GFile(
+          self.config.pretrained_embeddings_file_vi, 'r') as f:
+        for i, line in enumerate(f):
+          if i % 10000 == 0:
+            utils.log('on line', i)
+
+          split = line.split()
+          w = normalize_word(split[0])
+
+          try:
+            vec = np.array(list(map(float, split[1:])), dtype='float32')
+            if vec.size != self.vector_size_vi:
+              utils.log('vector for line', i, 'has size', vec.size, 'so skipping')
+              utils.log(line[:100] + '...')
+              continue
+          except:
+            utils.log('can\'t parse line', i, 'so skipping')
+            utils.log(line[:100] + '...')
+            continue
+          if w not in self.vocabulary_vi:
+            self.vocabulary_vi[w] = len(self.vectors_vi)
+            self.vocabulary_reversed_vi[len(self.vectors_vi)] = w
+            self.vectors_vi.append(vec)
     utils.log('writing vectors!')
     self._write()
 
@@ -152,6 +191,10 @@ class PretrainedEmbeddingLoader(object):
     utils.write_cpickle(np.vstack(self.vectors), self.config.word_embeddings)
     utils.write_cpickle(self.vocabulary, self.config.word_vocabulary)
     utils.write_cpickle(self.vocabulary_reversed, self.config.word_vocabulary_reversed)
+    if self._config.task_names[0] == 'translate':
+      utils.write_cpickle(np.vstack(self.vectors_vi), self.config.word_embeddings_vi)
+      utils.write_cpickle(self.vocabulary_vi, self.config.word_vocabulary_vi)
+      utils.write_cpickle(self.vocabulary_reversed_vi, self.config.word_vocabulary_reversed_vi)
 
 
 def normalize_chars(w):

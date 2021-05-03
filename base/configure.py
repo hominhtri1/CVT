@@ -42,9 +42,10 @@ class Config(object):
 
     # embeddings
     self.use_pretrained_embeddings = True
-    self.pretrained_embeddings = 'glove.6B.50d.txt'  # which pretrained
+    self.pretrained_embeddings = 'glove.6B.100d.txt'  # which pretrained
                                                       # embeddings to use
-    self.word_embedding_size = 50  # size of each word embedding
+    self.word_embedding_size = 100  # size of each word embedding
+    self.word_embedding_size_vi = 100
     self.en_vocab_size = 17191
     self.vi_vocab_size = 7709
     self.src_vocab_size = self.en_vocab_size
@@ -127,6 +128,9 @@ class Config(object):
     self.pretrained_embeddings_file = join(
         self.raw_data_topdir, 'pretrained_embeddings',
         self.pretrained_embeddings)
+    self.pretrained_embeddings_file_vi = join(
+      self.raw_data_topdir, 'pretrained_embeddings',
+      'pho.100d.txt')
 
     self.preprocessed_data_topdir = join(self.data_dir, 'preprocessed_data')
     self.embeddings_dir = join(self.preprocessed_data_topdir,
@@ -134,6 +138,9 @@ class Config(object):
     self.word_vocabulary = join(self.embeddings_dir, 'word_vocabulary.pkl')
     self.word_vocabulary_reversed = join(self.embeddings_dir, 'word_vocabulary_reversed.pkl')
     self.word_embeddings = join(self.embeddings_dir, 'word_embeddings.pkl')
+    self.word_vocabulary_vi = join(self.embeddings_dir, 'word_vocabulary_vi.pkl')
+    self.word_vocabulary_reversed_vi = join(self.embeddings_dir, 'word_vocabulary_reversed_vi.pkl')
+    self.word_embeddings_vi = join(self.embeddings_dir, 'word_embeddings_vi.pkl')
 
     self.model_dir = join(self.data_dir, "models", self.model_name)
     self.checkpoints_dir = join(self.model_dir, 'checkpoints')
