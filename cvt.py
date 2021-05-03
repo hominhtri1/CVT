@@ -47,7 +47,7 @@ def main():
   if config.mode == 'decode':
     word_vocab_reversed = embeddings.get_word_vocab_reversed(config)
     sentence = "25709 33 42 879 33 86 304 92 33 676 42 32 13406 33 273 445 34".split()
-    sentence = ([word_vocab_reversed[w] for w in sentence])
+    sentence = ([word_vocab_reversed[int(w)] for w in sentence])
     print(sentence)
     return
   with tf.Graph().as_default() as graph:
