@@ -62,7 +62,7 @@ class TranslationModule(task_module.SemiSupervisedModule):
     self.preds = tf.argmax(primary.logits, axis=-1)
 
   def update_feed_dict(self, feed, mb):
-    words_tgt_in = [e.words_tgt_in for e in mb.examples]
+    words_tgt_in = minibatching.build_array([e.words_tgt_in for e in mb.examples])
     feed[self.words_tgt_in] = words_tgt_in
 
     words_tgt_out = minibatching.build_array([e.words_tgt_out for e in mb.examples])
