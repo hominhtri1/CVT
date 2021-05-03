@@ -160,7 +160,7 @@ class PretrainedEmbeddingLoader(object):
           self.vocabulary[w] = len(self.vectors)
           self.vocabulary_reversed[len(self.vectors)] = w
           self.vectors.append(vec)
-    if self._config.task_names[0] == 'translate':
+    if self.config.task_names[0] == 'translate':
       with tf.gfile.GFile(
           self.config.pretrained_embeddings_file_vi, 'r') as f:
         for i, line in enumerate(f):
@@ -191,7 +191,7 @@ class PretrainedEmbeddingLoader(object):
     utils.write_cpickle(np.vstack(self.vectors), self.config.word_embeddings)
     utils.write_cpickle(self.vocabulary, self.config.word_vocabulary)
     utils.write_cpickle(self.vocabulary_reversed, self.config.word_vocabulary_reversed)
-    if self._config.task_names[0] == 'translate':
+    if self.config.task_names[0] == 'translate':
       utils.write_cpickle(np.vstack(self.vectors_vi), self.config.word_embeddings_vi)
       utils.write_cpickle(self.vocabulary_vi, self.config.word_vocabulary_vi)
       utils.write_cpickle(self.vocabulary_reversed_vi, self.config.word_vocabulary_reversed_vi)
