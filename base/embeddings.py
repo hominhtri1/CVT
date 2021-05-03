@@ -82,6 +82,10 @@ def get_word_vocab(config):
   return Vocabulary(utils.load_cpickle(config.word_vocabulary))
 
 
+def get_word_vocab_reversed(config):
+  return Vocabulary(utils.load_cpickle(config.word_vocabulary_reversed))
+
+
 def get_word_embeddings(config):
   return utils.load_cpickle(config.word_embeddings)
 
@@ -102,6 +106,7 @@ class PretrainedEmbeddingLoader(object):
   def __init__(self, config):
     self.config = config
     self.vocabulary = {}
+    self.vocabulary_reversed = {}
     self.vectors = []
     self.vector_size = config.word_embedding_size
 
@@ -138,6 +143,7 @@ class PretrainedEmbeddingLoader(object):
           continue
         if w not in self.vocabulary:
           self.vocabulary[w] = len(self.vectors)
+          self.vocabulary_reversed[len(self.vectors)] = w
           self.vectors.append(vec)
     utils.log('writing vectors!')
     self._write()
@@ -145,6 +151,7 @@ class PretrainedEmbeddingLoader(object):
   def _write(self):
     utils.write_cpickle(np.vstack(self.vectors), self.config.word_embeddings)
     utils.write_cpickle(self.vocabulary, self.config.word_vocabulary)
+    utils.write_cpickle(self.vocabulary_reversed, self.config.word_vocabulary_reversed)
 
 
 def normalize_chars(w):

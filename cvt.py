@@ -21,7 +21,7 @@
 
 import tensorflow as tf
 
-from base import configure
+from base import configure, embeddings
 from base import utils
 from training import trainer
 from training import training_progress
@@ -38,6 +38,18 @@ def main():
   utils.heading('SETUP')
   config = configure.Config(mode=FLAGS.mode, model_name=FLAGS.model_name)
   config.write()
+  if config.mode == 'encode':
+    word_vocab = embeddings.get_word_vocab(config)
+    sentence = "Squirrels , for example , would show up , look for the peanut , go away .".split()
+    sentence = ([word_vocab[embeddings.normalize_word(w)] for w in sentence])
+    print(sentence)
+    return
+  if config.mode == 'decode':
+    word_vocab_reversed = embeddings.get_word_vocab_reversed(config)
+    sentence = "25709 33 42 879 33 86 304 92 33 676 42 32 13406 33 273 445 34".split()
+    sentence = ([word_vocab_reversed[w] for w in sentence])
+    print(sentence)
+    return
   with tf.Graph().as_default() as graph:
     model_trainer = trainer.Trainer(config)
     summary_writer = tf.summary.FileWriter(config.summaries_dir)

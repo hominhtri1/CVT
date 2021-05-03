@@ -101,10 +101,10 @@ class Config(object):
                                                     # sentences by length
 
     # training
-    self.print_every = 20  # how often to print out training progress
-    self.eval_dev_every = 250  # how often to evaluate on the dev set
-    self.eval_train_every = 250  # how often to evaluate on the train set
-    self.save_model_every = 250  # how often to checkpoint the model
+    self.print_every = 10  # how often to print out training progress
+    self.eval_dev_every = 100  # how often to evaluate on the dev set
+    self.eval_train_every = 100  # how often to evaluate on the train set
+    self.save_model_every = 100  # how often to checkpoint the model
 
     # data set
     self.train_set_percent = 100  # how much of the train set to use
@@ -132,6 +132,7 @@ class Config(object):
     self.embeddings_dir = join(self.preprocessed_data_topdir,
                                self.pretrained_embeddings.rsplit('.', 1)[0])
     self.word_vocabulary = join(self.embeddings_dir, 'word_vocabulary.pkl')
+    self.word_vocabulary_reversed = join(self.embeddings_dir, 'word_vocabulary_reversed.pkl')
     self.word_embeddings = join(self.embeddings_dir, 'word_embeddings.pkl')
 
     self.model_dir = join(self.data_dir, "models", self.model_name)
