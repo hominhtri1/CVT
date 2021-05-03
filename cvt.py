@@ -56,6 +56,12 @@ def main():
     sentence = ([word_vocab_vi[embeddings.normalize_word(w)] for w in sentence])
     print(sentence)
     return
+  if config.mode == 'decode-vi':
+    word_vocab_reversed_vi = embeddings.get_word_vocab_reversed_vi(config)
+    sentence = "8971 32080 124 173 12 256 376 0 2 190 256 124 376 55 32 2469 1898 1".split()
+    sentence = ([word_vocab_reversed_vi[int(w)] for w in sentence])
+    print(sentence)
+    return
   with tf.Graph().as_default() as graph:
     model_trainer = trainer.Trainer(config)
     summary_writer = tf.summary.FileWriter(config.summaries_dir)
