@@ -20,7 +20,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d7e3a73-cb26-4827-8258-7d1cee2030a0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/configure.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/configure.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,14 +71,7 @@
       <workItem from="1618366965639" duration="8436000" />
       <workItem from="1619575535068" duration="23534000" />
       <workItem from="1620009689161" duration="14724000" />
-      <workItem from="1620048162875" duration="19713000" />
-    </task>
-    <task id="LOCAL-00043" summary="Add infer mode">
-      <created>1618325847355</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1618325847355</updated>
+      <workItem from="1620048162875" duration="20132000" />
     </task>
     <task id="LOCAL-00044" summary="Use pretrained embeddings for chunking task">
       <created>1618328006259</created>
@@ -417,7 +409,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620105758695</updated>
     </task>
-    <option name="localTasksCounter" value="92" />
+    <task id="LOCAL-00092" summary="Update vi_vocab_size">
+      <created>1620114323225</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1620114323225</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -439,7 +438,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/../.." />
     </ignored-roots>
-    <MESSAGE value="Modify mask for translate task" />
     <MESSAGE value="Switch to chunk task" />
     <MESSAGE value="Switch to senclass task" />
     <MESSAGE value="Senclass task can now infer for multiple sentences" />
@@ -464,7 +462,8 @@
     <MESSAGE value="Fix bug with loading pretrained embedding for vi" />
     <MESSAGE value="Use config to adjust vi_vocab_size" />
     <MESSAGE value="Print len of word_vocab_vi for debugging purpose" />
-    <option name="LAST_COMMIT_MESSAGE" value="Print len of word_vocab_vi for debugging purpose" />
+    <MESSAGE value="Update vi_vocab_size" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update vi_vocab_size" />
     <option name="PRESELECT_EXISTING_CHANGELIST" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -476,10 +475,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="515" y="254" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog/0.0.1366.728@0.0.1366.728" timestamp="1617778145837" />
-    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2" timestamp="1620105757888">
+    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2" timestamp="1620114322149">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1620105757888" />
+    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1620114322149" />
     <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1620102946082">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -496,10 +495,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="530" y="277" key="VCS.ChangelistChooser/0.0.1366.728@0.0.1366.728" timestamp="1620097604960" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1620105761984">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1620114328053">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1620105761984" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1620114328053" />
     <state x="234" y="60" width="919" height="595" key="find.popup" timestamp="1620108781520">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
