@@ -19,13 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d7e3a73-cb26-4827-8258-7d1cee2030a0" name="Default Changelist" comment="Update vocab size for vi">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/configure.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/configure.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpus_processing/example.py" beforeDir="false" afterPath="$PROJECT_DIR$/corpus_processing/example.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpus_processing/minibatching.py" beforeDir="false" afterPath="$PROJECT_DIR$/corpus_processing/minibatching.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task_specific/translation/translation_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_specific/translation/translation_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task_specific/translation/translation_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_specific/translation/translation_module.py" afterDir="false" />
+    <list default="true" id="9d7e3a73-cb26-4827-8258-7d1cee2030a0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/cvt.py" beforeDir="false" afterPath="$PROJECT_DIR$/cvt.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,21 +71,7 @@
       <workItem from="1618366965639" duration="8436000" />
       <workItem from="1619575535068" duration="23534000" />
       <workItem from="1620009689161" duration="14724000" />
-      <workItem from="1620048162875" duration="9660000" />
-    </task>
-    <task id="LOCAL-00038" summary="Skip mask for translation task">
-      <created>1618289565099</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1618289565099</updated>
-    </task>
-    <task id="LOCAL-00039" summary="Standardize words_tgt_out">
-      <created>1618290473933</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1618290473933</updated>
+      <workItem from="1620048162875" duration="10173000" />
     </task>
     <task id="LOCAL-00040" summary="Disable debugging, update loss function">
       <created>1618290869210</created>
@@ -421,7 +402,21 @@
       <option name="project" value="LOCAL" />
       <updated>1620057206621</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <task id="LOCAL-00087" summary="Translate task now takes in raw tgt text">
+      <created>1620097504880</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1620097504880</updated>
+    </task>
+    <task id="LOCAL-00088" summary="Translate task now takes in raw tgt text">
+      <created>1620097622994</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1620097622994</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -443,7 +438,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/../.." />
     </ignored-roots>
-    <MESSAGE value="Add infer mode for translate task" />
     <MESSAGE value="Use encoder's final state as decoder initial state" />
     <MESSAGE value="Update placeholder shape in translation module" />
     <MESSAGE value="Use masked loss for translation module" />
@@ -468,7 +462,8 @@
     <MESSAGE value="Use embedding size 100. Add pretrained embedding for vietnamese" />
     <MESSAGE value="Fix embedding loader bug" />
     <MESSAGE value="Update vocab size for vi" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update vocab size for vi" />
+    <MESSAGE value="Translate task now takes in raw tgt text" />
+    <option name="LAST_COMMIT_MESSAGE" value="Translate task now takes in raw tgt text" />
     <option name="PRESELECT_EXISTING_CHANGELIST" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -480,14 +475,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="515" y="254" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog/0.0.1366.728@0.0.1366.728" timestamp="1617778145837" />
-    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2" timestamp="1620096791801">
+    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2" timestamp="1620097622094">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1620096791801" />
-    <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1620097470064">
+    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1620097622094" />
+    <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1620097983698">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="92" y="92" width="1182" height="544" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1620097470064" />
+    <state x="92" y="92" width="1182" height="544" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1620097983698" />
     <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1620033546585">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -496,14 +491,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="8" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1617686181312" />
-    <state x="530" y="277" key="VCS.ChangelistChooser" timestamp="1618288312466">
+    <state x="530" y="277" key="VCS.ChangelistChooser" timestamp="1620097604960">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="530" y="277" key="VCS.ChangelistChooser/0.0.1366.728@0.0.1366.728" timestamp="1618288312466" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1620057212388">
+    <state x="530" y="277" key="VCS.ChangelistChooser/0.0.1366.728@0.0.1366.728" timestamp="1620097604960" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1620097661775">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1620057212388" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1620097661775" />
     <state x="234" y="60" width="919" height="595" key="find.popup" timestamp="1620095835159">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

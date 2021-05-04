@@ -28,12 +28,9 @@ class TranslationModule(task_module.SemiSupervisedModule):
         with tf.variable_scope(name + '/predictions'):
           decoder_state = tf.layers.dense(input_reprs, config.projection_size, name='encoder_to_decoder')
 
-          with tf.variable_scope('word_embeddings'):
+          with tf.variable_scope('word_embeddings_vi'):
             word_embedding_matrix = tf.get_variable(
-                'word_embedding_matrix',
-                [config.tgt_vocab_size, config.word_embedding_size_vi],
-                dtype=tf.float32,
-                initializer=pretrained_embeddings_vi)
+                'word_embedding_matrix_vi', initializer=pretrained_embeddings_vi)
             word_embeddings = tf.nn.embedding_lookup(
                 word_embedding_matrix, words_tgt_in)
             word_embeddings = tf.nn.dropout(word_embeddings, inputs.keep_prob)
