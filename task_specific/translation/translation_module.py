@@ -37,11 +37,12 @@ class TranslationModule(task_module.SemiSupervisedModule):
             word_embeddings *= tf.get_variable('emb_scale', initializer=1.0)
 
           outputs, _ = tf.nn.dynamic_rnn(
-            tf.nn.rnn_cell.BasicRNNCell(config.projection_size),
+            model_helpers.lstm_cell(config.bidirectional_sizes[0], inputs.keep_prob,
+                                    config.projection_size),
             word_embeddings,
             initial_state=decoder_state,
             dtype=tf.float32,
-            sequence_length=inputs.lengths,
+            sequence_length=size_tgt,
             scope='predictlstm'
           )
 
