@@ -76,7 +76,7 @@ def main():
           config.mode == 'train')
       utils.log()
       if config.mode == 'train':
-        summary_writer.add_graph(sess.graph)
+        #summary_writer.add_graph(sess.graph)
         utils.heading('START TRAINING ({:})'.format(config.model_name))
         model_trainer.train(sess, progress, summary_writer)
       elif config.mode == 'eval':

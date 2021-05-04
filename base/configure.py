@@ -47,7 +47,7 @@ class Config(object):
     self.word_embedding_size = 100  # size of each word embedding
     self.word_embedding_size_vi = 100
     self.en_vocab_size = 17191
-    self.vi_vocab_size = 74242
+    self.vi_vocab_size = 10000
     self.src_vocab_size = self.en_vocab_size
     self.tgt_vocab_size = self.vi_vocab_size
 
@@ -97,7 +97,7 @@ class Config(object):
     self.max_word_length = 20  # maximum length of words for char cnn
     self.train_batch_size = self.train_batch_size_dict[self.task]  # train batch size
     self.test_batch_size = self.test_batch_size_dict[self.task]  # test batch size
-    self.infer_batch_size = 64  # test batch size
+    self.infer_batch_size = 64  # infer batch size
     self.buckets = [(0, 15), (15, 40), (40, 1000)]  # buckets for binning
                                                     # sentences by length
 

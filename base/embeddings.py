@@ -160,12 +160,16 @@ class PretrainedEmbeddingLoader(object):
           self.vocabulary[w] = len(self.vectors)
           self.vocabulary_reversed[len(self.vectors)] = w
           self.vectors.append(vec)
+    cur_vi_vocab_size = 0
     if self.config.task_names[0] == 'translate':
       with tf.gfile.GFile(
           self.config.pretrained_embeddings_file_vi, 'r') as f:
         for i, line in enumerate(f):
           if i % 10000 == 0:
             utils.log('on line', i)
+
+          if cur_vi_vocab_size == self.config.vi_vocab_size:
+            break
 
           split = line.split()
           w = normalize_word(split[0])
@@ -184,6 +188,7 @@ class PretrainedEmbeddingLoader(object):
             self.vocabulary_vi[w] = len(self.vectors_vi)
             self.vocabulary_reversed_vi[len(self.vectors_vi)] = w
             self.vectors_vi.append(vec)
+            cur_vi_vocab_size += 1
     utils.log('writing vectors!')
     self._write()
 
