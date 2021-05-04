@@ -47,7 +47,7 @@ class Config(object):
     self.word_embedding_size = 100  # size of each word embedding
     self.word_embedding_size_vi = 100
     self.en_vocab_size = 17191
-    self.vi_vocab_size = 10000
+    self.vi_vocab_size = 9546
     self.src_vocab_size = self.en_vocab_size
     self.tgt_vocab_size = self.vi_vocab_size
 
