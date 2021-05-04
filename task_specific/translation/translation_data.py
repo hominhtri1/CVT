@@ -43,19 +43,15 @@ class TranslationDataLoader(object):
       if line_src == '':
         break
 
-      line_tgt_in = f.readline()[:-1]
-      line_tgt_out = f.readline()[:-1]
-      line_size_src = f.readline()[:-1]
-      line_size_tgt = f.readline()[:-1]
+      line_tgt = f.readline()[:-1]
       f.readline()
 
       words_src = line_src.strip().split()
-      words_tgt_in = [int(x) for x in line_tgt_in.strip().split()]
-      words_tgt_out = [int(x) for x in line_tgt_out.strip().split()]
-      size_src = int(line_size_src)
-      size_tgt = int(line_size_tgt)
+      words_tgt = line_tgt.strip().split()
+      size_src = len(words_src)
+      size_tgt = len(words_tgt) + 1
 
-      tuples.append((words_src, words_tgt_in, words_tgt_out, size_src, size_tgt))
+      tuples.append((words_src, words_tgt, size_src, size_tgt))
 
     f.close()
 
@@ -67,23 +63,22 @@ class TranslationDataLoader(object):
 
   def _get_examples(self, split):
     word_vocab = embeddings.get_word_vocab(self._config)
+    word_vocab_vi = embeddings.get_word_vocab_vi(self._config)
     char_vocab = embeddings.get_char_vocab()
     examples = [
         TranslationExample(
-            self._config, words_src, words_tgt_in, words_tgt_out, size_src, size_tgt,
-            word_vocab, char_vocab, self._task_name)
-        for words_src, words_tgt_in, words_tgt_out, size_src, size_tgt in self.get_sentence_tuples(split)
+            self._config, words_src, words_tgt, size_src, size_tgt,
+            word_vocab, char_vocab, self._task_name, word_vocab_vi)
+        for words_src, words_tgt, size_src, size_tgt in self.get_sentence_tuples(split)
     ]
     return examples
 
 class TranslationExample(example.Example):
-  def __init__(self, config, words_src, words_tgt_in, words_tgt_out, size_src, size_tgt,
-               word_vocab, char_vocab, task_name):
-    super(TranslationExample, self).__init__(words_src, word_vocab, char_vocab, False)
+  def __init__(self, config, words_src, words_tgt, size_src, size_tgt,
+               word_vocab, char_vocab, task_name, word_vocab_vi):
+    super(TranslationExample, self).__init__(words_src, word_vocab, char_vocab, False, words_tgt, word_vocab_vi)
 
     #self.words = words_src
-    self.words_tgt_in = words_tgt_in
-    self.words_tgt_out = words_tgt_out
     self.size_src = size_src
     self.size_tgt = size_tgt
 

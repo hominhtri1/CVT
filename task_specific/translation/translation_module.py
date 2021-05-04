@@ -1,6 +1,7 @@
 import numpy as np
 import tensorflow as tf
 
+from base import utils
 from corpus_processing import minibatching
 from model import task_module, model_helpers
 
@@ -19,6 +20,7 @@ class TranslationModule(task_module.SemiSupervisedModule):
                                               name=task_name + '_size_src')
     self.size_tgt = size_tgt = tf.placeholder(tf.int64, [None],
                                               name=task_name + '_size_tgt')
+    pretrained_embeddings_vi = utils.load_cpickle(config.word_embeddings_vi)
 
     class PredictionModule(object):
       def __init__(self, name, input_reprs, roll_direction=0, activate=True):
@@ -29,9 +31,9 @@ class TranslationModule(task_module.SemiSupervisedModule):
           with tf.variable_scope('word_embeddings'):
             word_embedding_matrix = tf.get_variable(
                 'word_embedding_matrix',
-                [config.tgt_vocab_size, config.word_embedding_size],
+                [config.tgt_vocab_size, config.word_embedding_size_vi],
                 dtype=tf.float32,
-                initializer=tf.initializers.random_uniform(-1, 1, dtype=tf.float32))
+                initializer=pretrained_embeddings_vi)
             word_embeddings = tf.nn.embedding_lookup(
                 word_embedding_matrix, words_tgt_in)
             word_embeddings = tf.nn.dropout(word_embeddings, inputs.keep_prob)

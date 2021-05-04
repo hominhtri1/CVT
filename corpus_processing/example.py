@@ -29,7 +29,7 @@ CONTRACTION_WORDS = set(w + 'n' for w in
 
 
 class Example(object):
-  def __init__(self, words, word_vocab, char_vocab, process_words=True):
+  def __init__(self, words, word_vocab, char_vocab, process_words=True, words_tgt=None, word_vocab_vi=None):
     if process_words:
       words = words[:]
       # Fix inconsistent tokenization between datasets
@@ -56,6 +56,9 @@ class Example(object):
                     [[char_vocab[c] for c in embeddings.normalize_chars(w)]
                      for w in ['place', 'holder']] +
                     [[embeddings.MISSING]])
+
+      self.words_tgt_in = ([embeddings.START] + [word_vocab_vi[embeddings.normalize_word(w)] for w in words_tgt])
+      self.words_tgt_out = ([word_vocab_vi[embeddings.normalize_word(w)] for w in words_tgt] + [embeddings.END])
 
   def __repr__(self,):
     inv_char_vocab = embeddings.get_inv_char_vocab()
