@@ -52,6 +52,7 @@ def main():
     return
   if config.mode == 'encode-vi':
     word_vocab_vi = embeddings.get_word_vocab_vi(config)
+    print(len(word_vocab_vi))
     sentence = "Mỗi_một khoa_học_gia đều thuộc một nhóm nghiên_cứu , và mỗi nhóm đều nghiên_cứu rất nhiều đề_tài đa_dạng .".split()
     sentence = ([word_vocab_vi[embeddings.normalize_word(w)] for w in sentence])
     print(sentence)
