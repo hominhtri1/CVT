@@ -26,7 +26,8 @@ class TranslationModule(task_module.SemiSupervisedModule):
       def __init__(self, name, input_reprs, roll_direction=0, activate=True):
         self.name = name
         with tf.variable_scope(name + '/predictions'):
-          decoder_state = tf.layers.dense(input_reprs, config.projection_size, name='encoder_to_decoder')
+          #decoder_state = tf.layers.dense(input_reprs, config.projection_size, name='encoder_to_decoder')
+          decoder_state = input_reprs
 
           with tf.variable_scope('word_embeddings_vi'):
             word_embedding_matrix = tf.get_variable(
