@@ -37,11 +37,18 @@ class TranslationDataLoader(object):
 
     f = tf.gfile.GFile(path, 'r')
 
+    line_count = 0
+
     while (True):
+      if split == 'train' and line_count == self._config.train_set_line_count:
+        break
+
       line_src = f.readline()[:-1]
 
       if line_src == '':
         break
+
+      line_count += 1
 
       line_tgt = f.readline()[:-1]
       f.readline()

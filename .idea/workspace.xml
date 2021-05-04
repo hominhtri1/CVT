@@ -21,8 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9d7e3a73-cb26-4827-8258-7d1cee2030a0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/encoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/encoder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task_specific/translation/translation_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_specific/translation/translation_module.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/configure.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/configure.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_specific/translation/translation_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_specific/translation/translation_data.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,14 +73,7 @@
       <workItem from="1618366965639" duration="8436000" />
       <workItem from="1619575535068" duration="23534000" />
       <workItem from="1620009689161" duration="14724000" />
-      <workItem from="1620048162875" duration="24199000" />
-    </task>
-    <task id="LOCAL-00046" summary="Write result to file in infer mode">
-      <created>1618329074301</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1618329074301</updated>
+      <workItem from="1620048162875" duration="27156000" />
     </task>
     <task id="LOCAL-00047" summary="Add heading in infer mode">
       <created>1618329266575</created>
@@ -418,7 +411,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620116870388</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="Fix bug with initial state of translate module's lstm">
+      <created>1620118950882</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1620118950882</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -440,7 +440,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/../.." />
     </ignored-roots>
-    <MESSAGE value="Switch to senclass task" />
     <MESSAGE value="Senclass task can now infer for multiple sentences" />
     <MESSAGE value="Update infer batch size and how infer result file is updated" />
     <MESSAGE value="Add detailed loss summary" />
@@ -465,7 +464,8 @@
     <MESSAGE value="Print len of word_vocab_vi for debugging purpose" />
     <MESSAGE value="Update vi_vocab_size" />
     <MESSAGE value="Update rnn cell in translate module to lstm cell" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update rnn cell in translate module to lstm cell" />
+    <MESSAGE value="Fix bug with initial state of translate module's lstm" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix bug with initial state of translate module's lstm" />
     <option name="PRESELECT_EXISTING_CHANGELIST" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -477,14 +477,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="515" y="254" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog/0.0.1366.728@0.0.1366.728" timestamp="1617778145837" />
-    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2" timestamp="1620116869514">
+    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2" timestamp="1620118949981">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1620116869514" />
-    <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1620118447505">
+    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1620118949981" />
+    <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1620120387188">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="92" y="92" width="1182" height="544" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1620118447505" />
+    <state x="92" y="92" width="1182" height="544" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1620120387188" />
     <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1620033546585">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -497,14 +497,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="530" y="277" key="VCS.ChangelistChooser/0.0.1366.728@0.0.1366.728" timestamp="1620097604960" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1620116881597">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1620118954331">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1620116881597" />
-    <state x="234" y="60" width="919" height="595" key="find.popup" timestamp="1620116570136">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1620118954331" />
+    <state x="234" y="60" width="919" height="595" key="find.popup" timestamp="1620125623018">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="234" y="60" width="919" height="595" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1620116570136" />
+    <state x="234" y="60" width="919" height="595" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1620125623018" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1620116288337">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
