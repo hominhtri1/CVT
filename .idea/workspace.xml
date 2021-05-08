@@ -21,6 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9d7e3a73-cb26-4827-8258-7d1cee2030a0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_specific/translation/translation_scorer.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_specific/translation/translation_scorer.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,20 +74,7 @@
       <workItem from="1620009689161" duration="14724000" />
       <workItem from="1620048162875" duration="27777000" />
       <workItem from="1620445102059" duration="7952000" />
-    </task>
-    <task id="LOCAL-00053" summary="Add graph for tensorboard">
-      <created>1618335662885</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1618335662885</updated>
-    </task>
-    <task id="LOCAL-00054" summary="Modify prediction module for classification task">
-      <created>1618338415110</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1618338415110</updated>
+      <workItem from="1620465459335" duration="1145000" />
     </task>
     <task id="LOCAL-00055" summary="Update result for infer mode of senclass task">
       <created>1618338716000</created>
@@ -417,7 +405,21 @@
       <option name="project" value="LOCAL" />
       <updated>1620455426999</updated>
     </task>
-    <option name="localTasksCounter" value="102" />
+    <task id="LOCAL-00102" summary="Add bleu score for translate task">
+      <created>1620465685308</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1620465685309</updated>
+    </task>
+    <task id="LOCAL-00103" summary="Add bleu score for translate task">
+      <created>1620465752727</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1620465752728</updated>
+    </task>
+    <option name="localTasksCounter" value="104" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -428,19 +430,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="text">
-                    <value>
-                      <list>
-                        <option value="debug" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -451,7 +441,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/../.." />
     </ignored-roots>
-    <MESSAGE value="Add more digits when displaying loss" />
     <MESSAGE value="Update loss function" />
     <MESSAGE value="Add more task specific configs" />
     <MESSAGE value="Update projection size dict config" />
@@ -476,7 +465,8 @@
     <MESSAGE value="Add embed mode" />
     <MESSAGE value="Add embed mode for en" />
     <MESSAGE value="Add translation_word_level_scorer.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add translation_word_level_scorer.py" />
+    <MESSAGE value="Add bleu score for translate task" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add bleu score for translate task" />
     <option name="PRESELECT_EXISTING_CHANGELIST" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -488,10 +478,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="515" y="254" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog/0.0.1366.728@0.0.1366.728" timestamp="1617778145837" />
-    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2" timestamp="1620455425961">
+    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2" timestamp="1620465751657">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1620455425961" />
+    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1620465751657" />
     <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1620450991825">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -504,14 +494,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="8" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1617686181312" />
-    <state x="530" y="277" key="VCS.ChangelistChooser" timestamp="1620097604960">
+    <state x="530" y="277" key="VCS.ChangelistChooser" timestamp="1620465707106">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="530" y="277" key="VCS.ChangelistChooser/0.0.1366.728@0.0.1366.728" timestamp="1620097604960" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1620455431763">
+    <state x="530" y="277" key="VCS.ChangelistChooser/0.0.1366.728@0.0.1366.728" timestamp="1620465707106" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1620465755578">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1620455431763" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1620465755578" />
     <state x="234" y="60" width="919" height="595" key="find.popup" timestamp="1620454119945">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

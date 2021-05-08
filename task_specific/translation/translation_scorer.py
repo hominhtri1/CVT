@@ -17,7 +17,7 @@ class AccuracyScorer(translation_word_level_scorer.TranslationWordLevelScorer):
         correct += (1 if y_pred == y_true and y_true != self._auto_fail_label
                     else 0)
       references.append([example.words_tgt_out])
-      hypotheses.append(preds)
+      hypotheses.append(preds[:len(example.words_tgt_out)])
     return [
         ("accuracy", 100.0 * correct / count),
         ("loss", self.get_loss()),
