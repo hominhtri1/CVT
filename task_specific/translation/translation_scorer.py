@@ -21,5 +21,5 @@ class AccuracyScorer(translation_word_level_scorer.TranslationWordLevelScorer):
     return [
         ("accuracy", 100.0 * correct / count),
         ("loss", self.get_loss()),
-        ("bleu", nltk.translate.bleu_score.corpus_bleu(references, hypotheses))
+        ("bleu", nltk.translate.bleu_score.corpus_bleu(references, hypotheses) * 100)
     ]
