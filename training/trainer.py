@@ -52,6 +52,7 @@ class Trainer(object):
     for mb in self._get_training_mbs(progress.unlabeled_data_reader):
       if mb.task_name != 'unlabeled':
         loss = self._model.train_labeled(sess, mb)
+        print('train loss', loss)
         supervised_loss_total += loss
         supervised_loss_count += 1
 
@@ -110,6 +111,7 @@ class Trainer(object):
     data = task.train_set if train_set else task.val_set
     for i, mb in enumerate(data.get_minibatches(self._config.test_batch_size)):
       loss, batch_preds = self._model.test(sess, mb)
+      print('eval loss', loss)
       scorer.update(mb.examples, batch_preds, loss)
 
     results = scorer.get_results(task.name +
