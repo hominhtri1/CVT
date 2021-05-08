@@ -56,7 +56,7 @@ class Config(object):
     self.bidirectional_sizes_dict = {'chunk': [512], 'senclass': [128], 'translate': [512]}
     self.projection_size_dict = {'chunk': 512, 'senclass': 128, 'translate': 256}
 
-    self.use_chars = False  # whether to include a character-level cnn
+    self.use_chars = True  # whether to include a character-level cnn
     self.char_embedding_size = 50  # size of character embeddings
     self.char_cnn_filter_widths = [2, 3, 4]  # filter widths for the char cnn
     self.char_cnn_n_filters = 100  # number of filters for each filter width

@@ -52,10 +52,7 @@ class Example(object):
 
       self.words = ([word_vocab[embeddings.normalize_word(w)] for w in words])
 
-      self.chars = ([[embeddings.MISSING]] +
-                    [[char_vocab[c] for c in embeddings.normalize_chars(w)]
-                     for w in ['place', 'holder']] +
-                    [[embeddings.MISSING]])
+      self.chars = ([[char_vocab[c] for c in embeddings.normalize_chars(w)] for w in words])
 
       self.words_tgt_in = ([embeddings.START] + [word_vocab_vi[embeddings.normalize_word(w)] for w in words_tgt])
       self.words_tgt_out = ([word_vocab_vi[embeddings.normalize_word(w)] for w in words_tgt] + [embeddings.END])
