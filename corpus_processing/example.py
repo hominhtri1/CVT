@@ -29,7 +29,7 @@ CONTRACTION_WORDS = set(w + 'n' for w in
 
 
 class Example(object):
-  def __init__(self, words, word_vocab, char_vocab, process_words=True, words_tgt=None, word_vocab_vi=None):
+  def __init__(self, words, word_vocab, char_vocab, process_words=True, words_tgt=None, word_vocab_vi=None, split='dev'):
     if process_words:
       words = words[:]
       # Fix inconsistent tokenization between datasets

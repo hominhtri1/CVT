@@ -75,15 +75,15 @@ class TranslationDataLoader(object):
     examples = [
         TranslationExample(
             self._config, words_src, words_tgt, size_src, size_tgt,
-            word_vocab, char_vocab, self._task_name, word_vocab_vi)
+            word_vocab, char_vocab, self._task_name, word_vocab_vi, split)
         for words_src, words_tgt, size_src, size_tgt in self.get_sentence_tuples(split)
     ]
     return examples
 
 class TranslationExample(example.Example):
   def __init__(self, config, words_src, words_tgt, size_src, size_tgt,
-               word_vocab, char_vocab, task_name, word_vocab_vi):
-    super(TranslationExample, self).__init__(words_src, word_vocab, char_vocab, False, words_tgt, word_vocab_vi)
+               word_vocab, char_vocab, task_name, word_vocab_vi, split):
+    super(TranslationExample, self).__init__(words_src, word_vocab, char_vocab, False, words_tgt, word_vocab_vi, split)
 
     #self.words = words_src
     self.size_src = size_src
