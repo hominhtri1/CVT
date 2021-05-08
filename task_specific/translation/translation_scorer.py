@@ -1,7 +1,7 @@
-from task_specific.word_level import word_level_scorer
+from task_specific.translation import translation_word_level_scorer
 
 
-class AccuracyScorer(word_level_scorer.WordLevelScorer):
+class AccuracyScorer(translation_word_level_scorer.TranslationWordLevelScorer):
   def __init__(self, auto_fail_label=None):
     super(AccuracyScorer, self).__init__()
     self._auto_fail_label = auto_fail_label

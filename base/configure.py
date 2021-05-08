@@ -82,7 +82,7 @@ class Config(object):
 
     # EMA
     self.ema_decay = 0.998  # EMA coefficient for averaged model weights
-    self.ema_test = True  # whether to use EMA weights at test time
+    self.ema_test = False  # whether to use EMA weights at test time
     self.ema_teacher = False  # whether to use EMA weights for the teacher model
 
     # regularization
