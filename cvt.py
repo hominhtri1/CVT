@@ -63,6 +63,12 @@ def main():
     sentence = ([word_vocab_reversed_vi[int(w)] for w in sentence])
     print(sentence)
     return
+  if config.mode == 'embed':
+    word_embeddings = embeddings.get_word_embeddings(config)
+    word = 50
+    embed = word_embeddings[word]
+    print(' '.join(str(x) for x in embed))
+    return
   if config.mode == 'embed-vi':
     word_embeddings_vi = embeddings.get_word_embeddings_vi(config)
     word = 50
