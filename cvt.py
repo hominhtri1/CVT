@@ -63,6 +63,12 @@ def main():
     sentence = ([word_vocab_reversed_vi[int(w)] for w in sentence])
     print(sentence)
     return
+  if config.mode == 'embed-vi':
+    word_embeddings_vi = embeddings.get_word_embeddings_vi(config)
+    word = 50
+    embed = word_embeddings_vi[word]
+    print(' '.join(str(x) for x in embed))
+    return
   with tf.Graph().as_default() as graph:
     model_trainer = trainer.Trainer(config)
     summary_writer = tf.summary.FileWriter(config.summaries_dir)
