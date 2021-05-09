@@ -37,7 +37,8 @@ class Task(object, metaclass=abc.ABCMeta):
     self.name = name
     self.loader = loader
     self.train_set = self.loader.get_dataset("train")
-    self.val_set = self.loader.get_dataset("dev" if config.dev_set else "test")
+    #self.val_set = self.loader.get_dataset("dev" if config.dev_set else "test")
+    self.val_set = self.loader.get_dataset("dev")
     self.infer_set = self.loader.get_dataset("infer")
 
   @abc.abstractmethod

@@ -92,7 +92,12 @@ def main():
         #summary_writer.add_graph(sess.graph)
         utils.heading('START TRAINING ({:})'.format(config.model_name))
         model_trainer.train(sess, progress, summary_writer)
-      elif config.mode == 'eval':
+      elif config.mode == 'eval-train':
+        utils.heading('RUN EVALUATION ({:})'.format(config.model_name))
+        progress.best_model_saver.restore(sess, tf.train.latest_checkpoint(
+            config.checkpoints_dir))
+        model_trainer.evaluate_all_tasks(sess, summary_writer, None, True)
+      elif config.mode == 'eval-dev':
         utils.heading('RUN EVALUATION ({:})'.format(config.model_name))
         progress.best_model_saver.restore(sess, tf.train.latest_checkpoint(
             config.checkpoints_dir))
