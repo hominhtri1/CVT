@@ -145,15 +145,18 @@ class Model(object):
     state = state[0]
 
     tgt_list = []
+    feed = self._inputs.create_feed_dict(mb, False)
     translate_module = self._tester.modules['translate']
     word_vocab_reversed_vi = embeddings.get_word_vocab_reversed_vi(self._config)
     cur_word = 2
 
     while True:
+      feed = translate_module.update_feed_dict_translate(feed, cur_word, state)
+
       word_out_arr, state = sess.run(
         [translate_module.translate_preds,
          translate_module.translate_state],
-        feed_dict=translate_module.create_feed_dict_translate(cur_word, state))
+        feed_dict=feed)
       word_out = word_out_arr[0, 0]
       state = state[0]
 

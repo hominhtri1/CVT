@@ -97,9 +97,7 @@ class TranslationModule(task_module.SemiSupervisedModule):
     size_tgt = [e.size_tgt for e in mb.examples]
     feed[self.size_tgt] = size_tgt
 
-  def create_feed_dict_translate(self, word_in, state_in):
-    return {
-      self.word_in: [[word_in]],
-      self.state_c_in: [state_in.c],
-      self.state_h_in: [state_in.h]
-    }
+  def update_feed_dict_translate(self, feed, word_in, state_in):
+    feed[self.word_in] = [[word_in]]
+    feed[self.state_c_in] = state_in.c
+    feed[self.state_h_in] = state_in.h
