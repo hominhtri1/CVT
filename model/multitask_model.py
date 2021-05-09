@@ -166,5 +166,4 @@ class Model(object):
 
       cur_word = word_out
 
-    tgt = ' '.join(str(x) for x in tgt_list)
-    return tgt
+    return tgt_list
