@@ -101,3 +101,4 @@ class TranslationModule(task_module.SemiSupervisedModule):
     feed[self.word_in] = [[word_in]]
     feed[self.state_c_in] = state_in.c
     feed[self.state_h_in] = state_in.h
+    feed[self.size_tgt] = [1]
