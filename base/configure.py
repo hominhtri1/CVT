@@ -52,9 +52,9 @@ class Config(object):
     self.tgt_vocab_size = self.vi_vocab_size
 
     # encoder
-    self.unidirectional_sizes_dict = {'chunk': [1024], 'senclass': [256], 'translate': [512]}
+    self.unidirectional_sizes_dict = {'chunk': [1024], 'senclass': [256], 'translate': [1024]}
     self.bidirectional_sizes_dict = {'chunk': [512], 'senclass': [128], 'translate': [512]}
-    self.projection_size_dict = {'chunk': 512, 'senclass': 128, 'translate': 256}
+    self.projection_size_dict = {'chunk': 512, 'senclass': 128, 'translate': 512}
 
     self.use_chars = True  # whether to include a character-level cnn
     self.char_embedding_size = 50  # size of character embeddings
@@ -79,6 +79,7 @@ class Config(object):
     self.grad_clip = 1.0  # maximum gradient norm during optimization
     self.warm_up_steps = 5000.0  # linearly ramp up the lr for this many steps
     self.lr_decay = 0.005  # factor for gradually decaying the lr
+    self.tri_lr = 0.005
 
     # EMA
     self.ema_decay = 0.998  # EMA coefficient for averaged model weights
