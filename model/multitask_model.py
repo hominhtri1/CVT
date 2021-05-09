@@ -151,16 +151,15 @@ class Model(object):
     cur_word = 2
 
     while True:
-      feed = translate_module.update_feed_dict_translate(feed, cur_word, state)
+      translate_module.update_feed_dict_translate(feed, cur_word, state)
 
       word_out_arr, state = sess.run(
         [translate_module.translate_preds,
          translate_module.translate_state],
         feed_dict=feed)
       word_out = word_out_arr[0, 0]
-      state = state[0]
 
-      word_out_str = word_vocab_reversed_vi(word_out)
+      word_out_str = word_vocab_reversed_vi[word_out]
       tgt_list.append(word_out_str)
 
       if word_out_str == '<end>' or len(tgt_list) == 100:
