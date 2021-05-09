@@ -73,7 +73,7 @@ class TranslationModule(task_module.SemiSupervisedModule):
 
     ###
 
-    self.word_in = tf.placeholder(tf.int64, [None], name=task_name + '_word_in')
+    self.word_in = tf.placeholder(tf.int64, [None, None], name=task_name + '_word_in')
     self.state_c_in = tf.placeholder(tf.float32, [None], name=task_name + '_state_c_in')
     self.state_h_in = tf.placeholder(tf.float32, [None], name=task_name + '_state_h_in')
 
@@ -99,7 +99,7 @@ class TranslationModule(task_module.SemiSupervisedModule):
 
   def create_feed_dict_translate(self, word_in, state_in):
     return {
-      self.word_in: [word_in],
+      self.word_in: [[word_in]],
       self.state_c_in: state_in.c,
       self.state_h_in: state_in.h
     }

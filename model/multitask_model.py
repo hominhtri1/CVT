@@ -149,18 +149,19 @@ class Model(object):
     cur_word = 2
 
     while True:
-      word_out, state = sess.run(
+      word_out_arr, state = sess.run(
         [translate_module.translate_preds,
          translate_module.translate_state],
         feed_dict=translate_module.create_feed_dict_translate(cur_word, state))
+      word_out = word_out_arr[0, 0]
 
-      word_out_str = word_vocab_reversed_vi(word_out[0])
+      word_out_str = word_vocab_reversed_vi(word_out)
       tgt_list.append(word_out_str)
 
       if word_out_str == '<end>' or len(tgt_list) == 100:
         break
 
-      cur_word = word_out[0]
+      cur_word = word_out
 
     tgt = ' '.join(str(x) for x in tgt_list)
     return tgt
