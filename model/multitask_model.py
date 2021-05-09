@@ -142,6 +142,7 @@ class Model(object):
     state = sess.run(
         [self._tester.encoder.bi_state],
         feed_dict=self._create_feed_dict(mb, self._tester, False))
+    state = state[0]
 
     tgt_list = []
     translate_module = self._tester.modules['translate']
@@ -154,6 +155,7 @@ class Model(object):
          translate_module.translate_state],
         feed_dict=translate_module.create_feed_dict_translate(cur_word, state))
       word_out = word_out_arr[0, 0]
+      state = state[0]
 
       word_out_str = word_vocab_reversed_vi(word_out)
       tgt_list.append(word_out_str)
