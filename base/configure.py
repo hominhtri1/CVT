@@ -111,6 +111,7 @@ class Config(object):
     # data set
     self.train_set_percent = 100  # how much of the train set to use
     self.train_set_line_count = 1
+    self.result_sample_line_count = 10
 
     for k, v in kwargs.items():
       if k not in self.__dict__:

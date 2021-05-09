@@ -102,13 +102,14 @@ class Translation(Task):
         config, name, translation_data.TranslationDataLoader(
             config, name))
     self.n_classes = len(set(self.loader.label_mapping.values()))
+    self._config = config
 
   def get_module(self, inputs, encoder):
     return translation_module.TranslationModule(
         self.config, self.name, self.n_classes, inputs, encoder)
 
   def get_scorer(self):
-    return translation_scorer.AccuracyScorer()
+    return translation_scorer.AccuracyScorer(self._config)
 
 
 def get_task(config, name):
