@@ -96,12 +96,12 @@ def main():
         utils.heading('RUN EVALUATION ({:})'.format(config.model_name))
         progress.best_model_saver.restore(sess, tf.train.latest_checkpoint(
             config.checkpoints_dir))
-        model_trainer.evaluate_all_tasks(sess, summary_writer, None, True)
+        model_trainer.evaluate_all_tasks(sess, summary_writer, None, train_set=True)
       elif config.mode == 'eval-dev':
         utils.heading('RUN EVALUATION ({:})'.format(config.model_name))
         progress.best_model_saver.restore(sess, tf.train.latest_checkpoint(
             config.checkpoints_dir))
-        model_trainer.evaluate_all_tasks(sess, summary_writer, None)
+        model_trainer.evaluate_all_tasks(sess, summary_writer, None, train_set=False)
       elif config.mode == 'infer':
         utils.heading('START INFER ({:})'.format(config.model_name))
         progress.best_model_saver.restore(sess, tf.train.latest_checkpoint(
@@ -112,6 +112,16 @@ def main():
         progress.best_model_saver.restore(sess, tf.train.latest_checkpoint(
           config.checkpoints_dir))
         model_trainer.translate(sess)
+      elif config.mode == 'eval-translate-train':
+        utils.heading('RUN EVALUATION ({:})'.format(config.model_name))
+        progress.best_model_saver.restore(sess, tf.train.latest_checkpoint(
+          config.checkpoints_dir))
+        model_trainer.evaluate_all_tasks(sess, summary_writer, None, train_set=True, is_translate=True)
+      elif config.mode == 'eval-translate-dev':
+        utils.heading('RUN EVALUATION ({:})'.format(config.model_name))
+        progress.best_model_saver.restore(sess, tf.train.latest_checkpoint(
+          config.checkpoints_dir))
+        model_trainer.evaluate_all_tasks(sess, summary_writer, None, train_set=False, is_translate=True)
       else:
         raise ValueError('Mode must be "train" or "eval"')
 

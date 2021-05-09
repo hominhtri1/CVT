@@ -135,9 +135,10 @@ class Model(object):
   def get_global_step(self, sess):
     return sess.run(self._global_step)
 
-  def translate(self, sess, src):
-    examples = TranslationDataLoader.get_examples_translate(self._config, src, 'translate')
-    mb = Dataset.make_minibatch_translate(self._config, examples)
+  def translate(self, sess, src=None, mb=None):
+    if src != None and mb == None:
+      examples = TranslationDataLoader.get_examples_translate(self._config, src, 'translate')
+      mb = Dataset.make_minibatch_translate(self._config, examples)
 
     state = sess.run(
         [self._tester.encoder.bi_state],
@@ -147,7 +148,6 @@ class Model(object):
     tgt_list = []
     feed = self._inputs.create_feed_dict(mb, False)
     translate_module = self._tester.modules['translate']
-    word_vocab_reversed_vi = embeddings.get_word_vocab_reversed_vi(self._config)
     cur_word = 2
 
     while True:
@@ -159,10 +159,9 @@ class Model(object):
         feed_dict=feed)
       word_out = word_out_arr[0, 0]
 
-      word_out_str = word_vocab_reversed_vi[word_out]
-      tgt_list.append(word_out_str)
+      tgt_list.append(word_out)
 
-      if word_out_str == '<end>' or len(tgt_list) == 100:
+      if word_out == embeddings.END or len(tgt_list) == 100:
         break
 
       cur_word = word_out

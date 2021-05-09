@@ -99,6 +99,7 @@ class Config(object):
     self.train_batch_size = self.train_batch_size_dict[self.task]  # train batch size
     self.test_batch_size = self.test_batch_size_dict[self.task]  # test batch size
     self.infer_batch_size = 64  # infer batch size
+    self.translate_batch_size = 1
     self.buckets = [(0, 15), (15, 40), (40, 1000)]  # buckets for binning
                                                     # sentences by length
 

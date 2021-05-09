@@ -24,7 +24,7 @@ import time
 import numpy as np
 import tensorflow as tf
 
-from base import utils
+from base import utils, embeddings
 from model import multitask_model
 from task_specific import task_definitions
 
@@ -97,9 +97,12 @@ class Trainer(object):
         progress.write(sess, global_step)
         utils.log()
 
-  def evaluate_all_tasks(self, sess, summary_writer, history, train_set=False):
+  def evaluate_all_tasks(self, sess, summary_writer, history, train_set=False, is_translate=False):
     for task in self.tasks:
-      results = self._evaluate_task(sess, task, summary_writer, train_set)
+      if not is_translate:
+        results = self._evaluate_task(sess, task, summary_writer, train_set)
+      else:
+        results = self._evaluate_translate(sess, task, summary_writer, train_set)
       if history is not None:
         results.append(('step', self._model.get_global_step(sess)))
         history.append(results)
@@ -203,9 +206,27 @@ class Trainer(object):
   def translate(self, sess):
     src = 'he went    quot  dad   this has been the best day of my life   ever    quot'
 
-    tgt = self._model.translate(sess, src)
+    tgt = self._model.translate(sess, src=src)
 
-    print(tgt)
+    word_vocab_reversed_vi = embeddings.get_word_vocab_reversed_vi(self._config)
+    tgt_str = ' '.join([word_vocab_reversed_vi[x] for x in tgt])
+    print(tgt_str)
+
+  def _evaluate_translate(self, sess, task, summary_writer, train_set):
+    scorer = task.get_scorer()
+    data = task.train_set if train_set else task.val_set
+    for i, mb in enumerate(data.get_minibatches(self._config.translate_batch_size)):
+      if i == 100:
+        break
+      tgt = self._model.translate(sess, mb=mb)
+      scorer.update(mb.examples, [tgt], 0)
+
+    results = scorer.get_results(task.name +
+                                 ('_train_' if train_set else '_dev_'))
+    utils.log(task.name.upper() + ': ' + scorer.results_str())
+    write_summary(summary_writer, results,
+                  global_step=self._model.get_global_step(sess))
+    return results
 
 
 def write_summary(writer, results, global_step):
