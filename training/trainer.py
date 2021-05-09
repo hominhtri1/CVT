@@ -200,6 +200,13 @@ class Trainer(object):
   def _np_str(self, np_arr):
     return ' '.join([str(x) for x in np_arr])
 
+  def translate(self, sess):
+    src = 'he went    quot  dad   this has been the best day of my life   ever    quot'
+
+    tgt = self._model.translate(sess, src)
+
+    print(tgt)
+
 
 def write_summary(writer, results, global_step):
   for k, v in results:

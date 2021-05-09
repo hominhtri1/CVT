@@ -21,8 +21,11 @@
 
 import tensorflow as tf
 
+from base import embeddings
+from corpus_processing.minibatching import Dataset
 from model import encoder
 from model import shared_inputs
+from task_specific.translation.translation_data import TranslationDataLoader
 
 
 class Inference(object):
@@ -131,3 +134,33 @@ class Model(object):
 
   def get_global_step(self, sess):
     return sess.run(self._global_step)
+
+  def translate(self, sess, src):
+    examples = TranslationDataLoader.get_examples_translate(self._config, src, 'translate')
+    mb = Dataset.make_minibatch_translate(self._config, examples)
+
+    state = sess.run(
+        [self._tester.encoder.bi_state],
+        feed_dict=self._create_feed_dict(mb, self._tester, False))
+
+    tgt_list = []
+    translate_module = self._tester.modules['translate']
+    word_vocab_reversed_vi = embeddings.get_word_vocab_reversed_vi(self._config)
+    cur_word = 2
+
+    while True:
+      word_out, state = sess.run(
+        [translate_module.translate_preds,
+         translate_module.translate_state],
+        feed_dict=translate_module.create_feed_dict_translate(cur_word, state))
+
+      word_out_str = word_vocab_reversed_vi(word_out[0])
+      tgt_list.append(word_out_str)
+
+      if word_out_str == '<end>' or len(tgt_list) == 100:
+        break
+
+      cur_word = word_out[0]
+
+    tgt = ' '.join(str(x) for x in tgt_list)
+    return tgt

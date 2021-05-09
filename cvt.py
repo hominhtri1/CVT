@@ -102,6 +102,11 @@ def main():
         progress.best_model_saver.restore(sess, tf.train.latest_checkpoint(
             config.checkpoints_dir))
         model_trainer.infer(sess)
+      elif config.mode == 'translate':
+        utils.heading('START TRANSLATE ({:})'.format(config.model_name))
+        progress.best_model_saver.restore(sess, tf.train.latest_checkpoint(
+          config.checkpoints_dir))
+        model_trainer.translate(sess)
       else:
         raise ValueError('Mode must be "train" or "eval"')
 

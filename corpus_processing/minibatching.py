@@ -140,6 +140,31 @@ class Dataset(object):
         mask=mask,
     )
 
+  @staticmethod
+  def make_minibatch_translate(config, examples):
+    sentence_lengths = np.array([len(e.words) for e in examples])
+    max_word_length = min(max(max(len(word) for word in e.chars)
+                              for e in examples),
+                          config.max_word_length)
+    characters = [[[embeddings.PAD] + [embeddings.START] + w[:max_word_length] +
+                   [embeddings.END] + [embeddings.PAD] for w in e.chars]
+                  for e in examples]
+    mask = build_array([[0] + [1] * (length - 2) + [0]
+                        for length in sentence_lengths]) # mask is not used
+    words = build_array([e.words for e in examples])
+    chars = build_array(characters, dtype='int16')
+    return Minibatch(
+      task_name='translate',
+      size=len(examples),
+      examples=examples,
+      ids=[0],
+      teacher_predictions={},
+      words=words,
+      chars=chars,
+      lengths=sentence_lengths,
+      mask=mask,
+    )
+
 
 Minibatch = collections.namedtuple('Minibatch', [
     'task_name', 'size', 'examples', 'ids', 'teacher_predictions',

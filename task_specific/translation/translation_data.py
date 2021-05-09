@@ -80,6 +80,25 @@ class TranslationDataLoader(object):
     ]
     return examples
 
+  @staticmethod
+  def get_examples_translate(config, src, split):
+    words_src = src.strip().split()
+    size_src = len(words_src)
+    words_tgt = []
+    size_tgt = 1
+
+    word_vocab = embeddings.get_word_vocab(config)
+    word_vocab_vi = embeddings.get_word_vocab_vi(config)
+    char_vocab = embeddings.get_char_vocab()
+
+    examples = [
+      TranslationExample(
+        config, words_src, words_tgt, size_src, size_tgt,
+        word_vocab, char_vocab, 'translate', word_vocab_vi, split)
+    ]
+
+    return examples
+
 class TranslationExample(example.Example):
   def __init__(self, config, words_src, words_tgt, size_src, size_tgt,
                word_vocab, char_vocab, task_name, word_vocab_vi, split):
