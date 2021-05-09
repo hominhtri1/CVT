@@ -13,7 +13,7 @@ class AccuracyScorer(translation_word_level_scorer.TranslationWordLevelScorer):
   def _get_results(self):
     correct, count = 0, 0
     references, hypotheses = [], []
-    result_samples = np.random.choice(self._config.train_set_line_count, self._config.result_sample_line_count, replace=False)
+    result_samples = np.random.choice(len(self._examples), self._config.result_sample_line_count, replace=False)
     for id in result_samples:
       print(self._examples[id].words_tgt_out)
       print(self._preds[id])
