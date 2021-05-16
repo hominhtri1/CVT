@@ -63,35 +63,39 @@ class TranslationModule(task_module.SemiSupervisedModule):
 
             self.logits = outputs.rnn_output
           else:
-            '''
-            helper = tf.contrib.seq2seq.GreedyEmbeddingHelper(
-              word_embedding_matrix,
-              [embeddings.START, embeddings.START],
-              embeddings.END)
+            if config.decode_mode == 'greedy':
+              helper = tf.contrib.seq2seq.GreedyEmbeddingHelper(
+                word_embedding_matrix,
+                [embeddings.START, embeddings.START],
+                embeddings.END)
 
-            decoder = tf.contrib.seq2seq.BasicDecoder(
-              decoder_lstm,
-              helper,
-              decoder_state,
-              decoder_output_layer)
-            '''
+              decoder = tf.contrib.seq2seq.BasicDecoder(
+                decoder_lstm,
+                helper,
+                decoder_state,
+                decoder_output_layer)
+            elif config.decode_mode == 'beam':
+              decoder_state = tf.contrib.seq2seq.tile_batch(
+                decoder_state, multiplier=config.beam_width)
 
-            decoder = tf.contrib.seq2seq.BeamSearchDecoder(
-              cell=decoder_lstm,
-              embedding=word_embedding_matrix,
-              start_tokens=[embeddings.START, embeddings.START],
-              end_token=embeddings.END,
-              initial_state=decoder_state,
-              beam_width=config.beam_width,
-              output_layer=decoder_output_layer)
+              decoder = tf.contrib.seq2seq.BeamSearchDecoder(
+                cell=decoder_lstm,
+                embedding=word_embedding_matrix,
+                start_tokens=[embeddings.START, embeddings.START],
+                end_token=embeddings.END,
+                initial_state=decoder_state,
+                beam_width=config.beam_width,
+                output_layer=decoder_output_layer)
 
             outputs, state, _ = tf.contrib.seq2seq.dynamic_decode(
               decoder,
               maximum_iterations=config.max_translate_length)
               #swap_memory=True)
 
-            #self.sample_ids = outputs.sample_id
-            self.sample_ids = outputs.predicted_ids
+            if config.decode_mode == 'greedy':
+              self.sample_ids = outputs.sample_id
+            elif config.decode_mode == 'beam':
+              self.sample_ids = outputs.predicted_ids
 
           '''
           outputs, state = tf.nn.dynamic_rnn(

@@ -156,7 +156,20 @@ class Model(object):
       feed_dict=feed)
     tgt_list = tgt_list[0]
 
-    return tgt_list
+    if self._config.decode_mode == 'greedy':
+      return tgt_list
+
+    tgt_list_out = []
+    cur_index = 0
+
+    while cur_index < len(tgt_list):
+      if tgt_list[cur_index, 0] == embeddings.END:
+        break
+
+      tgt_list_out.append(tgt_list[cur_index, 0])
+      cur_index += 1
+
+    return tgt_list_out
 
     '''
     tgt_list = []

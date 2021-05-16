@@ -39,6 +39,8 @@ class Config(object):
     self.task = self.task_names[0]
     self.is_semisup = False  # whether to use CVT or train purely supervised
     self.for_preprocessing = False  # is this for the preprocessing script
+    self.decode_modes = ['greedy', 'beam']
+    self.decode_mode = self.decode_modes[1]
 
     # embeddings
     self.use_pretrained_embeddings = True
