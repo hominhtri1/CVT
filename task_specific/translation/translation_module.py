@@ -41,7 +41,7 @@ class TranslationModule(task_module.SemiSupervisedModule):
             word_embeddings = tf.nn.dropout(word_embeddings, inputs.keep_prob)
             word_embeddings *= tf.get_variable('emb_scale', initializer=1.0)
 
-          decoder_lstm = model_helpers.lstm_cell(config.bidirectional_sizes[0], inputs.keep_prob,
+          decoder_lstm = model_helpers.multi_lstm_cell(config.bidirectional_sizes, inputs.keep_prob,
                                       config.projection_size)
 
           decoder_output_layer = tf.layers.Dense(n_classes, name='predict')

@@ -54,8 +54,8 @@ class Config(object):
     self.tgt_vocab_size = self.vi_vocab_size
 
     # encoder
-    self.unidirectional_sizes_dict = {'chunk': [1024], 'senclass': [256], 'translate': [1024]}
-    self.bidirectional_sizes_dict = {'chunk': [512], 'senclass': [128], 'translate': [512]}
+    self.unidirectional_sizes_dict = {'chunk': [1024], 'senclass': [256], 'translate': [1024, 1024]}
+    self.bidirectional_sizes_dict = {'chunk': [512], 'senclass': [128], 'translate': [512, 512]}
     self.projection_size_dict = {'chunk': 512, 'senclass': 128, 'translate': 512}
 
     self.use_chars = True  # whether to include a character-level cnn
