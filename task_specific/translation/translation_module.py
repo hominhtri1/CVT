@@ -133,10 +133,15 @@ class TranslationModule(task_module.SemiSupervisedModule):
     ###
 
     self.word_in = tf.placeholder(tf.int32, [None, None], name=task_name + '_word_in')
-    self.state_c_in = tf.placeholder(tf.float32, [None, None], name=task_name + '_state_c_in')
-    self.state_h_in = tf.placeholder(tf.float32, [None, None], name=task_name + '_state_h_in')
+    self.state_c_in_0 = tf.placeholder(tf.float32, [None, None], name=task_name + '_state_c_in_0')
+    self.state_h_in_0 = tf.placeholder(tf.float32, [None, None], name=task_name + '_state_h_in_0')
+    self.state_c_in_1 = tf.placeholder(tf.float32, [None, None], name=task_name + '_state_c_in_1')
+    self.state_h_in_1 = tf.placeholder(tf.float32, [None, None], name=task_name + '_state_h_in_1')
 
-    state_in = tf.nn.rnn_cell.LSTMStateTuple(self.state_c_in, self.state_h_in)
+    state_in_0 = tf.nn.rnn_cell.LSTMStateTuple(self.state_c_in_0, self.state_h_in_0)
+    state_in_1 = tf.nn.rnn_cell.LSTMStateTuple(self.state_c_in_1, self.state_h_in_1)
+
+    state_in = (state_in_0, state_in_1)
 
     translate_primary = PredictionModule('primary', state_in, is_translate=True, word_in=self.word_in)
 
@@ -159,7 +164,9 @@ class TranslationModule(task_module.SemiSupervisedModule):
 
   def update_feed_dict_translate(self, feed, word_in=None, state_in=None, size_tgt=None):
     #feed[self.word_in] = [[word_in]]
-    feed[self.state_c_in] = [state_in.c[0], state_in.c[0]]
-    feed[self.state_h_in] = [state_in.h[0], state_in.h[0]]
+    feed[self.state_c_in_0] = [state_in[0].c[0], state_in[0].c[0]]
+    feed[self.state_h_in_0] = [state_in[0].h[0], state_in[0].h[0]]
+    feed[self.state_c_in_1] = [state_in[1].c[0], state_in[1].c[0]]
+    feed[self.state_h_in_1] = [state_in[1].h[0], state_in[1].h[0]]
     #feed[self.size_tgt] = [1]
     feed[self.size_tgt] = [size_tgt, size_tgt]
