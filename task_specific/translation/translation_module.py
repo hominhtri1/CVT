@@ -12,13 +12,13 @@ class TranslationModule(task_module.SemiSupervisedModule):
     super(TranslationModule, self).__init__()
     self.task_name = task_name
     self.n_classes = n_classes
-    self.words_tgt_in = words_tgt_in = tf.placeholder(tf.int64, [None, None],
+    self.words_tgt_in = words_tgt_in = tf.placeholder(tf.int32, [None, None],
                                                       name=task_name + '_words_tgt_in')
     self.words_tgt_out = words_tgt_out = tf.placeholder(tf.float32, [None, None, None],
                                                         name=task_name + '_words_tgt_out')
-    self.size_src = size_src = tf.placeholder(tf.int64, [None],
+    self.size_src = size_src = tf.placeholder(tf.int32, [None],
                                               name=task_name + '_size_src')
-    self.size_tgt = size_tgt = tf.placeholder(tf.int64, [None],
+    self.size_tgt = size_tgt = tf.placeholder(tf.int32, [None],
                                               name=task_name + '_size_tgt')
     pretrained_embeddings_vi = utils.load_cpickle(config.word_embeddings_vi)
 
@@ -89,7 +89,7 @@ class TranslationModule(task_module.SemiSupervisedModule):
 
     ###
 
-    self.word_in = tf.placeholder(tf.int64, [None, None], name=task_name + '_word_in')
+    self.word_in = tf.placeholder(tf.int32, [None, None], name=task_name + '_word_in')
     self.state_c_in = tf.placeholder(tf.float32, [None, None], name=task_name + '_state_c_in')
     self.state_h_in = tf.placeholder(tf.float32, [None, None], name=task_name + '_state_h_in')
 
