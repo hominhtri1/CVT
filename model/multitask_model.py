@@ -148,7 +148,7 @@ class Model(object):
     feed = self._inputs.create_feed_dict(mb, False)
     translate_module = self._tester.modules['translate']
 
-    translate_module.update_feed_dict_translate(feed, state=state, size_tgt=mb.examples[0].size_tgt)
+    translate_module.update_feed_dict_translate(feed, state_in=state, size_tgt=mb.examples[0].size_tgt)
 
     tgt_list, state = sess.run(
       [translate_module.translate_preds,
