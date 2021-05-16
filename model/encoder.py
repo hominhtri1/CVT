@@ -116,5 +116,5 @@ class Encoder(object):
         )
         current_outputs = tf.concat([outputs_fw, outputs_bw], axis=-1)
         current_states.append(state_fw)
-      current_states = tuple(current_states)
+        current_states = tuple(current_states)
       return outputs_fw, outputs_bw, current_outputs, current_states
