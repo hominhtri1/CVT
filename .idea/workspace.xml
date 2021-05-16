@@ -21,8 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9d7e3a73-cb26-4827-8258-7d1cee2030a0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/configure.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/configure.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task_specific/translation/translation_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_specific/translation/translation_module.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,14 +76,7 @@
       <workItem from="1620465459335" duration="5531000" />
       <workItem from="1620483616623" duration="4869000" />
       <workItem from="1620529442117" duration="15566000" />
-      <workItem from="1621136154584" duration="22072000" />
-    </task>
-    <task id="LOCAL-00084" summary="Use embedding size 100. Add pretrained embedding for vietnamese">
-      <created>1620053014495</created>
-      <option name="number" value="00084" />
-      <option name="presentableId" value="LOCAL-00084" />
-      <option name="project" value="LOCAL" />
-      <updated>1620053014495</updated>
+      <workItem from="1621136154584" duration="22756000" />
     </task>
     <task id="LOCAL-00085" summary="Fix embedding loader bug">
       <created>1620053218846</created>
@@ -423,7 +414,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621162219558</updated>
     </task>
-    <option name="localTasksCounter" value="133" />
+    <task id="LOCAL-00133" summary="Increase model size">
+      <created>1621182022507</created>
+      <option name="number" value="00133" />
+      <option name="presentableId" value="LOCAL-00133" />
+      <option name="project" value="LOCAL" />
+      <updated>1621182022507</updated>
+    </task>
+    <option name="localTasksCounter" value="134" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -448,7 +446,6 @@
     <MESSAGE value="Update bleu score" />
     <MESSAGE value="Update Adam" />
     <MESSAGE value="Use char cnn" />
-    <MESSAGE value="Increase model size" />
     <MESSAGE value="Add code to translate without tgt" />
     <MESSAGE value="Update translate input dimension" />
     <MESSAGE value="Update translate state dimension" />
@@ -470,7 +467,8 @@
     <MESSAGE value="Add beam search decoder" />
     <MESSAGE value="Fix bug with output name of beam decoder" />
     <MESSAGE value="Fix bug with beam decoder" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix bug with beam decoder" />
+    <MESSAGE value="Increase model size" />
+    <option name="LAST_COMMIT_MESSAGE" value="Increase model size" />
     <option name="PRESELECT_EXISTING_CHANGELIST" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -482,10 +480,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="515" y="254" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog/0.0.1366.728@0.0.1366.728" timestamp="1617778145837" />
-    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2" timestamp="1621162218432">
+    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2" timestamp="1621182021543">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1621162218432" />
+    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1621182021543" />
     <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1621168369647">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -506,10 +504,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="530" y="277" key="VCS.ChangelistChooser/0.0.1366.728@0.0.1366.728" timestamp="1621162002059" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1621168349997">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1621182026973">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1621168349997" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1621182026973" />
     <state x="234" y="60" width="919" height="595" key="find.popup" timestamp="1621161092269">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
