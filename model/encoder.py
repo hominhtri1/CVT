@@ -102,7 +102,7 @@ class Encoder(object):
     with tf.variable_scope('bidirectional_reprs'):
       current_outputs = uni_reprs
       outputs_fw, outputs_bw = None, None
-      current_states = []
+      current_state = None
       for size in self._config.bidirectional_sizes:
         (outputs_fw, outputs_bw), (state_fw, state_bw) = tf.nn.bidirectional_dynamic_rnn(
             model_helpers.lstm_cell(size, self._inputs.keep_prob,
@@ -115,6 +115,5 @@ class Encoder(object):
             scope='bilstm'
         )
         current_outputs = tf.concat([outputs_fw, outputs_bw], axis=-1)
-        current_states.append(state_fw)
-        current_states = tuple(current_states)
-      return outputs_fw, outputs_bw, current_outputs, current_states
+        current_state = state_fw
+      return outputs_fw, outputs_bw, current_outputs, current_state
