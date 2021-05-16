@@ -21,8 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9d7e3a73-cb26-4827-8258-7d1cee2030a0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/configure.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/configure.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/multitask_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/multitask_model.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/task_specific/translation/translation_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_specific/translation/translation_module.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -79,14 +77,7 @@
       <workItem from="1620465459335" duration="5531000" />
       <workItem from="1620483616623" duration="4869000" />
       <workItem from="1620529442117" duration="15566000" />
-      <workItem from="1621136154584" duration="9049000" />
-    </task>
-    <task id="LOCAL-00077" summary="Add more task specific configs">
-      <created>1619601303204</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1619601303204</updated>
+      <workItem from="1621136154584" duration="11699000" />
     </task>
     <task id="LOCAL-00078" summary="Update projection size dict config">
       <created>1619614702687</created>
@@ -424,7 +415,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621151236893</updated>
     </task>
-    <option name="localTasksCounter" value="126" />
+    <task id="LOCAL-00126" summary="Use GreedyEmbeddingHelper for translate">
+      <created>1621153671145</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1621153671145</updated>
+    </task>
+    <option name="localTasksCounter" value="127" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -446,7 +444,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/../.." />
     </ignored-roots>
-    <MESSAGE value="Add split info in example class" />
     <MESSAGE value="Test on one input sample" />
     <MESSAGE value="Add embed mode" />
     <MESSAGE value="Add embed mode for en" />
@@ -471,7 +468,8 @@
     <MESSAGE value="Experiment with BasicDecoder" />
     <MESSAGE value="Change all to int32" />
     <MESSAGE value="Fix bug with decoder output" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix bug with decoder output" />
+    <MESSAGE value="Use GreedyEmbeddingHelper for translate" />
+    <option name="LAST_COMMIT_MESSAGE" value="Use GreedyEmbeddingHelper for translate" />
     <option name="PRESELECT_EXISTING_CHANGELIST" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -483,10 +481,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="515" y="254" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog/0.0.1366.728@0.0.1366.728" timestamp="1617778145837" />
-    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2" timestamp="1621151236084">
+    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2" timestamp="1621153669576">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1621151236084" />
+    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1621153669576" />
     <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1621151752408">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -507,10 +505,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="530" y="277" key="VCS.ChangelistChooser/0.0.1366.728@0.0.1366.728" timestamp="1620539301864" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1621151263647">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1621153675312">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1621151263647" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1621153675312" />
     <state x="234" y="60" width="919" height="595" key="find.popup" timestamp="1621150820181">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

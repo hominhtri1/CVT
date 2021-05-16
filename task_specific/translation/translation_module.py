@@ -63,7 +63,7 @@ class TranslationModule(task_module.SemiSupervisedModule):
           else:
             helper = tf.contrib.seq2seq.GreedyEmbeddingHelper(
               word_embedding_matrix,
-              [embeddings.START],
+              [embeddings.START, embeddings.START],
               embeddings.END)
 
             decoder = tf.contrib.seq2seq.BasicDecoder(
@@ -139,7 +139,7 @@ class TranslationModule(task_module.SemiSupervisedModule):
 
   def update_feed_dict_translate(self, feed, word_in=None, state_in=None, size_tgt=None):
     #feed[self.word_in] = [[word_in]]
-    feed[self.state_c_in] = state_in.c
-    feed[self.state_h_in] = state_in.h
+    feed[self.state_c_in] = [state_in.c[0], state_in.c[0]]
+    feed[self.state_h_in] = [state_in.h[0], state_in.h[0]]
     #feed[self.size_tgt] = [1]
-    feed[self.size_tgt] = [size_tgt]
+    feed[self.size_tgt] = [size_tgt, size_tgt]
