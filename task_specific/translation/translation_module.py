@@ -1,7 +1,7 @@
 import numpy as np
 import tensorflow as tf
 
-from base import utils
+from base import utils, embeddings
 from corpus_processing import minibatching
 from model import task_module, model_helpers
 
@@ -41,19 +41,41 @@ class TranslationModule(task_module.SemiSupervisedModule):
             word_embeddings = tf.nn.dropout(word_embeddings, inputs.keep_prob)
             word_embeddings *= tf.get_variable('emb_scale', initializer=1.0)
 
-          helper = tf.contrib.seq2seq.TrainingHelper(
-            word_embeddings,
-            size_tgt)
+          decoder_lstm = model_helpers.lstm_cell(config.bidirectional_sizes[0], inputs.keep_prob,
+                                      config.projection_size)
 
-          my_decoder = tf.contrib.seq2seq.BasicDecoder(
-            model_helpers.lstm_cell(config.bidirectional_sizes[0], inputs.keep_prob,
-                                    config.projection_size),
-            helper,
-            decoder_state)
+          decoder_output_layer = tf.layers.Dense(n_classes, name='predict')
 
-          outputs, state, _ = tf.contrib.seq2seq.dynamic_decode(
-            my_decoder)
-            #swap_memory=True)
+          if not is_translate:
+            helper = tf.contrib.seq2seq.TrainingHelper(
+              word_embeddings,
+              size_tgt)
+
+            decoder = tf.contrib.seq2seq.BasicDecoder(
+              decoder_lstm,
+              helper,
+              decoder_state,
+              decoder_output_layer)
+
+            outputs, state, _ = tf.contrib.seq2seq.dynamic_decode(
+              decoder)
+            # swap_memory=True)
+          else:
+            helper = tf.contrib.seq2seq.GreedyEmbeddingHelper(
+              word_embedding_matrix,
+              [embeddings.START],
+              embeddings.END)
+
+            decoder = tf.contrib.seq2seq.BasicDecoder(
+              decoder_lstm,
+              helper,
+              decoder_state,
+              decoder_output_layer)
+
+            outputs, state, _ = tf.contrib.seq2seq.dynamic_decode(
+              decoder,
+              maximum_iterations=config.max_translate_length)
+              #swap_memory=True)
 
           '''
           outputs, state = tf.nn.dynamic_rnn(
@@ -70,7 +92,8 @@ class TranslationModule(task_module.SemiSupervisedModule):
           self.state = state
 
           #self.logits = tf.layers.dense(outputs, n_classes, name='predict')
-          self.logits = tf.layers.dense(outputs.rnn_output, n_classes, name='predict')
+          #self.logits = tf.layers.dense(outputs.rnn_output, n_classes, name='predict')
+          self.logits = outputs.rnn_output
 
         if is_translate:
           return
@@ -114,8 +137,9 @@ class TranslationModule(task_module.SemiSupervisedModule):
     size_tgt = [e.size_tgt for e in mb.examples]
     feed[self.size_tgt] = size_tgt
 
-  def update_feed_dict_translate(self, feed, word_in, state_in):
-    feed[self.word_in] = [[word_in]]
+  def update_feed_dict_translate(self, feed, word_in=None, state_in=None, size_tgt=None):
+    #feed[self.word_in] = [[word_in]]
     feed[self.state_c_in] = state_in.c
     feed[self.state_h_in] = state_in.h
-    feed[self.size_tgt] = [1]
+    #feed[self.size_tgt] = [1]
+    feed[self.size_tgt] = [size_tgt]

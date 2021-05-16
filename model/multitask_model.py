@@ -145,6 +145,20 @@ class Model(object):
         feed_dict=self._create_feed_dict(mb, self._tester, False))
     state = state[0]
 
+    feed = self._inputs.create_feed_dict(mb, False)
+    translate_module = self._tester.modules['translate']
+
+    translate_module.update_feed_dict_translate(feed, state=state, size_tgt=mb.examples[0].size_tgt)
+
+    tgt_list, state = sess.run(
+      [translate_module.translate_preds,
+       translate_module.translate_state],
+      feed_dict=feed)
+    tgt_list = tgt_list[0]
+
+    return tgt_list
+
+    '''
     tgt_list = []
     feed = self._inputs.create_feed_dict(mb, False)
     translate_module = self._tester.modules['translate']
@@ -161,9 +175,10 @@ class Model(object):
 
       tgt_list.append(word_out)
 
-      if word_out == embeddings.END or len(tgt_list) == 100:
+      if word_out == embeddings.END or len(tgt_list) == self._config.max_translate_length:
         break
 
       cur_word = word_out
 
     return tgt_list
+    '''
