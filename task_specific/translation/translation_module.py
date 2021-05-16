@@ -69,7 +69,8 @@ class TranslationModule(task_module.SemiSupervisedModule):
 
           self.state = state
 
-          self.logits = tf.layers.dense(outputs, n_classes, name='predict')
+          #self.logits = tf.layers.dense(outputs, n_classes, name='predict')
+          self.logits = tf.layers.dense(outputs.rnn_output, n_classes, name='predict')
 
         if is_translate:
           return

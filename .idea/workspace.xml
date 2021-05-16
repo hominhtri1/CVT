@@ -77,21 +77,7 @@
       <workItem from="1620465459335" duration="5531000" />
       <workItem from="1620483616623" duration="4869000" />
       <workItem from="1620529442117" duration="15566000" />
-      <workItem from="1621136154584" duration="5964000" />
-    </task>
-    <task id="LOCAL-00074" summary="Use Adam optimizer, update loss count">
-      <created>1619593830457</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1619593830457</updated>
-    </task>
-    <task id="LOCAL-00075" summary="Add more digits when displaying loss">
-      <created>1619594397077</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1619594397077</updated>
+      <workItem from="1621136154584" duration="6631000" />
     </task>
     <task id="LOCAL-00076" summary="Update loss function">
       <created>1619595458826</created>
@@ -422,7 +408,21 @@
       <option name="project" value="LOCAL" />
       <updated>1621138612305</updated>
     </task>
-    <option name="localTasksCounter" value="123" />
+    <task id="LOCAL-00123" summary="Experiment with BasicDecoder">
+      <created>1621150544908</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1621150544908</updated>
+    </task>
+    <task id="LOCAL-00124" summary="Change all to int32">
+      <created>1621150816481</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1621150816481</updated>
+    </task>
+    <option name="localTasksCounter" value="125" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -444,8 +444,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/../.." />
     </ignored-roots>
-    <MESSAGE value="Update rnn cell in translate module to lstm cell" />
-    <MESSAGE value="Fix bug with initial state of translate module's lstm" />
     <MESSAGE value="Test with overfitting on small dataset" />
     <MESSAGE value="Add split info in example class" />
     <MESSAGE value="Test on one input sample" />
@@ -469,7 +467,9 @@
     <MESSAGE value="Fix bug in translate function" />
     <MESSAGE value="Add get_minibatches_without_weight for translate eval" />
     <MESSAGE value="Add print output to eval translate" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add print output to eval translate" />
+    <MESSAGE value="Experiment with BasicDecoder" />
+    <MESSAGE value="Change all to int32" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change all to int32" />
     <option name="PRESELECT_EXISTING_CHANGELIST" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -481,10 +481,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="515" y="254" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog/0.0.1366.728@0.0.1366.728" timestamp="1617778145837" />
-    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2" timestamp="1621138611362">
+    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2" timestamp="1621150815522">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1621138611362" />
+    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1621150815522" />
     <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1620550050880">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -505,14 +505,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="530" y="277" key="VCS.ChangelistChooser/0.0.1366.728@0.0.1366.728" timestamp="1620539301864" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1621138615186">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1621150822746">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1621138615186" />
-    <state x="234" y="60" width="919" height="595" key="find.popup" timestamp="1621137382483">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1621150822746" />
+    <state x="234" y="60" width="919" height="595" key="find.popup" timestamp="1621150820181">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="234" y="60" width="919" height="595" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1621137382483" />
+    <state x="234" y="60" width="919" height="595" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1621150820181" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1621136906245">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
