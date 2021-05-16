@@ -41,6 +41,21 @@ class TranslationModule(task_module.SemiSupervisedModule):
             word_embeddings = tf.nn.dropout(word_embeddings, inputs.keep_prob)
             word_embeddings *= tf.get_variable('emb_scale', initializer=1.0)
 
+          helper = tf.contrib.seq2seq.TrainingHelper(
+            word_embeddings,
+            size_tgt)
+
+          my_decoder = tf.contrib.seq2seq.BasicDecoder(
+            model_helpers.lstm_cell(config.bidirectional_sizes[0], inputs.keep_prob,
+                                    config.projection_size),
+            helper,
+            decoder_state)
+
+          outputs, state, _ = tf.contrib.seq2seq.dynamic_decode(
+            my_decoder)
+            #swap_memory=True)
+
+          '''
           outputs, state = tf.nn.dynamic_rnn(
             model_helpers.lstm_cell(config.bidirectional_sizes[0], inputs.keep_prob,
                                     config.projection_size),
@@ -50,6 +65,7 @@ class TranslationModule(task_module.SemiSupervisedModule):
             sequence_length=size_tgt,
             scope='predictlstm'
           )
+          '''
 
           self.state = state
 
