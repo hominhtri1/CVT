@@ -215,7 +215,7 @@ class Trainer(object):
   def _evaluate_translate(self, sess, task, summary_writer, train_set):
     scorer = task.get_scorer()
     data = task.train_set if train_set else task.val_set
-    for i, mb in enumerate(data.get_minibatches(self._config.translate_batch_size)):
+    for i, mb in enumerate(data.get_minibatches_without_weight(self._config.translate_batch_size)):
       if i == 100:
         break
       tgt = self._model.translate(sess, mb=mb)

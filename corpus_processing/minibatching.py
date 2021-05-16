@@ -105,6 +105,26 @@ class Dataset(object):
     for id_batch in id_batches:
       yield self._make_minibatch(id_batch)
 
+  def get_minibatches_without_weight(self, minibatch_size):
+    by_bucket = collections.defaultdict(list)
+    for i, e in enumerate(self.examples):
+      by_bucket[get_bucket(self._config, len(e.words))].append(i)
+
+    id_batches = []
+    for _, ids in by_bucket.items():
+      ids = np.array(ids)
+      np.random.shuffle(ids)
+      curr_batch = []
+      for i, curr_id in enumerate(ids):
+        curr_batch.append(curr_id)
+        if (i == len(ids) - 1 or len(curr_batch) == minibatch_size):
+          id_batches.append(np.array(curr_batch))
+          curr_batch = []
+    random.shuffle(id_batches)
+
+    for id_batch in id_batches:
+      yield self._make_minibatch(id_batch)
+
   def endless_minibatches(self, minibatch_size):
     while True:
       for mb in self.get_minibatches(minibatch_size):
