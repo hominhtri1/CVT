@@ -103,6 +103,7 @@ class Config(object):
     self.buckets = [(0, 15), (15, 40), (40, 1000)]  # buckets for binning
                                                     # sentences by length
     self.max_translate_length = 100
+    self.beam_width = 1
 
     # training
     self.print_every = 10  # how often to print out training progress

@@ -61,6 +61,7 @@ class TranslationModule(task_module.SemiSupervisedModule):
               decoder)
             # swap_memory=True)
           else:
+            '''
             helper = tf.contrib.seq2seq.GreedyEmbeddingHelper(
               word_embedding_matrix,
               [embeddings.START, embeddings.START],
@@ -71,6 +72,16 @@ class TranslationModule(task_module.SemiSupervisedModule):
               helper,
               decoder_state,
               decoder_output_layer)
+            '''
+
+            decoder = tf.contrib.seq2seq.BeamSearchDecoder(
+              cell=decoder_lstm,
+              embedding=word_embedding_matrix,
+              start_tokens=[embeddings.START, embeddings.START],
+              end_token=embeddings.END,
+              initial_state=decoder_state,
+              beam_width=config.beam_width,
+              output_layer=decoder_output_layer)
 
             outputs, state, _ = tf.contrib.seq2seq.dynamic_decode(
               decoder,
