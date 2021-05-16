@@ -19,11 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d7e3a73-cb26-4827-8258-7d1cee2030a0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpus_processing/minibatching.py" beforeDir="false" afterPath="$PROJECT_DIR$/corpus_processing/minibatching.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/training/trainer.py" beforeDir="false" afterPath="$PROJECT_DIR$/training/trainer.py" afterDir="false" />
-    </list>
+    <list default="true" id="9d7e3a73-cb26-4827-8258-7d1cee2030a0" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -78,14 +74,7 @@
       <workItem from="1620465459335" duration="5531000" />
       <workItem from="1620483616623" duration="4869000" />
       <workItem from="1620529442117" duration="15566000" />
-      <workItem from="1621136154584" duration="1904000" />
-    </task>
-    <task id="LOCAL-00072" summary="Remove loss summary flushing">
-      <created>1619588183438</created>
-      <option name="number" value="00072" />
-      <option name="presentableId" value="LOCAL-00072" />
-      <option name="project" value="LOCAL" />
-      <updated>1619588183438</updated>
+      <workItem from="1621136154584" duration="2212000" />
     </task>
     <task id="LOCAL-00073" summary="Add support for task specific config">
       <created>1619591058895</created>
@@ -423,7 +412,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620551285539</updated>
     </task>
-    <option name="localTasksCounter" value="121" />
+    <task id="LOCAL-00121" summary="Add get_minibatches_without_weight for translate eval">
+      <created>1621138092830</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1621138092831</updated>
+    </task>
+    <option name="localTasksCounter" value="122" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -445,7 +441,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/../.." />
     </ignored-roots>
-    <MESSAGE value="Print len of word_vocab_vi for debugging purpose" />
     <MESSAGE value="Update vi_vocab_size" />
     <MESSAGE value="Update rnn cell in translate module to lstm cell" />
     <MESSAGE value="Fix bug with initial state of translate module's lstm" />
@@ -470,7 +465,8 @@
     <MESSAGE value="Update translate scorer result samples" />
     <MESSAGE value="Calculate true bleu on dataset" />
     <MESSAGE value="Fix bug in translate function" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix bug in translate function" />
+    <MESSAGE value="Add get_minibatches_without_weight for translate eval" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add get_minibatches_without_weight for translate eval" />
     <option name="PRESELECT_EXISTING_CHANGELIST" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -482,10 +478,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="515" y="254" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog/0.0.1366.728@0.0.1366.728" timestamp="1617778145837" />
-    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2" timestamp="1620551284241">
+    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2" timestamp="1621138090939">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1620551284241" />
+    <state x="154" y="0" width="1077" height="728" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1621138090939" />
     <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1620550050880">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -506,10 +502,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="530" y="277" key="VCS.ChangelistChooser/0.0.1366.728@0.0.1366.728" timestamp="1620539301864" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1620551289370">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1621138099902">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1620551289370" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1621138099902" />
     <state x="234" y="60" width="919" height="595" key="find.popup" timestamp="1621137382483">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

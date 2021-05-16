@@ -216,6 +216,7 @@ class Trainer(object):
     scorer = task.get_scorer()
     data = task.train_set if train_set else task.val_set
     for i, mb in enumerate(data.get_minibatches_without_weight(self._config.translate_batch_size)):
+      print(i)
       if i == 100:
         break
       tgt = self._model.translate(sess, mb=mb)
