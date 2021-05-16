@@ -60,6 +60,8 @@ class TranslationModule(task_module.SemiSupervisedModule):
             outputs, state, _ = tf.contrib.seq2seq.dynamic_decode(
               decoder)
             # swap_memory=True)
+
+            self.logits = outputs.rnn_output
           else:
             '''
             helper = tf.contrib.seq2seq.GreedyEmbeddingHelper(
@@ -88,6 +90,9 @@ class TranslationModule(task_module.SemiSupervisedModule):
               maximum_iterations=config.max_translate_length)
               #swap_memory=True)
 
+            #self.sample_ids = outputs.sample_id
+            self.sample_ids = outputs.predicted_ids
+
           '''
           outputs, state = tf.nn.dynamic_rnn(
             model_helpers.lstm_cell(config.bidirectional_sizes[0], inputs.keep_prob,
@@ -104,7 +109,6 @@ class TranslationModule(task_module.SemiSupervisedModule):
 
           #self.logits = tf.layers.dense(outputs, n_classes, name='predict')
           #self.logits = tf.layers.dense(outputs.rnn_output, n_classes, name='predict')
-          self.logits = outputs.rnn_output
 
         if is_translate:
           return
@@ -132,7 +136,8 @@ class TranslationModule(task_module.SemiSupervisedModule):
 
     translate_primary = PredictionModule('primary', state_in, is_translate=True, word_in=self.word_in)
 
-    self.translate_preds = tf.argmax(translate_primary.logits, axis=-1)
+    #self.translate_preds = tf.argmax(translate_primary.logits, axis=-1)
+    self.translate_preds = translate_primary.sample_ids
     self.translate_state = translate_primary.state
 
   def update_feed_dict(self, feed, mb):
