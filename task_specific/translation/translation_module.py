@@ -1,5 +1,6 @@
 import numpy as np
 import tensorflow as tf
+from tensorflow.contrib.seq2seq import BahdanauAttention, AttentionWrapper
 
 from base import utils, embeddings
 from corpus_processing import minibatching
@@ -23,7 +24,7 @@ class TranslationModule(task_module.SemiSupervisedModule):
     pretrained_embeddings_vi = utils.load_cpickle(config.word_embeddings_vi)
 
     class PredictionModule(object):
-      def __init__(self, name, input_reprs, roll_direction=0, activate=True, is_translate=False, word_in=None):
+      def __init__(self, name, input_reprs, roll_direction=0, activate=True, is_translate=False, word_in=None, encoder_reprs=encoder.bi_reprs):
         self.name = name
         with tf.variable_scope(name + '/predictions'):
           #decoder_state = tf.layers.dense(input_reprs, config.projection_size, name='encoder_to_decoder')
@@ -47,12 +48,29 @@ class TranslationModule(task_module.SemiSupervisedModule):
           decoder_output_layer = tf.layers.Dense(n_classes, name='predict')
 
           if not is_translate:
+            size_src = self.size_src
+
+            attention_mechanism = BahdanauAttention(
+              num_units=config.attention_units,
+              memory=encoder_reprs,
+              memory_sequence_length=size_src)
+            attention_cell = AttentionWrapper(
+              decoder_lstm,
+              attention_mechanism,
+              attention_layer_size=config.attention_units)
+
+            batch_size = tf.shape(words_tgt_in)[0]
+            decoder_initial_state = attention_cell.zero_state(
+              dtype=tf.float32,
+              batch_size=batch_size * config.beam_width)
+            decoder_state = decoder_initial_state.clone(cell_state=decoder_state)
+
             helper = tf.contrib.seq2seq.TrainingHelper(
               word_embeddings,
               size_tgt)
 
             decoder = tf.contrib.seq2seq.BasicDecoder(
-              decoder_lstm,
+              attention_cell,
               helper,
               decoder_state,
               decoder_output_layer)
@@ -75,11 +93,30 @@ class TranslationModule(task_module.SemiSupervisedModule):
                 decoder_state,
                 decoder_output_layer)
             elif config.decode_mode == 'beam':
-              decoder_state = tf.contrib.seq2seq.tile_batch(
-                decoder_state, multiplier=config.beam_width)
+              encoder_reprs = tf.contrib.seq2seq.tile_batch(encoder_reprs, multiplier=config.beam_width)
+              decoder_state = tf.contrib.seq2seq.tile_batch(decoder_state, multiplier=config.beam_width)
+              size_src = tf.contrib.seq2seq.tile_batch(self.size_src, multiplier=config.beam_width)
+
+              attention_mechanism = BahdanauAttention(
+                num_units=config.attention_units,
+                memory=encoder_reprs,
+                memory_sequence_length=size_src)
+              attention_cell = AttentionWrapper(
+                decoder_lstm,
+                attention_mechanism,
+                attention_layer_size=config.attention_units)
+
+              batch_size = 2
+              decoder_initial_state = attention_cell.zero_state(
+                dtype=tf.float32,
+                batch_size=batch_size * config.beam_width)
+              decoder_state = decoder_initial_state.clone(cell_state=decoder_state)
+
+              #decoder_state = tf.contrib.seq2seq.tile_batch(
+              #  decoder_state, multiplier=config.beam_width)
 
               decoder = tf.contrib.seq2seq.BeamSearchDecoder(
-                cell=decoder_lstm,
+                cell=attention_cell,
                 embedding=word_embedding_matrix,
                 start_tokens=[embeddings.START, embeddings.START],
                 end_token=embeddings.END,
@@ -123,7 +160,7 @@ class TranslationModule(task_module.SemiSupervisedModule):
         self.loss = model_helpers.masked_ce_loss(
           self.logits, targets, inputs.mask)
 
-    primary = PredictionModule('primary', encoder.bi_state)
+    primary = PredictionModule('primary', encoder.bi_state, encoder_reprs=encoder.bi_reprs)
 
     self.unsupervised_loss = primary.loss
     self.supervised_loss = primary.loss
@@ -138,7 +175,7 @@ class TranslationModule(task_module.SemiSupervisedModule):
 
     state_in = tf.nn.rnn_cell.LSTMStateTuple(self.state_c_in, self.state_h_in)
 
-    translate_primary = PredictionModule('primary', state_in, is_translate=True, word_in=self.word_in)
+    translate_primary = PredictionModule('primary', state_in, is_translate=True, word_in=self.word_in, encoder_reprs=encoder.bi_reprs)
 
     #self.translate_preds = tf.argmax(translate_primary.logits, axis=-1)
     self.translate_preds = translate_primary.sample_ids
