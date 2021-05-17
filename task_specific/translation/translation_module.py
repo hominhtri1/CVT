@@ -1,6 +1,6 @@
 import numpy as np
 import tensorflow as tf
-from tensorflow.contrib.seq2seq import BahdanauAttention, AttentionWrapper
+from tensorflow.contrib.seq2seq import BahdanauAttention, AttentionWrapper, LuongAttention
 
 from base import utils, embeddings
 from corpus_processing import minibatching
@@ -48,10 +48,11 @@ class TranslationModule(task_module.SemiSupervisedModule):
           decoder_output_layer = tf.layers.Dense(n_classes, name='predict')
 
           if not is_translate:
-            attention_mechanism = BahdanauAttention(
+            attention_mechanism = LuongAttention(
               num_units=config.attention_units,
               memory=encoder_reprs,
-              memory_sequence_length=size_sr)
+              memory_sequence_length=size_sr,
+              scale=True)
             attention_cell = AttentionWrapper(
               decoder_lstm,
               attention_mechanism,
@@ -95,10 +96,11 @@ class TranslationModule(task_module.SemiSupervisedModule):
               decoder_state = tf.contrib.seq2seq.tile_batch(decoder_state, multiplier=config.beam_width)
               size_src = tf.contrib.seq2seq.tile_batch(size_sr, multiplier=config.beam_width)
 
-              attention_mechanism = BahdanauAttention(
+              attention_mechanism = LuongAttention(
                 num_units=config.attention_units,
                 memory=encoder_reprs,
-                memory_sequence_length=size_src)
+                memory_sequence_length=size_src,
+                scale=True)
               attention_cell = AttentionWrapper(
                 decoder_lstm,
                 attention_mechanism,

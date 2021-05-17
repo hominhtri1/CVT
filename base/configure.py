@@ -65,7 +65,6 @@ class Config(object):
     self.unidirectional_sizes = self.unidirectional_sizes_dict[self.task]  # size of first Bi-LSTM
     self.bidirectional_sizes = self.bidirectional_sizes_dict[self.task]  # size of second Bi-LSTM
     self.projection_size = self.projection_size_dict[self.task]  # projections size for LSTMs and hidden layers
-    self.attention_units = 256
 
     # dependency parsing
     self.depparse_projection_size = 128  # size of the representations used in
@@ -107,6 +106,7 @@ class Config(object):
                                                     # sentences by length
     self.max_translate_length = 100
     self.beam_width = 1
+    self.attention_units = self.projection_size
 
     # training
     self.print_every = 10  # how often to print out training progress
