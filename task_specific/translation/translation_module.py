@@ -17,7 +17,7 @@ class TranslationModule(task_module.SemiSupervisedModule):
                                                       name=task_name + '_words_tgt_in')
     self.words_tgt_out = words_tgt_out = tf.placeholder(tf.float32, [None, None, None],
                                                         name=task_name + '_words_tgt_out')
-    self.size_src = size_src = tf.placeholder(tf.int32, [None],
+    self.size_src = size_sr = tf.placeholder(tf.int32, [None],
                                               name=task_name + '_size_src')
     self.size_tgt = size_tgt = tf.placeholder(tf.int32, [None],
                                               name=task_name + '_size_tgt')
@@ -48,12 +48,10 @@ class TranslationModule(task_module.SemiSupervisedModule):
           decoder_output_layer = tf.layers.Dense(n_classes, name='predict')
 
           if not is_translate:
-            size_src = self.size_src
-
             attention_mechanism = BahdanauAttention(
               num_units=config.attention_units,
               memory=encoder_reprs,
-              memory_sequence_length=size_src)
+              memory_sequence_length=size_sr)
             attention_cell = AttentionWrapper(
               decoder_lstm,
               attention_mechanism,
@@ -95,7 +93,7 @@ class TranslationModule(task_module.SemiSupervisedModule):
             elif config.decode_mode == 'beam':
               encoder_reprs = tf.contrib.seq2seq.tile_batch(encoder_reprs, multiplier=config.beam_width)
               decoder_state = tf.contrib.seq2seq.tile_batch(decoder_state, multiplier=config.beam_width)
-              size_src = tf.contrib.seq2seq.tile_batch(self.size_src, multiplier=config.beam_width)
+              size_src = tf.contrib.seq2seq.tile_batch(size_sr, multiplier=config.beam_width)
 
               attention_mechanism = BahdanauAttention(
                 num_units=config.attention_units,
