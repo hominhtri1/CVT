@@ -33,7 +33,7 @@ class ClassificationModule(task_module.SemiSupervisedModule):
     #print_op = tf.print('TRI', 'labels', tf.shape(labels), 'encoder.bi_state', tf.shape(encoder.bi_state))
 
     #with tf.compat.v1.control_dependencies([print_op]):
-    primary = PredictionModule('primary', encoder.bi_state)
+    primary = PredictionModule('primary', encoder.bi_state.h)
 
     self.unsupervised_loss = primary.loss
     self.supervised_loss = primary.loss

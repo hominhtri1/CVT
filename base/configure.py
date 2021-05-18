@@ -34,7 +34,7 @@ class Config(object):
 
     # mode
     self.mode = 'train'  # either "train" or "eval"
-    self.task_names = ['translate']  # list of tasks this model will learn
+    self.task_names = ['senclass']  # list of tasks this model will learn
                                  # more than one trains a multi-task model
     self.task = self.task_names[0]
     self.is_semisup = False  # whether to use CVT or train purely supervised
@@ -76,12 +76,14 @@ class Config(object):
     self.label_smoothing = 0.1  # label smoothing rate for tagging tasks
 
     # optimization
+    self.tri_lr_dict = {'chunk': 0.001, 'senclass': 0.001, 'translate': 0.005}
+
     self.lr = 0.5  # base learning rate
     self.momentum = 0.9  # momentum
     self.grad_clip = 1.0  # maximum gradient norm during optimization
     self.warm_up_steps = 5000.0  # linearly ramp up the lr for this many steps
     self.lr_decay = 0.005  # factor for gradually decaying the lr
-    self.tri_lr = 0.005
+    self.tri_lr = self.tri_lr_dict[self.task]
 
     # EMA
     self.ema_decay = 0.998  # EMA coefficient for averaged model weights
